@@ -8,19 +8,93 @@ header{
 }
 #conteiner{	
 	display: flex;
-	width: 96vw;
+	width: 95vw;
 	height: 45vw;
 	background-color: rgb(0,118,168);
 	margin-left: auto;
 	margin-right: auto;
 }
-#img_planta{
-	width: 90vw;
-	height: 45vw;		
-	margin-left: 3%;
+#tela_principal{	
+	width: 95vw;
+	height: 45vw;	
 }
-#tela_principal{
-	width: 90vw;
-	height: 45vw;		
-	margin-left: 3%;
+.motor{
+	width: 2vw;
+	height: 2vw;
+	background-color: transparent;
+	border:;
+	position: absolute;
+	cursor: pointer;	
+}
+.display_motor{
+	display: flex;
+	flex-wrap: wrap;
+	width: 8.4vw;
+	height: 9vw;
+	background-color:rgb(255,128,0);	
+	position: absolute;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.2vw;	
+}
+#mt-01{/*motor mexedor tq. SI*/
+	margin-left: 28.7vw;	
+	margin-top: 30vw;
+}
+#mt-02{/*motor da bomba de SI*/
+	margin-left: 31.2vw;	
+	margin-top: 41vw;
+}
+
+
+.display_ident{      
+    width: 7.6vw;
+    height: 2vw;
+    background-color: blue;
+    border:0.4vw inset blue;
+    color: white;
+    font-weight: bold;    
+    display: flex;
+    justify-content: space-between;
+	align-items: center;    
+}
+.motor_btnLiga{
+    background-color: green;
+    border: 4px outset green;
+    width: 4vw;
+    height: 3vw;
+    font-weight: bold;
+    color: white;  
+}
+.motor_btnDesl{
+    background-color: red;
+    border: 4px outset red;
+    width: 4vw;
+    height: 3vw;
+    font-weight: bold;
+    color: white;        
+}
+.motor_btnAuto{
+    background-color: green;
+    border: 4px outset green;
+    width: 4vw;
+    height: 3vw;
+    font-weight: bold;
+    color: white;        
+}
+.motor_btnMan{
+    background-color: red;
+    border: 4px outset red;
+    width: 4vw;
+    height: 3vw;
+    font-weight: bold;
+    color: white;    
+}
+.display_btnClose{
+    background-color: gray;
+    border: 0.2vw outset gray;
+    width: 2vw;
+    height: 2vw;
+    font-weight: bold;
+    color: white;       
 }
