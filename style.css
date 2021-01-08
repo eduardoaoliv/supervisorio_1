@@ -29,13 +29,13 @@ header{
 .display_motor{
 	display: flex;
 	flex-wrap: wrap;
-	width: 8.4vw;
+	width: 9vw;
 	height: 9vw;
 	background-color:rgb(255,128,0);	
 	position: absolute;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
-	padding: 0.2vw;	
+	padding: 0.1vw;	
 }
 #mt-01{/*motor mexedor tq. SI*/
 	margin-left: 28.7vw;	
@@ -48,10 +48,11 @@ header{
 
 
 .display_ident{      
-    width: 7.6vw;
+    width: 7.8vw;
     height: 2vw;
     background-color: blue;
     border:0.4vw inset blue;
+    font-size: 1.5vw;
     color: white;
     font-weight: bold;    
     display: flex;
@@ -64,7 +65,9 @@ header{
     width: 4vw;
     height: 3vw;
     font-weight: bold;
-    color: white;  
+    color: white; 
+    font-size: 1vw; 
+    text-align: left;  
 }
 .motor_btnDesl{
     background-color: red;
@@ -72,7 +75,9 @@ header{
     width: 4vw;
     height: 3vw;
     font-weight: bold;
-    color: white;        
+    color: white;
+    font-size: 1vw; 
+    text-align: left;         
 }
 .motor_btnAuto{
     background-color: green;
@@ -80,7 +85,9 @@ header{
     width: 4vw;
     height: 3vw;
     font-weight: bold;
-    color: white;        
+    color: white;
+    font-size: 1vw; 
+    text-align: left;         
 }
 .motor_btnMan{
     background-color: red;
@@ -88,7 +95,9 @@ header{
     width: 4vw;
     height: 3vw;
     font-weight: bold;
-    color: white;    
+    color: white;
+    font-size: 1vw;
+    text-align: left;    
 }
 .display_btnClose{
     background-color: gray;
@@ -96,5 +105,7 @@ header{
     width: 2vw;
     height: 2vw;
     font-weight: bold;
-    color: white;       
+    color: white; 
+    font-size: 1vw;
+    text-align: center;          
 }
