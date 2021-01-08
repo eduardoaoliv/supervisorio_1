@@ -6,6 +6,7 @@ header{
 	font-size: 2vw;
 	text-align: center;
 }
+/*Área que contém toda a tela*/
 #conteiner{	
 	display: flex;
 	width: 95vw;
@@ -14,10 +15,12 @@ header{
 	margin-left: auto;
 	margin-right: auto;
 }
+/*Tela de fundo*/
 #tela_principal{	
 	width: 95vw;
 	height: 45vw;	
 }
+/*Configuração do botão de chamada dos displays dos motores e válvulas*/
 .motor{
 	width: 2vw;
 	height: 2vw;
@@ -26,6 +29,7 @@ header{
 	position: absolute;
 	cursor: pointer;	
 }
+/*Configuração do conteiner display motores e válvulas*/
 .display_motor{
 	display: flex;
 	flex-wrap: wrap;
@@ -37,6 +41,7 @@ header{
 	align-items: center;
 	padding: 0.1vw;	
 }
+/*Posição dos botões de chamada do display de controle dos motores*/
 #mt-01{/*motor mexedor tq. SI*/
 	margin-left: 28.7vw;	
 	margin-top: 30vw;
@@ -46,58 +51,18 @@ header{
 	margin-top: 41vw;
 }
 
-
+/*Configuração do campo identificação e botão close do display motor e valvula*/
 .display_ident{      
     width: 7.8vw;
     height: 2vw;
-    background-color: blue;
-    border:0.4vw inset blue;
+    background-color: rgb(55,55,55);
+    border:0.4vw inset black;
     font-size: 1.5vw;
     color: white;
     font-weight: bold;    
     display: flex;
     justify-content: space-between;
 	align-items: center;    
-}
-.motor_btnLiga{
-    background-color: green;
-    border: 4px outset green;
-    width: 4vw;
-    height: 3vw;
-    font-weight: bold;
-    color: white; 
-    font-size: 1vw; 
-    text-align: left;  
-}
-.motor_btnDesl{
-    background-color: red;
-    border: 4px outset red;
-    width: 4vw;
-    height: 3vw;
-    font-weight: bold;
-    color: white;
-    font-size: 1vw; 
-    text-align: left;         
-}
-.motor_btnAuto{
-    background-color: green;
-    border: 4px outset green;
-    width: 4vw;
-    height: 3vw;
-    font-weight: bold;
-    color: white;
-    font-size: 1vw; 
-    text-align: left;         
-}
-.motor_btnMan{
-    background-color: red;
-    border: 4px outset red;
-    width: 4vw;
-    height: 3vw;
-    font-weight: bold;
-    color: white;
-    font-size: 1vw;
-    text-align: left;    
 }
 .display_btnClose{
     background-color: gray;
@@ -108,4 +73,45 @@ header{
     color: white; 
     font-size: 1vw;
     text-align: center;          
+}
+/*Layout dos botões do display de controle dos motores*/
+.motor_btnLiga{
+    background-color: rgb(55,55,55);
+    border: 0.4vw outset gray;
+    width: 4vw;
+    height: 3vw;
+    font-weight: bold;
+    color: white; 
+    font-size: 1vw; 
+    text-align: left;  
+}
+.motor_btnDesl{
+    background-color: rgb(55,55,55);
+    border: 0.4vw outset gray;
+    width: 4vw;
+    height: 3vw;
+    font-weight: bold;
+    color: white;
+    font-size: 1vw; 
+    text-align: left;         
+}
+.motor_btnAuto{
+    background-color: rgb(100,100,100);
+    border: 0.4vw outset gray;
+    width: 4vw;
+    height: 3vw;
+    font-weight: bold;
+    color: white;
+    font-size: 1vw; 
+    text-align: left;         
+}
+.motor_btnMan{
+    background-color: rgb(100,100,100);
+    border: 0.4vw outset gray;
+    width: 4vw;
+    height: 3vw;
+    font-weight: bold;
+    color: white;
+    font-size: 1vw;
+    text-align: left;    
 }
