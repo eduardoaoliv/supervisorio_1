@@ -20,12 +20,31 @@ header{
 	width: 95vw;
 	height: 45vw;	
 }
+/*imagem do motor vertical*/
+.motorVertical{    
+    width: 3vw;
+    height: 2vw;
+}
+#mt01Acionado{
+    display: none;
+
+}
+
+
+/*imagem do motor horizontal*/
+.motorHoriz{    
+    width: 3vw;
+    height: 2vw;
+}
 /*Configuração do botão de chamada dos displays dos motores e válvulas*/
 .motor{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 	width: 2vw;
 	height: 2vw;
 	background-color: transparent;
-	border:;
+	border:0.1vw solid white;
 	position: absolute;
 	cursor: pointer;	
 }
@@ -41,14 +60,27 @@ header{
 	align-items: center;
 	padding: 0.1vw;	
 }
+/*Posição dos displays dos motores*/
+#display_mt01{
+    display:none;
+    margin-left: 25.7vw;
+    margin-top: 20vw;
+}
+#display_mt02{
+    display:none;
+    margin-left: 37.7vw;
+    margin-top: 34vw;
+}
+
+
 /*Posição dos botões de chamada do display de controle dos motores*/
-#mt-01{/*motor mexedor tq. SI*/
+#mt_01{/*motor mexedor tq. SI*/
 	margin-left: 28.7vw;	
 	margin-top: 30vw;
 }
-#mt-02{/*motor da bomba de SI*/
+#mt_02{/*motor da bomba de SI*/
 	margin-left: 31.2vw;	
-	margin-top: 41vw;
+	margin-top: 40.8vw;
 }
 
 /*Configuração do campo identificação e botão close do display motor e valvula*/

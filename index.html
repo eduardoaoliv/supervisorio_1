@@ -11,8 +11,38 @@
 	<header>Principal</header>
 		<div id="conteiner"  dropzone="copy">
 			<img id="tela_principal" src="Imagens/tela_principal.png"  >
-			<button type="button" class="motor" name="motor_mexedorSI" id=mt-01></button>
-			<button type="button" class="motor" name="motor_bombaSI" id=mt-02></button>
+<!--******************** Motor Mexedor SI - mt-01 *********************************-->			
+			<button type="button" class="motor" name="motor_mexedorSI" id=mt_01>
+				<img  class="motorVertical" id="mt01Acionado" src="Imagens/motorVertical.jpg">
+			</button>
+				<div class="display_motor" id="display_mt01" draggable="true">
+					<div class="display_ident">mt-01
+						<button type="button" class="display_btnClose" id="btn_mt01_close">X</button>
+					</div>
+					<button class="motor_btnLiga" id="mt_01_liga">Liga</button>
+					<button class="motor_btnDesl" id="mt_01_desl">Desl</button>
+					<button class="motor_btnAuto" id="mt_01_auto">Auto</button>
+					<button class="motor_btnMan" id="mt_01_man">Man</button>
+				</div>
+<!--******************** Motor Bomba SI - mt-02 *********************************-->
+			<button type="button" class="motor" name="motor_bombaSI" id=mt_02>
+				<img class="motorHoriz" id="mt02Acionado" src="Imagens/motorHoriz.jpg">
+			</button>
+				<div class="display_motor" id="display_mt02" draggable="true">
+					<div class="display_ident">mt-02
+						<button type="button" class="display_btnClose" id="btn_mt02_close">X</button>
+					</div>
+					<button class="motor_btnLiga" id="mt_02_liga">Liga</button>
+					<button class="motor_btnDesl" id="mt_02_desl">Desl</button>
+					<button class="motor_btnAuto" id="mt_02_auto">Auto</button>
+					<button class="motor_btnMan" id="mt_02_man">Man</button>
+				</div>
+
+
+
+
+
+
 		</div>
 </body>
 </html>
