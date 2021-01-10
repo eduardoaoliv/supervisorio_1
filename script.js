@@ -157,7 +157,7 @@ function acionaMotor(ID){
 		}else mt02Aciona.style.display="none";
 }*/
 
-//********************* Motor Mexedor SI mt-01 ****************************
+//***************************** Motor Mexedor SI mt-01 ****************************
 
 var btnMt01Liga=document.getElementById("mt_01_liga");
 var btnMt01Desl=document.getElementById("mt_01_desl");
@@ -199,15 +199,13 @@ var mt01Ligado=document.getElementById("mt01Acionado");
 			btnMt01Desl.style.backgroundColor="green";
 			btnMt01Desl.value="1";
 			mt01Manual();					
+		});	
+		
+		btnMt01Close.addEventListener("click",function(){
+			displayMt01.style.display="none";
 		});
-	
-	
-	btnMt01Close.addEventListener("click",function(){
-		displayMt01.style.display="none";
-	});
 
 // Acionamento manual do mexedor mt-01
-
 function mt01Manual(){	
 	if((btnMt01Man.value==="1" )&&(btnMt01Liga.value==="1")){
 		mt01Ligado.style.display="block";		
@@ -217,44 +215,67 @@ function mt01Manual(){
 	
 
 
-//********************* Motor Bomba de SI mt-02 ****************************
-	var btnMt02Liga=document.getElementById("mt_02_liga");
+//****************************** Motor Bomba de SI mt-02 ****************************
+var btnMt02Liga=document.getElementById("mt_02_liga");
 var btnMt02Desl=document.getElementById("mt_02_desl");
 var btnMt02Auto=document.getElementById("mt_02_auto");
 var btnMt02Man=document.getElementById("mt_02_man");
 var displayMt02=document.getElementById("display_mt02");
 var btnDisplayMt02=document.getElementById("mt_02");
 var btnMt02Close=document.getElementById("btn_mt02_close");
+var mt02Ligado=document.getElementById("mt02Acionado");
+var tubSIMist01=document.getElementById("tub_SI_mist_01"); 
+var tubSIMist02=document.getElementById("tub_SI_mist_02");
+var tubSIMist03=document.getElementById("tub_SI_mist_03");
 
 	btnDisplayMt02.addEventListener("click",function(){
 		displayMt02.style.display="block";
 
 		btnMt02Auto.addEventListener("click",function(){
 			btnMt02Auto.style.backgroundColor="green";
-			btnMt02Auto.value="true";		
+			btnMt02Auto.value="1";		
 			btnMt02Man.style.backgroundColor="rgb(100,100,100)";
-			btnMt02Man.value="false";		
+			btnMt02Man.value="0";
+			mt02Manual();		
 		});
 		btnMt02Man.addEventListener("click",function(){
 			btnMt02Auto.style.backgroundColor="rgb(100,100,100)";
-			btnMt02Auto.value="false";		
+			btnMt02Auto.value="0";		
 			btnMt02Man.style.backgroundColor="green";
-			btnMt02Man.value="true";		
+			btnMt02Man.value="1";
+			mt02Manual();			
 		});	
-		btnMt02Liga.addEventListener("click",function(id){
+		btnMt02Liga.addEventListener("click",function(){
 			btnMt02Liga.style.backgroundColor="green";
-			btnMt02Liga.value="true";
+			btnMt02Liga.value="1";
 			btnMt02Desl.style.backgroundColor="rgb(55,55,55)";
-			btnMt02Desl.value="false";		
+			btnMt02Desl.value="0";
+			mt02Manual();			
 		});
-		btnMt02Desl.addEventListener("click",function(id){
+		btnMt02Desl.addEventListener("click",function(){
 			btnMt02Liga.style.backgroundColor="rgb(55,55,55)";
-			btnMt02Liga.value="false";
+			btnMt02Liga.value="0";
 			btnMt02Desl.style.backgroundColor="green";
-			btnMt02Desl.value="true";		
+			btnMt02Desl.value="1";
+			mt02Manual();			
 		});	
 	});
 	
 	btnMt02Close.addEventListener("click",function(){
 		displayMt02.style.display="none";		
 	});
+
+// Acionamento manual do mexedor mt-02
+function mt02Manual(){	
+	if((btnMt02Man.value==="1" )&&(btnMt02Liga.value==="1")){
+		mt02Ligado.style.display="block";
+		tubSIMist01.style.display="block";
+		tubSIMist02.style.display="block";
+		tubSIMist03.style.display="block";
+	}else {
+	mt02Ligado.style.display="none";
+	tubSIMist01.style.display="none";
+	tubSIMist02.style.display="none";
+	tubSIMist03.style.display="none";	
+	}
+}

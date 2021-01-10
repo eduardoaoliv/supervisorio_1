@@ -20,22 +20,54 @@ header{
 	width: 95vw;
 	height: 45vw;	
 }
+/*Tubulações SI*/
+#tub_SI_mist_01{
+    display: none;
+    position: absolute;
+    margin-left: 19vw;
+    margin-top: 41.6vw;
+    height: 0.8vw;
+    width: 5vw;
+}
+#tub_SI_mist_02{
+    display: none;
+    position: absolute;    
+    margin-left: 19.02vw;
+    margin-top: 15.4vw;
+    height: 26.4vw;
+    width: 0.9vw;   
+}
+#tub_SI_mist_03{
+    display: none;
+    position: absolute;    
+    margin-left: 19.8vw;
+    margin-top: 15.5vw;
+    height: 0.5vw;
+    width: 27vw;   
+}
+
 /*imagem do motor vertical*/
 .motorVertical{    
-    width: 3vw;
-    height: 2vw;
+    width: 2.5vw;
+    height: 1.6vw;
 }
 #mt01Acionado{
     display: none;
-
+    margin-top: -0.5vw;
+    margin-left: 0.2vw;
 }
-
 
 /*imagem do motor horizontal*/
 .motorHoriz{    
-    width: 3vw;
-    height: 2vw;
+    width: 2.3vw;
+    height: 1.2vw;
 }
+#mt02Acionado{
+    display: none;
+    margin-top: 0.2vw;
+    margin-left: -0.2vw;
+}
+
 /*Configuração do botão de chamada dos displays dos motores e válvulas*/
 .motor{
     display: flex;
@@ -44,7 +76,7 @@ header{
 	width: 2vw;
 	height: 2vw;
 	background-color: transparent;
-	border:0.1vw solid white;
+	border:0.1vw solid transparent;
 	position: absolute;
 	cursor: pointer;	
 }
