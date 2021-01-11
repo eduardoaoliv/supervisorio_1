@@ -86,25 +86,43 @@ header{
     width: 0.6vw;  
 }
 
-/*imagem do motor vertical*/
+/*imagem do motores verticais*/
 .motorVertical{    
     width: 2.5vw;
     height: 1.6vw;
 }
-#mt01Acionado{
+#mt01Acionado{/*motor mexedor SI*/
     display: none;
     margin-top: -0.5vw;
     margin-left: 0.2vw;
 }
 
-/*imagem do motor horizontal*/
+/*imagem dos motores horizontais*/
 .motorHoriz{    
     width: 2.3vw;
     height: 1.2vw;
 }
-#mt02Acionado{
+#mt02Acionado{/*motor bomba de SI*/
     display: none;
     margin-top: 0.2vw;
+    margin-left: -0.2vw;
+}
+#mt03Acionado{/*motor misturador 1*/
+    display: none;
+    height: 1.8vw;
+    margin-top: -0.4vw;
+    margin-left: -0.2vw;
+}
+#mt04Acionado{/*motor misturador 2*/
+    display: none;
+    height: 1.8vw;
+    margin-top: -0.4vw;
+    margin-left: -0.2vw;
+}
+#mt05Acionado{/*motor misturador 3*/
+    display: none;
+    height: 1.8vw;
+    margin-top: -0.4vw;
     margin-left: -0.2vw;
 }
 
@@ -133,17 +151,31 @@ header{
 	padding: 0.1vw;	
 }
 /*Posição dos displays dos motores*/
-#display_mt01{
+#display_mt01{/*mexedor SI*/
     display:none;
-    margin-left: 25.7vw;
+    margin-left: 20.7vw;
     margin-top: 20vw;
 }
-#display_mt02{
+#display_mt02{/*bomba SI*/
     display:none;
     margin-left: 37.7vw;
-    margin-top: 34vw;
+    margin-top: 34.5vw;
 }
-
+#display_mt03{/*misturador-1*/
+    display:none;
+    margin-left: 36.7vw;
+    margin-top: 25.5vw;
+}
+#display_mt04{/*misturador-2*/
+    display:none;
+    margin-left: 53.6vw;
+    margin-top: 25.5vw;
+}
+#display_mt05{/*misturador-3*/
+    display:none;
+    margin-left: 69vw;
+    margin-top: 25.5vw;
+}
 
 /*Posição dos botões de chamada do display de controle dos motores*/
 #mt_01{/*motor mexedor tq. SI*/
@@ -154,6 +186,19 @@ header{
 	margin-left: 31.2vw;	
 	margin-top: 40.8vw;
 }
+#mt_03{/*motor do misturador-1*/
+    margin-left: 40.3vw;    
+    margin-top: 23vw;
+}
+#mt_04{/*motor do misturador-2*/
+    margin-left: 55.5vw;    
+    margin-top: 23vw;
+}
+#mt_05{/*motor do misturador-3*/
+    margin-left: 70.8vw;    
+    margin-top: 23vw;
+}
+
 
 /*Configuração do campo identificação e botão close do display motor e valvula*/
 .display_ident{      

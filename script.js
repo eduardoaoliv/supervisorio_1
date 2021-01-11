@@ -271,7 +271,7 @@ var tubSIMist036=document.getElementById("tub_SI_mist_036");
 		displayMt02.style.display="none";		
 	});
 
-// Acionamento manual do mexedor mt-02
+// Acionamento manual do mexedor de SI mt-02
 function mt02Manual(){	
 	if((btnMt02Man.value==="1" )&&(btnMt02Liga.value==="1")){
 		mt02Ligado.style.display="block";
@@ -295,3 +295,168 @@ function mt02Manual(){
 	tubSIMist036.style.display="none";		
 	}
 }
+
+//****************************** Motor Misturador-1 mt-03 ****************************
+var btnMt03Liga=document.getElementById("mt_03_liga");
+var btnMt03Desl=document.getElementById("mt_03_desl");
+var btnMt03Auto=document.getElementById("mt_03_auto");
+var btnMt03Man=document.getElementById("mt_03_man");
+var displayMt03=document.getElementById("display_mt03");
+var btnDisplayMt03=document.getElementById("mt_03");
+var btnMt03Close=document.getElementById("btn_mt03_close");
+var mt03Ligado=document.getElementById("mt03Acionado");
+
+		btnDisplayMt03.addEventListener("click",function(){
+			displayMt03.style.display="block";
+		});
+
+		btnMt03Auto.addEventListener("click",function(){
+			btnMt03Auto.style.backgroundColor="green";
+			btnMt03Auto.value="1";		
+			btnMt03Man.style.backgroundColor="rgb(100,100,100)";
+			btnMt03Man.value="0";
+			mt03Manual();					
+		})
+		btnMt03Man.addEventListener("click",function(){
+			btnMt03Auto.style.backgroundColor="rgb(100,100,100)";
+			btnMt03Auto.value="0";		
+			btnMt03Man.style.backgroundColor="green";
+			btnMt03Man.value="1";
+			mt03Manual();					
+		});	
+		btnMt03Liga.addEventListener("click",function(){
+			btnMt03Liga.style.backgroundColor="green";
+			btnMt03Liga.value="1";
+			btnMt03Desl.style.backgroundColor="rgb(55,55,55)";
+			btnMt03Desl.value="0";
+			mt03Manual();					
+		});
+		btnMt03Desl.addEventListener("click",function(){
+			btnMt03Liga.style.backgroundColor="rgb(55,55,55)";
+			btnMt03Liga.value="0";
+			btnMt03Desl.style.backgroundColor="green";
+			btnMt03Desl.value="1";
+			mt03Manual();					
+		});	
+		
+		btnMt03Close.addEventListener("click",function(){
+			displayMt03.style.display="none";
+		});
+
+		// Acionamento manual do motor misturador-1 mt-03
+function mt03Manual(){	
+	if((btnMt03Man.value==="1" )&&(btnMt03Liga.value==="1")){
+		mt03Ligado.style.display="block";		
+	}else {
+	mt03Ligado.style.display="none"};	
+	}	 
+
+//****************************** Motor Misturador-2 mt-04 ****************************
+var btnMt04Liga=document.getElementById("mt_04_liga");
+var btnMt04Desl=document.getElementById("mt_04_desl");
+var btnMt04Auto=document.getElementById("mt_04_auto");
+var btnMt04Man=document.getElementById("mt_04_man");
+var displayMt04=document.getElementById("display_mt04");
+var btnDisplayMt04=document.getElementById("mt_04");
+var btnMt04Close=document.getElementById("btn_mt04_close");
+var mt04Ligado=document.getElementById("mt04Acionado");
+
+		btnDisplayMt04.addEventListener("click",function(){
+			displayMt04.style.display="block";
+		});
+
+		btnMt04Auto.addEventListener("click",function(){
+			btnMt04Auto.style.backgroundColor="green";
+			btnMt04Auto.value="1";		
+			btnMt04Man.style.backgroundColor="rgb(100,100,100)";
+			btnMt04Man.value="0";
+			mt04Manual();					
+		})
+		btnMt04Man.addEventListener("click",function(){
+			btnMt04Auto.style.backgroundColor="rgb(100,100,100)";
+			btnMt04Auto.value="0";		
+			btnMt04Man.style.backgroundColor="green";
+			btnMt04Man.value="1";
+			mt04Manual();					
+		});	
+		btnMt04Liga.addEventListener("click",function(){
+			btnMt04Liga.style.backgroundColor="green";
+			btnMt04Liga.value="1";
+			btnMt04Desl.style.backgroundColor="rgb(55,55,55)";
+			btnMt04Desl.value="0";
+			mt04Manual();					
+		});
+		btnMt04Desl.addEventListener("click",function(){
+			btnMt04Liga.style.backgroundColor="rgb(55,55,55)";
+			btnMt04Liga.value="0";
+			btnMt04Desl.style.backgroundColor="green";
+			btnMt04Desl.value="1";
+			mt04Manual();					
+		});	
+		
+		btnMt04Close.addEventListener("click",function(){
+			displayMt04.style.display="none";
+		});
+
+		// Acionamento manual do motor misturador-2 mt-04
+function mt04Manual(){	
+	if((btnMt04Man.value==="1" )&&(btnMt04Liga.value==="1")){
+		mt04Ligado.style.display="block";		
+	}else {
+	mt04Ligado.style.display="none"};	
+	}	 
+
+//****************************** Motor Misturador-3 mt-05 ****************************
+var btnMt05Liga=document.getElementById("mt_05_liga");
+var btnMt05Desl=document.getElementById("mt_05_desl");
+var btnMt05Auto=document.getElementById("mt_05_auto");
+var btnMt05Man=document.getElementById("mt_05_man");
+var displayMt05=document.getElementById("display_mt05");
+var btnDisplayMt05=document.getElementById("mt_05");
+var btnMt05Close=document.getElementById("btn_mt05_close");
+var mt05Ligado=document.getElementById("mt05Acionado");
+
+		btnDisplayMt05.addEventListener("click",function(){
+			displayMt05.style.display="block";
+		});
+
+		btnMt05Auto.addEventListener("click",function(){
+			btnMt05Auto.style.backgroundColor="green";
+			btnMt05Auto.value="1";		
+			btnMt05Man.style.backgroundColor="rgb(100,100,100)";
+			btnMt05Man.value="0";
+			mt05Manual();					
+		})
+		btnMt05Man.addEventListener("click",function(){
+			btnMt05Auto.style.backgroundColor="rgb(100,100,100)";
+			btnMt05Auto.value="0";		
+			btnMt05Man.style.backgroundColor="green";
+			btnMt05Man.value="1";
+			mt05Manual();					
+		});	
+		btnMt05Liga.addEventListener("click",function(){
+			btnMt05Liga.style.backgroundColor="green";
+			btnMt05Liga.value="1";
+			btnMt05Desl.style.backgroundColor="rgb(55,55,55)";
+			btnMt05Desl.value="0";
+			mt05Manual();					
+		});
+		btnMt05Desl.addEventListener("click",function(){
+			btnMt05Liga.style.backgroundColor="rgb(55,55,55)";
+			btnMt05Liga.value="0";
+			btnMt05Desl.style.backgroundColor="green";
+			btnMt05Desl.value="1";
+			mt05Manual();					
+		});	
+		
+		btnMt05Close.addEventListener("click",function(){
+			displayMt05.style.display="none";
+		});
+
+		// Acionamento manual do motor misturador-2 mt-04
+function mt05Manual(){	
+	if((btnMt05Man.value==="1" )&&(btnMt05Liga.value==="1")){
+		mt05Ligado.style.display="block";		
+	}else {
+	mt05Ligado.style.display="none"};	
+	}	 
