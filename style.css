@@ -40,10 +40,50 @@ header{
 #tub_SI_mist_03{
     display: none;
     position: absolute;    
-    margin-left: 19.8vw;
+    margin-left: 19.9vw;
     margin-top: 15.5vw;
     height: 0.5vw;
     width: 27vw;   
+}
+#tub_SI_mist_031{
+    display: none;
+    position: absolute;    
+    margin-left: 47.8vw;
+    margin-top: 15.5vw;
+    height: 0.5vw;
+    width: 14.5vw;   
+}
+#tub_SI_mist_032{
+    display: none;
+    position: absolute;    
+    margin-left: 63.2vw;
+    margin-top: 15.5vw;
+    height: 0.5vw;
+    width: 12.6vw;   
+}
+#tub_SI_mist_034{
+    display: none;
+    position: absolute;    
+    margin-left: 44.7vw;
+    margin-top: 15.5vw;
+    height: 1.1vw;
+    width: 0.6vw;
+}
+#tub_SI_mist_035{
+    display: none;
+    position: absolute;    
+    margin-left: 60vw;
+    margin-top: 15.5vw;
+    height: 1.1vw;
+    width: 0.6vw;  
+}
+#tub_SI_mist_036{
+    display: none;
+    position: absolute;    
+    margin-left: 75.3vw;
+    margin-top: 15.5vw;
+    height: 1.2vw;
+    width: 0.6vw;  
 }
 
 /*imagem do motor vertical*/

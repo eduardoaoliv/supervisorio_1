@@ -227,6 +227,12 @@ var mt02Ligado=document.getElementById("mt02Acionado");
 var tubSIMist01=document.getElementById("tub_SI_mist_01"); 
 var tubSIMist02=document.getElementById("tub_SI_mist_02");
 var tubSIMist03=document.getElementById("tub_SI_mist_03");
+var tubSIMist031=document.getElementById("tub_SI_mist_031");
+var tubSIMist032=document.getElementById("tub_SI_mist_032");
+var tubSIMist034=document.getElementById("tub_SI_mist_034");
+var tubSIMist035=document.getElementById("tub_SI_mist_035");
+var tubSIMist036=document.getElementById("tub_SI_mist_036");
+
 
 	btnDisplayMt02.addEventListener("click",function(){
 		displayMt02.style.display="block";
@@ -272,10 +278,20 @@ function mt02Manual(){
 		tubSIMist01.style.display="block";
 		tubSIMist02.style.display="block";
 		tubSIMist03.style.display="block";
+		tubSIMist031.style.display="block";
+		tubSIMist032.style.display="block";
+		tubSIMist034.style.display="block";
+		tubSIMist035.style.display="block";
+		tubSIMist036.style.display="block";
 	}else {
 	mt02Ligado.style.display="none";
 	tubSIMist01.style.display="none";
 	tubSIMist02.style.display="none";
-	tubSIMist03.style.display="none";	
+	tubSIMist03.style.display="none";
+	tubSIMist031.style.display="none";
+	tubSIMist032.style.display="none";
+	tubSIMist034.style.display="none";	
+	tubSIMist035.style.display="none";
+	tubSIMist036.style.display="none";		
 	}
 }
