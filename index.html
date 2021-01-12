@@ -11,7 +11,8 @@
 	<header>Principal</header>
 		<div id="conteiner"  dropzone="copy">
 			<img id="tela_principal" src="Imagens/tela_principal.png">
-
+			
+			
 
 			<img  id="tub_SI_mist_01" src="Imagens/tub_SI_mist_01.png">
 			<img  id="tub_SI_mist_02" src="Imagens/tub_SI_mist_02.png">
@@ -23,6 +24,25 @@
 			<img  id="tub_SI_mist_036" src="Imagens/tub_SI_mist_036.png">
 
 			<img  id="tub_SI_xv01_mist1" src="Imagens/tub_SI_xv01_mist1.png">
+
+<!--******************** Display Controle Tanque SI  *********************************-->			
+			<button type="button" class="DisplayControl"  id=controlTqSI>Controle</button>
+			<div id="LTSI">
+				<div id="SIBarraNivel"></div>				
+			</div>
+				<div class="display_controle" id="display_TqSI" draggable="true">
+					<div class="display_ident">Tq. SI
+						<button type="button" class="display_btnClose" id="btn_TqSI_close">X</button>
+					</div>
+					<input type="number" id="setNivelSI"><label>%</label>
+					<button type="button" class="display_btnClose" id="SISetEnviar">OK</button>
+					<button class="buttonControl" id="SIbtnAuto">Auto</button>
+					<button class="buttonControl" id="SIbtnMan">Man</button>
+				</div>
+
+
+
+
 
 <!--******************** Motor Mexedor SI - mt-01 *********************************-->			
 			<button type="button" class="motor" name="motor_mexedorSI" id=mt_01>
@@ -187,6 +207,66 @@
 					<button class="valv_btnFecha" id="xv_033_fecha">Fecha</button>
 					<button class="valv_btnAuto" id="xv_033_auto">Auto</button>
 					<button class="valv_btnMan" id="xv_033_man">Man</button>
+				</div>
+
+<!--******************** Válvula SAL pulmão-01 vx-101 ******************************-->
+			<button type="button" class="valvula" name="valv_SalPulm01" id=xv_101>
+				<img class="valve" id="xv101Acionada" src="Imagens/valvPulm101.png">
+			</button>
+
+				<div class="display_valv" id="display_xv101" draggable="true">
+					<div class="display_ident">xv-101
+						<button type="button" class="display_btnClose" id="btn_xv101_close">X</button>
+					</div>
+					<button class="valv_btnAbre" id="xv_101_abre">Abre</button>
+					<button class="valv_btnFecha" id="xv_101_fecha">Fecha</button>
+					<button class="valv_btnAuto" id="xv_101_auto">Auto</button>
+					<button class="valv_btnMan" id="xv_101_man">Man</button>
+				</div>
+
+<!--******************** Válvula SAL pulmão-02 vx-102 ******************************-->
+			<button type="button" class="valvula" name="valv_SalPulm02" id=xv_102>
+				<img class="valve" id="xv102Acionada" src="Imagens/valvPulm102.png">
+			</button>
+
+				<div class="display_valv" id="display_xv102" draggable="true">
+					<div class="display_ident">xv-102
+						<button type="button" class="display_btnClose" id="btn_xv102_close">X</button>
+					</div>
+					<button class="valv_btnAbre" id="xv_102_abre">Abre</button>
+					<button class="valv_btnFecha" id="xv_102_fecha">Fecha</button>
+					<button class="valv_btnAuto" id="xv_102_auto">Auto</button>
+					<button class="valv_btnMan" id="xv_102_man">Man</button>
+				</div>
+
+<!--******************** Válvula SAL pulmão-03 vx-103 ******************************-->
+			<button type="button" class="valvula" name="valv_SalPulm03" id=xv_103>
+				<img class="valve" id="xv103Acionada" src="Imagens/valvPulm103.png">
+			</button>
+
+				<div class="display_valv" id="display_xv103" draggable="true">
+					<div class="display_ident">xv-103
+						<button type="button" class="display_btnClose" id="btn_xv103_close">X</button>
+					</div>
+					<button class="valv_btnAbre" id="xv_103_abre">Abre</button>
+					<button class="valv_btnFecha" id="xv_103_fecha">Fecha</button>
+					<button class="valv_btnAuto" id="xv_103_auto">Auto</button>
+					<button class="valv_btnMan" id="xv_103_man">Man</button>
+				</div>
+
+<!--******************** Válvula Inlet vx-100 ******************************-->
+			<button type="button" class="valvula" name="valv_Inlet" id=xv_100>
+				<img class="valve" id="xv100Acionada" src="Imagens/valvInlet100.png">
+			</button>
+
+				<div class="display_valv" id="display_xv100" draggable="true">
+					<div class="display_ident">xv-100
+						<button type="button" class="display_btnClose" id="btn_xv100_close">X</button>
+					</div>
+					<button class="valv_btnAbre" id="xv_100_abre">Abre</button>
+					<button class="valv_btnFecha" id="xv_100_fecha">Fecha</button>
+					<button class="valv_btnAuto" id="xv_100_auto">Auto</button>
+					<button class="valv_btnMan" id="xv_100_man">Man</button>
 				</div>
 
 

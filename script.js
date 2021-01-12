@@ -805,3 +805,280 @@ function xv033Manual(){
 	xv033Acionada.style.display="none";	
 	}	
 }
+
+//****************************** Válvulas transporte de SAL ************************
+
+//****************************** Válvula Pulmão-1 xv-101 ****************************
+var btnXv101Abre=document.getElementById("xv_101_abre");
+var btnXv101Fecha=document.getElementById("xv_101_fecha");
+var btnXv101Auto=document.getElementById("xv_101_auto");
+var btnXv101Man=document.getElementById("xv_101_man");
+var displayXv101=document.getElementById("display_xv101");
+var btnDisplayXv101=document.getElementById("xv_101");
+var btnXv101Close=document.getElementById("btn_xv101_close");
+var xv101Acionada=document.getElementById("xv101Acionada");
+
+
+		btnDisplayXv101.addEventListener("click",function(){
+			displayXv101.style.display="block";
+		});
+
+		btnXv101Auto.addEventListener("click",function(){
+			btnXv101Auto.style.backgroundColor="green";
+			btnXv101Auto.value="1";		
+			btnXv101Man.style.backgroundColor="rgb(100,100,100)";
+			btnXv101Man.value="0";
+			xv101Manual();					
+		})
+		btnXv101Man.addEventListener("click",function(){
+			btnXv101Auto.style.backgroundColor="rgb(100,100,100)";
+			btnXv101Auto.value="0";		
+			btnXv101Man.style.backgroundColor="green";
+			btnXv101Man.value="1";
+			xv101Manual();					
+		});	
+		btnXv101Abre.addEventListener("click",function(){
+			btnXv101Abre.style.backgroundColor="green";
+			btnXv101Abre.value="1";
+			btnXv101Fecha.style.backgroundColor="rgb(55,55,55)";
+			btnXv101Fecha.value="0";
+			xv101Manual();					
+		});
+		btnXv101Fecha.addEventListener("click",function(){
+			btnXv101Abre.style.backgroundColor="rgb(55,55,55)";
+			btnXv101Abre.value="0";
+			btnXv101Fecha.style.backgroundColor="green";
+			btnXv101Fecha.value="1";
+			xv101Manual();					
+		});	
+		
+		btnXv101Close.addEventListener("click",function(){
+			displayXv101.style.display="none";
+		});
+
+		// Acionamento manual da vávl. Pulmão-1 xv-101
+function xv101Manual(){	
+	if((btnXv101Man.value==="1" )&&(btnXv101Abre.value==="1")){
+		xv101Acionada.style.display="block";			
+	}	
+	else {
+	xv101Acionada.style.display="none";	
+	}	
+}	  	
+
+//****************************** Válvula Pulmão-2 xv-102 ****************************
+var btnXv102Abre=document.getElementById("xv_102_abre");
+var btnXv102Fecha=document.getElementById("xv_102_fecha");
+var btnXv102Auto=document.getElementById("xv_102_auto");
+var btnXv102Man=document.getElementById("xv_102_man");
+var displayXv102=document.getElementById("display_xv102");
+var btnDisplayXv102=document.getElementById("xv_102");
+var btnXv102Close=document.getElementById("btn_xv102_close");
+var xv102Acionada=document.getElementById("xv102Acionada");
+
+
+		btnDisplayXv102.addEventListener("click",function(){
+			displayXv102.style.display="block";
+		});
+
+		btnXv102Auto.addEventListener("click",function(){
+			btnXv102Auto.style.backgroundColor="green";
+			btnXv102Auto.value="1";		
+			btnXv102Man.style.backgroundColor="rgb(100,100,100)";
+			btnXv102Man.value="0";
+			xv102Manual();					
+		})
+		btnXv102Man.addEventListener("click",function(){
+			btnXv102Auto.style.backgroundColor="rgb(100,100,100)";
+			btnXv102Auto.value="0";		
+			btnXv102Man.style.backgroundColor="green";
+			btnXv102Man.value="1";
+			xv102Manual();					
+		});	
+		btnXv102Abre.addEventListener("click",function(){
+			btnXv102Abre.style.backgroundColor="green";
+			btnXv102Abre.value="1";
+			btnXv102Fecha.style.backgroundColor="rgb(55,55,55)";
+			btnXv102Fecha.value="0";
+			xv102Manual();					
+		});
+		btnXv102Fecha.addEventListener("click",function(){
+			btnXv102Abre.style.backgroundColor="rgb(55,55,55)";
+			btnXv102Abre.value="0";
+			btnXv102Fecha.style.backgroundColor="green";
+			btnXv102Fecha.value="1";
+			xv102Manual();					
+		});	
+		
+		btnXv102Close.addEventListener("click",function(){
+			displayXv102.style.display="none";
+		});
+
+		// Acionamento manual da vávl. Pulmão-2 xv-102
+function xv102Manual(){	
+	if((btnXv102Man.value==="1" )&&(btnXv102Abre.value==="1")){
+		xv102Acionada.style.display="block";			
+	}	
+	else {
+	xv102Acionada.style.display="none";	
+	}	
+}	  	
+
+//****************************** Válvula Pulmão-3 xv-102 ****************************
+var btnXv103Abre=document.getElementById("xv_103_abre");
+var btnXv103Fecha=document.getElementById("xv_103_fecha");
+var btnXv103Auto=document.getElementById("xv_103_auto");
+var btnXv103Man=document.getElementById("xv_103_man");
+var displayXv103=document.getElementById("display_xv103");
+var btnDisplayXv103=document.getElementById("xv_103");
+var btnXv103Close=document.getElementById("btn_xv103_close");
+var xv103Acionada=document.getElementById("xv103Acionada");
+
+
+		btnDisplayXv103.addEventListener("click",function(){
+			displayXv103.style.display="block";
+		});
+
+		btnXv103Auto.addEventListener("click",function(){
+			btnXv103Auto.style.backgroundColor="green";
+			btnXv103Auto.value="1";		
+			btnXv103Man.style.backgroundColor="rgb(100,100,100)";
+			btnXv103Man.value="0";
+			xv103Manual();					
+		})
+		btnXv103Man.addEventListener("click",function(){
+			btnXv103Auto.style.backgroundColor="rgb(100,100,100)";
+			btnXv103Auto.value="0";		
+			btnXv103Man.style.backgroundColor="green";
+			btnXv103Man.value="1";
+			xv103Manual();					
+		});	
+		btnXv103Abre.addEventListener("click",function(){
+			btnXv103Abre.style.backgroundColor="green";
+			btnXv103Abre.value="1";
+			btnXv103Fecha.style.backgroundColor="rgb(55,55,55)";
+			btnXv103Fecha.value="0";
+			xv103Manual();					
+		});
+		btnXv103Fecha.addEventListener("click",function(){
+			btnXv103Abre.style.backgroundColor="rgb(55,55,55)";
+			btnXv103Abre.value="0";
+			btnXv103Fecha.style.backgroundColor="green";
+			btnXv103Fecha.value="1";
+			xv103Manual();					
+		});	
+		
+		btnXv103Close.addEventListener("click",function(){
+			displayXv103.style.display="none";
+		});
+
+		// Acionamento manual da vávl. Pulmão-3 xv-103
+function xv103Manual(){	
+	if((btnXv103Man.value==="1" )&&(btnXv103Abre.value==="1")){
+		xv103Acionada.style.display="block";			
+	}	
+	else {
+	xv103Acionada.style.display="none";	
+	}	
+}	  	
+
+//****************************** Válvula Inlet xv-100 ****************************
+var btnXv100Abre=document.getElementById("xv_100_abre");
+var btnXv100Fecha=document.getElementById("xv_100_fecha");
+var btnXv100Auto=document.getElementById("xv_100_auto");
+var btnXv100Man=document.getElementById("xv_100_man");
+var displayXv100=document.getElementById("display_xv100");
+var btnDisplayXv100=document.getElementById("xv_100");
+var btnXv100Close=document.getElementById("btn_xv100_close");
+var xv100Acionada=document.getElementById("xv100Acionada");
+
+
+		btnDisplayXv100.addEventListener("click",function(){
+			displayXv100.style.display="block";
+		});
+
+		btnXv100Auto.addEventListener("click",function(){
+			btnXv100Auto.style.backgroundColor="green";
+			btnXv100Auto.value="1";		
+			btnXv100Man.style.backgroundColor="rgb(100,100,100)";
+			btnXv100Man.value="0";
+			xv100Manual();					
+		})
+		btnXv100Man.addEventListener("click",function(){
+			btnXv100Auto.style.backgroundColor="rgb(100,100,100)";
+			btnXv100Auto.value="0";		
+			btnXv100Man.style.backgroundColor="green";
+			btnXv100Man.value="1";
+			xv100Manual();					
+		});	
+		btnXv100Abre.addEventListener("click",function(){
+			btnXv100Abre.style.backgroundColor="green";
+			btnXv100Abre.value="1";
+			btnXv100Fecha.style.backgroundColor="rgb(55,55,55)";
+			btnXv100Fecha.value="0";
+			xv100Manual();					
+		});
+		btnXv100Fecha.addEventListener("click",function(){
+			btnXv100Abre.style.backgroundColor="rgb(55,55,55)";
+			btnXv100Abre.value="0";
+			btnXv100Fecha.style.backgroundColor="green";
+			btnXv100Fecha.value="1";
+			xv100Manual();					
+		});	
+		
+		btnXv100Close.addEventListener("click",function(){
+			displayXv100.style.display="none";
+		});
+
+		// Acionamento manual da vávl. Inlet xv-100
+function xv100Manual(){	
+	if((btnXv100Man.value==="1" )&&(btnXv100Abre.value==="1")){
+		xv100Acionada.style.display="block";			
+	}	
+	else {
+	xv100Acionada.style.display="none";	
+	}	
+}	  	
+
+//****************************** Botão controle Tq.SI ****************************
+
+var btnSIbtnAuto=document.getElementById("SIbtnAuto");
+var btnSIbtnMan=document.getElementById("SIbtnMan");
+var displayTqSI=document.getElementById("display_TqSI");
+var btnCtrlTqSI=document.getElementById("controlTqSI");
+var btnTqSIclose=document.getElementById("btn_TqSI_close");
+var setNivelSI=document.getElementById("setNivelSI");
+var nivelTqSImax=document.getElementById("LTSI");
+var btnSISetEnviar=document.getElementById("SISetEnviar");
+var SIBarraNivel=document.getElementById("SIBarraNivel");
+var setpointNivelTqSI=0;	
+	
+		btnCtrlTqSI.addEventListener("click",function(){
+			displayTqSI.style.display="block";
+		});
+
+		btnSIbtnAuto.addEventListener("click",function(){
+			btnSIbtnAuto.style.backgroundColor="green";
+			btnSIbtnAuto.value="1";		
+			btnSIbtnMan.style.backgroundColor="rgb(100,100,100)";
+			btnSIbtnMan.value="0";								
+		})
+		btnSIbtnMan.addEventListener("click",function(){
+			btnSIbtnAuto.style.backgroundColor="rgb(100,100,100)";
+			btnSIbtnAuto.value="0";		
+			btnSIbtnMan.style.backgroundColor="green";
+			btnSIbtnMan.value="1";								
+		});	
+			
+		
+		btnTqSIclose.addEventListener("click",function(){
+			displayTqSI.style.display="none";
+		});
+
+		btnSISetEnviar.addEventListener("click",function(){
+			setpointNivelTqSI=Number(7-(setNivelSI.value*7)/100);
+			SIBarraNivel.style.height=setpointNivelTqSI+"vw";
+		});
+		
+		
+	  	

@@ -292,7 +292,7 @@ header{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 2vw;
+    width: 2.5vw;
     height: 2vw;
     background-color: transparent;
     border:0.1vw solid transparent;
@@ -305,40 +305,73 @@ header{
     height: 1.2vw;
 }
 #xv01Acionada{/*valvula SI misturador 1*/
-    display: none;  
-    margin-top: -0.4vw;
-    margin-left: -0.2vw;
+    display: none;
+    height: 1vw;
+    width: 0.92vw;  
+    margin-top: -0.41vw;
+    margin-left: -1.34vw;
 }
 #xv02Acionada{/*valvula SI misturador 2*/
     display: none;
-    margin-top: -0.4vw;
-    margin-left: -0.2vw;
+    height: 1vw;
+    width: 0.92vw;
+    margin-top: -0.41vw;
+    margin-left: -1.34vw;
 }
 #xv03Acionada{/*valvula SI misturador 3*/
     display: none;
-    margin-top: -0.4vw;
-    margin-left: -0.2vw;
+    height: 1vw;
+    width: 0.92vw;
+    margin-top: -0.41vw;
+    margin-left: -1.34vw;
 }
 #xv011Acionada{/*valvula Sal misturador 1*/
     display: none;
-    width: 3.8vw;
+    width: 1.44vw;
     height: 1.1vw;    
     margin-top: 0vw;
-    margin-left: 0vw;
+    margin-left: 1.6vw;
 }
 #xv022Acionada{/*valvula Sal misturador 2*/
     display: none;
-    width: 3.8vw;
+    width: 1.44vw;
     height: 1.1vw;    
     margin-top: 0vw;
-    margin-left: 0vw;
+    margin-left: 1.6vw;
 }
 #xv033Acionada{/*valvula Sal misturador 3*/
     display: none;
-    width: 3.8vw;
+    width: 1.44vw;
     height: 1.1vw;    
     margin-top: 0vw;
-    margin-left: 0vw;
+    margin-left: 1.6vw;
+}
+#xv101Acionada{/*valvula Sal Pulmão-1*/
+    display: none;
+    width: 1.42vw;
+    height: 1.1vw;    
+    margin-top: 0vw;
+    margin-left: 1.6vw;
+}
+#xv102Acionada{/*valvula Sal Pulmão-2*/
+    display: none;
+    width: 1.42vw;
+    height: 1.1vw;    
+    margin-top: 0vw;
+    margin-left: 1.6vw;
+}
+#xv103Acionada{/*valvula Sal Pulmão-3*/
+    display: none;
+    width: 1.4vw;
+    height: 1.1vw;    
+    margin-top: -0.1vw;
+    margin-left: 1.6vw;
+}
+#xv100Acionada{/*valvula Inlet*/
+    display: none;    
+    height: 0.94vw;    
+    margin-top: 0vw;
+    margin-left: 2.7vw;
 }
 
 /*Posição dos displays das válvulas*/
@@ -359,12 +392,12 @@ header{
 }
 #display_xv011{/*misturador-1 Sal*/
     display: none;
-    margin-left: 22vw;
-    margin-top: 10.5vw;
+    margin-left: 33vw;
+    margin-top: 0.7vw;
 }
 #display_xv022{/*misturador-2 Sal*/
     display: none;
-    margin-left: 12vw;
+    margin-left: 22vw;
     margin-top: 10.5vw;
 }
 #display_xv033{/*misturador-3 Sal*/
@@ -372,36 +405,77 @@ header{
     margin-left: 83vw;
     margin-top: 15.5vw;
 }
+#display_xv101{/*Pulmão-1 Sal*/
+    display: none;
+    margin-left: 52vw;
+    margin-top: 0.7vw;
+}
+#display_xv102{/*Pulmão-2 Sal*/
+    display: none;
+    margin-left: 67.6vw;
+    margin-top: 0.7vw;
+}
+#display_xv103{/*Pulmão-3 Sal*/
+    display: none;
+    margin-left: 85.5vw;
+    margin-top: 0.7vw;
+}
+#display_xv100{/*Inlet*/
+    display: none;
+    margin-left: 10vw;
+    margin-top: 17vw;
+}
+
 
 /*Posição dos botões de chamada do display de controle das válvulas*/
 #xv_01{/*válvula de SI mist-01*/
-    margin-left: 43.52vw;    
+    margin-left: 43.2vw;    
     margin-top: 16.2vw;
 }
 #xv_02{/*válvula de SI mist-02*/
-    margin-left: 58.8vw;    
+    margin-left: 58.44vw;    
     margin-top: 16.2vw;
 }
 #xv_03{/*válvula de SI mist-03*/
-    margin-left: 74.1vw;    
+    margin-left: 73.8vw;    
     margin-top: 16.2vw;
 }
 #xv_011{/*válvula de Sal mist-01*/    
-    width:3.4vw;
+    width:3.5vw;
     margin-left: 46.5vw;    
     margin-top: 16.3vw;
 }
 #xv_022{/*válvula de Sal mist-02*/    
-    width:3.4vw;
+    width:3.5vw;
     margin-left: 61.8vw;    
     margin-top: 16.3vw;
 }
 #xv_033{/*válvula de Sal mist-03*/    
-    width:3.4vw;
-    margin-left: 77.02vw;    
+    width:3.5vw;
+    margin-left: 77vw;    
     margin-top: 16.3vw;
 }
-
+#xv_101{/*válvula de Sal Pulmão-1*/    
+    width:3.5vw;
+    margin-left: 46.54vw;    
+    margin-top: 4.45vw;
+}
+#xv_102{/*válvula de Sal Pulmão-2*/    
+    width:3.5vw;
+    margin-left: 61.8vw;    
+    margin-top: 4.45vw;
+}
+#xv_103{/*válvula de Sal Pulmão-3*/    
+    width:3.5vw;
+    margin-left: 77vw;    
+    margin-top: 4.45vw;
+}
+#xv_100{/*válvula Inlet*/    
+    width:6vw;
+    height: 1.5vw;    
+    margin-left: 12.6vw;    
+    margin-top: 32.16vw;
+}
 
 /*Layout dos botões do display de controle das válvulas*/
 .valv_btnAbre{
@@ -443,4 +517,82 @@ header{
     color: white;
     font-size: 1vw;
     text-align: left;    
+}
+
+
+
+#LTSI{/*Indicador nível tq. SI*/
+    position: absolute;   
+    height: 7vw;
+    width: 0.7vw;
+    background-color: green;
+    border: 0.1vw solid black;
+    margin-left: 32vw;
+    margin-top: 32.5vw
+}
+#SIBarraNivel{/*Barra nível tq. SI*/
+    position: absolute;   
+    height: 0vw;
+    width: 0.7vw;
+    background-color: rgb(200,200,200);    
+    margin-left: 0vw;
+    margin-top: 0vw
+}
+
+.DisplayControl{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 4vw;
+    height: 1.5vw;
+    background-color: gray;
+    border:0.1vw solid white;
+    position: absolute;
+    cursor: pointer; 
+    font-size: 0.8vw;    
+    font-weight: bold;   
+}
+.display_controle{
+    display: flex;
+    flex-wrap: wrap;
+    width: 8.6vw;
+    height: 8vw;
+    background-color:rgb(255,128,0);    
+    position: absolute;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.2vw; 
+}
+.buttonControl{/*Botões Display Controle tq. SI*/    
+    background-color: rgb(100,100,100);
+    border: 0.4vw outset gray;
+    width: 4vw;
+    height: 3vw;
+    font-weight: bold;
+    color: white;
+    font-size: 1vw; 
+    text-align: left;         
+}
+
+
+
+#display_TqSI{/*display controle tq. SI*/
+    display: none;
+    margin-left: 30vw;
+    margin-top: 20.5vw;
+}
+#controlTqSI{/*botão de chamada do display controle Tq. SI*/
+    margin-left: 27.8vw;    
+    margin-top: 36vw;
+}
+#setNivelSI{/*Input de setpoint nivel Tq. SI*/
+    width: 3vw;
+    height: 1.2vw;   
+}
+label{/*Input de setpoint nivel Tq. SI*/    
+    font-size: 1.2vw;
+    font-weight: bold;   
+}
+#SISetEnviar{
+    width: 3vw;
 }
