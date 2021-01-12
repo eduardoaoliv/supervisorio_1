@@ -460,3 +460,348 @@ function mt05Manual(){
 	}else {
 	mt05Ligado.style.display="none"};	
 	}	 
+
+
+//****************************** Válvula SI mist-1 xv-01 ****************************
+var btnXv01Abre=document.getElementById("xv_01_abre");
+var btnXv01Fecha=document.getElementById("xv_01_fecha");
+var btnXv01Auto=document.getElementById("xv_01_auto");
+var btnXv01Man=document.getElementById("xv_01_man");
+var displayXv01=document.getElementById("display_xv01");
+var btnDisplayXv01=document.getElementById("xv_01");
+var btnXv01Close=document.getElementById("btn_xv01_close");
+var xv01Acionada=document.getElementById("xv01Acionada");
+var tubSIxv01Mist1=document.getElementById("tub_SI_xv01_mist1");
+
+		btnDisplayXv01.addEventListener("click",function(){
+			displayXv01.style.display="block";
+		});
+
+		btnXv01Auto.addEventListener("click",function(){
+			btnXv01Auto.style.backgroundColor="green";
+			btnXv01Auto.value="1";		
+			btnXv01Man.style.backgroundColor="rgb(100,100,100)";
+			btnXv01Man.value="0";
+			xv01Manual();					
+		})
+		btnXv01Man.addEventListener("click",function(){
+			btnXv01Auto.style.backgroundColor="rgb(100,100,100)";
+			btnXv01Auto.value="0";		
+			btnXv01Man.style.backgroundColor="green";
+			btnXv01Man.value="1";
+			xv01Manual();					
+		});	
+		btnXv01Abre.addEventListener("click",function(){
+			btnXv01Abre.style.backgroundColor="green";
+			btnXv01Abre.value="1";
+			btnXv01Fecha.style.backgroundColor="rgb(55,55,55)";
+			btnXv01Fecha.value="0";
+			xv01Manual();					
+		});
+		btnXv01Fecha.addEventListener("click",function(){
+			btnXv01Abre.style.backgroundColor="rgb(55,55,55)";
+			btnXv01Abre.value="0";
+			btnXv01Fecha.style.backgroundColor="green";
+			btnXv01Fecha.value="1";
+			xv01Manual();					
+		});	
+		
+		btnXv01Close.addEventListener("click",function(){
+			displayXv01.style.display="none";
+		});
+
+		// Acionamento manual da vávl. SI do mist-1 xv-01
+function xv01Manual(){	
+	if((btnXv01Man.value==="1" )&&(btnXv01Abre.value==="1")){
+		xv01Acionada.style.display="block";
+		tubSIxv01Mist1.style.display="block";		
+	}	
+	else {
+	xv01Acionada.style.display="none";
+	tubSIxv01Mist1.style.display="none";
+	}	
+}	 
+
+//****************************** Válvula SI mist-2 xv-02 ****************************
+var btnXv02Abre=document.getElementById("xv_02_abre");
+var btnXv02Fecha=document.getElementById("xv_02_fecha");
+var btnXv02Auto=document.getElementById("xv_02_auto");
+var btnXv02Man=document.getElementById("xv_02_man");
+var displayXv02=document.getElementById("display_xv02");
+var btnDisplayXv02=document.getElementById("xv_02");
+var btnXv02Close=document.getElementById("btn_xv02_close");
+var xv02Acionada=document.getElementById("xv02Acionada");
+
+		btnDisplayXv02.addEventListener("click",function(){
+			displayXv02.style.display="block";
+		});
+
+		btnXv02Auto.addEventListener("click",function(){
+			btnXv02Auto.style.backgroundColor="green";
+			btnXv02Auto.value="1";		
+			btnXv02Man.style.backgroundColor="rgb(100,100,100)";
+			btnXv02Man.value="0";
+			xv02Manual();					
+		})
+		btnXv02Man.addEventListener("click",function(){
+			btnXv02Auto.style.backgroundColor="rgb(100,100,100)";
+			btnXv02Auto.value="0";		
+			btnXv02Man.style.backgroundColor="green";
+			btnXv02Man.value="1";
+			xv02Manual();					
+		});	
+		btnXv02Abre.addEventListener("click",function(){
+			btnXv02Abre.style.backgroundColor="green";
+			btnXv02Abre.value="1";
+			btnXv02Fecha.style.backgroundColor="rgb(55,55,55)";
+			btnXv02Fecha.value="0";
+			xv02Manual();					
+		});
+		btnXv02Fecha.addEventListener("click",function(){
+			btnXv02Abre.style.backgroundColor="rgb(55,55,55)";
+			btnXv02Abre.value="0";
+			btnXv02Fecha.style.backgroundColor="green";
+			btnXv02Fecha.value="1";
+			xv02Manual();					
+		});	
+		
+		btnXv02Close.addEventListener("click",function(){
+			displayXv02.style.display="none";
+		});
+
+		// Acionamento manual da vávl. SI do mist-2 xv-02
+function xv02Manual(){	
+	if((btnXv02Man.value==="1" )&&(btnXv02Abre.value==="1")){
+		xv02Acionada.style.display="block";		
+	}else {
+	xv02Acionada.style.display="none"};	
+	}	 	
+
+//****************************** Válvula SI mist-3 xv-03 ****************************
+var btnXv03Abre=document.getElementById("xv_03_abre");
+var btnXv03Fecha=document.getElementById("xv_03_fecha");
+var btnXv03Auto=document.getElementById("xv_03_auto");
+var btnXv03Man=document.getElementById("xv_03_man");
+var displayXv03=document.getElementById("display_xv03");
+var btnDisplayXv03=document.getElementById("xv_03");
+var btnXv03Close=document.getElementById("btn_xv03_close");
+var xv03Acionada=document.getElementById("xv03Acionada");
+
+		btnDisplayXv03.addEventListener("click",function(){
+			displayXv03.style.display="block";
+		});
+
+		btnXv03Auto.addEventListener("click",function(){
+			btnXv03Auto.style.backgroundColor="green";
+			btnXv03Auto.value="1";		
+			btnXv03Man.style.backgroundColor="rgb(100,100,100)";
+			btnXv03Man.value="0";
+			xv03Manual();					
+		})
+		btnXv03Man.addEventListener("click",function(){
+			btnXv03Auto.style.backgroundColor="rgb(100,100,100)";
+			btnXv03Auto.value="0";		
+			btnXv03Man.style.backgroundColor="green";
+			btnXv03Man.value="1";
+			xv03Manual();					
+		});	
+		btnXv03Abre.addEventListener("click",function(){
+			btnXv03Abre.style.backgroundColor="green";
+			btnXv03Abre.value="1";
+			btnXv03Fecha.style.backgroundColor="rgb(55,55,55)";
+			btnXv03Fecha.value="0";
+			xv03Manual();					
+		});
+		btnXv03Fecha.addEventListener("click",function(){
+			btnXv03Abre.style.backgroundColor="rgb(55,55,55)";
+			btnXv03Abre.value="0";
+			btnXv03Fecha.style.backgroundColor="green";
+			btnXv03Fecha.value="1";
+			xv03Manual();					
+		});	
+		
+		btnXv03Close.addEventListener("click",function(){
+			displayXv03.style.display="none";
+		});
+
+		// Acionamento manual da vávl. SI do mist-2 xv-02
+function xv03Manual(){	
+	if((btnXv03Man.value==="1" )&&(btnXv03Abre.value==="1")){
+		xv03Acionada.style.display="block";		
+	}else {
+	xv03Acionada.style.display="none"};	
+	}	
+
+//****************************** Válvula Sal mist-1 xv-011 ****************************
+var btnXv011Abre=document.getElementById("xv_011_abre");
+var btnXv011Fecha=document.getElementById("xv_011_fecha");
+var btnXv011Auto=document.getElementById("xv_011_auto");
+var btnXv011Man=document.getElementById("xv_011_man");
+var displayXv011=document.getElementById("display_xv011");
+var btnDisplayXv011=document.getElementById("xv_011");
+var btnXv011Close=document.getElementById("btn_xv011_close");
+var xv011Acionada=document.getElementById("xv011Acionada");
+
+
+		btnDisplayXv011.addEventListener("click",function(){
+			displayXv011.style.display="block";
+		});
+
+		btnXv011Auto.addEventListener("click",function(){
+			btnXv011Auto.style.backgroundColor="green";
+			btnXv011Auto.value="1";		
+			btnXv011Man.style.backgroundColor="rgb(100,100,100)";
+			btnXv011Man.value="0";
+			xv011Manual();					
+		})
+		btnXv011Man.addEventListener("click",function(){
+			btnXv011Auto.style.backgroundColor="rgb(100,100,100)";
+			btnXv011Auto.value="0";		
+			btnXv011Man.style.backgroundColor="green";
+			btnXv011Man.value="1";
+			xv011Manual();					
+		});	
+		btnXv011Abre.addEventListener("click",function(){
+			btnXv011Abre.style.backgroundColor="green";
+			btnXv011Abre.value="1";
+			btnXv011Fecha.style.backgroundColor="rgb(55,55,55)";
+			btnXv011Fecha.value="0";
+			xv011Manual();					
+		});
+		btnXv011Fecha.addEventListener("click",function(){
+			btnXv011Abre.style.backgroundColor="rgb(55,55,55)";
+			btnXv011Abre.value="0";
+			btnXv011Fecha.style.backgroundColor="green";
+			btnXv011Fecha.value="1";
+			xv011Manual();					
+		});	
+		
+		btnXv011Close.addEventListener("click",function(){
+			displayXv011.style.display="none";
+		});
+
+		// Acionamento manual da vávl. Sal do mist-1 xv-011
+function xv011Manual(){	
+	if((btnXv011Man.value==="1" )&&(btnXv011Abre.value==="1")){
+		xv011Acionada.style.display="block";			
+	}	
+	else {
+	xv011Acionada.style.display="none";	
+	}	
+}	  	
+
+//****************************** Válvula Sal mist-2 xv-022 ****************************
+var btnXv022Abre=document.getElementById("xv_022_abre");
+var btnXv022Fecha=document.getElementById("xv_022_fecha");
+var btnXv022Auto=document.getElementById("xv_022_auto");
+var btnXv022Man=document.getElementById("xv_022_man");
+var displayXv022=document.getElementById("display_xv022");
+var btnDisplayXv022=document.getElementById("xv_022");
+var btnXv022Close=document.getElementById("btn_xv022_close");
+var xv022Acionada=document.getElementById("xv022Acionada");
+
+
+		btnDisplayXv022.addEventListener("click",function(){
+			displayXv022.style.display="block";
+		});
+
+		btnXv022Auto.addEventListener("click",function(){
+			btnXv022Auto.style.backgroundColor="green";
+			btnXv022Auto.value="1";		
+			btnXv022Man.style.backgroundColor="rgb(100,100,100)";
+			btnXv022Man.value="0";
+			xv022Manual();					
+		})
+		btnXv022Man.addEventListener("click",function(){
+			btnXv022Auto.style.backgroundColor="rgb(100,100,100)";
+			btnXv022Auto.value="0";		
+			btnXv022Man.style.backgroundColor="green";
+			btnXv022Man.value="1";
+			xv022Manual();					
+		});	
+		btnXv022Abre.addEventListener("click",function(){
+			btnXv022Abre.style.backgroundColor="green";
+			btnXv022Abre.value="1";
+			btnXv022Fecha.style.backgroundColor="rgb(55,55,55)";
+			btnXv022Fecha.value="0";
+			xv022Manual();					
+		});
+		btnXv022Fecha.addEventListener("click",function(){
+			btnXv022Abre.style.backgroundColor="rgb(55,55,55)";
+			btnXv022Abre.value="0";
+			btnXv022Fecha.style.backgroundColor="green";
+			btnXv022Fecha.value="1";
+			xv022Manual();					
+		});	
+		
+		btnXv022Close.addEventListener("click",function(){
+			displayXv022.style.display="none";
+		});
+
+		// Acionamento manual da vávl. Sal do mist-2 xv-022
+function xv022Manual(){	
+	if((btnXv022Man.value==="1" )&&(btnXv022Abre.value==="1")){
+		xv022Acionada.style.display="block";			
+	}	
+	else {
+	xv022Acionada.style.display="none";	
+	}	
+}
+
+//****************************** Válvula Sal mist-3 xv-033 ****************************
+var btnXv033Abre=document.getElementById("xv_033_abre");
+var btnXv033Fecha=document.getElementById("xv_033_fecha");
+var btnXv033Auto=document.getElementById("xv_033_auto");
+var btnXv033Man=document.getElementById("xv_033_man");
+var displayXv033=document.getElementById("display_xv033");
+var btnDisplayXv033=document.getElementById("xv_033");
+var btnXv033Close=document.getElementById("btn_xv033_close");
+var xv033Acionada=document.getElementById("xv033Acionada");
+
+
+		btnDisplayXv033.addEventListener("click",function(){
+			displayXv033.style.display="block";
+		});
+
+		btnXv033Auto.addEventListener("click",function(){
+			btnXv033Auto.style.backgroundColor="green";
+			btnXv033Auto.value="1";		
+			btnXv033Man.style.backgroundColor="rgb(100,100,100)";
+			btnXv033Man.value="0";
+			xv033Manual();					
+		})
+		btnXv033Man.addEventListener("click",function(){
+			btnXv033Auto.style.backgroundColor="rgb(100,100,100)";
+			btnXv033Auto.value="0";		
+			btnXv033Man.style.backgroundColor="green";
+			btnXv033Man.value="1";
+			xv033Manual();					
+		});	
+		btnXv033Abre.addEventListener("click",function(){
+			btnXv033Abre.style.backgroundColor="green";
+			btnXv033Abre.value="1";
+			btnXv033Fecha.style.backgroundColor="rgb(55,55,55)";
+			btnXv033Fecha.value="0";
+			xv033Manual();					
+		});
+		btnXv033Fecha.addEventListener("click",function(){
+			btnXv033Abre.style.backgroundColor="rgb(55,55,55)";
+			btnXv033Abre.value="0";
+			btnXv033Fecha.style.backgroundColor="green";
+			btnXv033Fecha.value="1";
+			xv033Manual();					
+		});	
+		
+		btnXv033Close.addEventListener("click",function(){
+			displayXv033.style.display="none";
+		});
+
+		// Acionamento manual da vávl. Sal do mist-3 xv-033
+function xv033Manual(){	
+	if((btnXv033Man.value==="1" )&&(btnXv033Abre.value==="1")){
+		xv033Acionada.style.display="block";			
+	}	
+	else {
+	xv033Acionada.style.display="none";	
+	}	
+}

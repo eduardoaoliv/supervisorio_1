@@ -86,6 +86,15 @@ header{
     width: 0.6vw;  
 }
 
+#tub_SI_xv01_mist1{
+    display: none;
+    position: absolute;    
+    margin-left: 44.7vw;
+    margin-top: 17.4vw;
+    height: 1.2vw;
+    width: 0.6vw;  
+}
+
 /*imagem do motores verticais*/
 .motorVertical{    
     width: 2.5vw;
@@ -138,17 +147,18 @@ header{
 	position: absolute;
 	cursor: pointer;	
 }
+
 /*Configuração do conteiner display motores e válvulas*/
 .display_motor{
 	display: flex;
 	flex-wrap: wrap;
-	width: 9vw;
+	width: 8.6vw;
 	height: 9vw;
 	background-color:rgb(255,128,0);	
 	position: absolute;
 	justify-content: space-around;
 	align-items: center;
-	padding: 0.1vw;	
+	padding: 0.2vw;	
 }
 /*Posição dos displays dos motores*/
 #display_mt01{/*mexedor SI*/
@@ -202,7 +212,7 @@ header{
 
 /*Configuração do campo identificação e botão close do display motor e valvula*/
 .display_ident{      
-    width: 7.8vw;
+    width: 7.6vw;
     height: 2vw;
     background-color: rgb(55,55,55);
     border:0.4vw inset black;
@@ -255,6 +265,176 @@ header{
     text-align: left;         
 }
 .motor_btnMan{
+    background-color: rgb(100,100,100);
+    border: 0.4vw outset gray;
+    width: 4vw;
+    height: 3vw;
+    font-weight: bold;
+    color: white;
+    font-size: 1vw;
+    text-align: left;    
+}
+
+/************************************* Válvulas ************************************************/
+
+.display_valv{
+    display: flex;
+    flex-wrap: wrap;
+    width: 8.6vw;
+    height: 9vw;
+    background-color:rgb(255,128,0);    
+    position: absolute;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.2vw; 
+}
+.valvula{/*Botão de chamada de válvula*/
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 2vw;
+    height: 2vw;
+    background-color: transparent;
+    border:0.1vw solid transparent;
+    position: absolute;
+    cursor: pointer;    
+}
+/*imagens das válvulas acionadas*/
+.valve{ /*??????????????????? mesma motorHoriz e vertical*/   
+    width: 2.3vw;
+    height: 1.2vw;
+}
+#xv01Acionada{/*valvula SI misturador 1*/
+    display: none;  
+    margin-top: -0.4vw;
+    margin-left: -0.2vw;
+}
+#xv02Acionada{/*valvula SI misturador 2*/
+    display: none;
+    margin-top: -0.4vw;
+    margin-left: -0.2vw;
+}
+#xv03Acionada{/*valvula SI misturador 3*/
+    display: none;
+    margin-top: -0.4vw;
+    margin-left: -0.2vw;
+}
+#xv011Acionada{/*valvula Sal misturador 1*/
+    display: none;
+    width: 3.8vw;
+    height: 1.1vw;    
+    margin-top: 0vw;
+    margin-left: 0vw;
+}
+#xv022Acionada{/*valvula Sal misturador 2*/
+    display: none;
+    width: 3.8vw;
+    height: 1.1vw;    
+    margin-top: 0vw;
+    margin-left: 0vw;
+}
+#xv033Acionada{/*valvula Sal misturador 3*/
+    display: none;
+    width: 3.8vw;
+    height: 1.1vw;    
+    margin-top: 0vw;
+    margin-left: 0vw;
+}
+
+/*Posição dos displays das válvulas*/
+#display_xv01{/*misturador-1 SI*/
+    display: none;
+    margin-left: 33vw;
+    margin-top: 10.5vw;
+}
+#display_xv02{/*misturador-2 SI*/
+    display: none;
+    margin-left: 49.5vw;
+    margin-top: 10.5vw;
+}
+#display_xv03{/*misturador-3 SI*/
+    display: none;
+    margin-left: 65vw;
+    margin-top: 10.5vw;
+}
+#display_xv011{/*misturador-1 Sal*/
+    display: none;
+    margin-left: 22vw;
+    margin-top: 10.5vw;
+}
+#display_xv022{/*misturador-2 Sal*/
+    display: none;
+    margin-left: 12vw;
+    margin-top: 10.5vw;
+}
+#display_xv033{/*misturador-3 Sal*/
+    display: none;
+    margin-left: 83vw;
+    margin-top: 15.5vw;
+}
+
+/*Posição dos botões de chamada do display de controle das válvulas*/
+#xv_01{/*válvula de SI mist-01*/
+    margin-left: 43.52vw;    
+    margin-top: 16.2vw;
+}
+#xv_02{/*válvula de SI mist-02*/
+    margin-left: 58.8vw;    
+    margin-top: 16.2vw;
+}
+#xv_03{/*válvula de SI mist-03*/
+    margin-left: 74.1vw;    
+    margin-top: 16.2vw;
+}
+#xv_011{/*válvula de Sal mist-01*/    
+    width:3.4vw;
+    margin-left: 46.5vw;    
+    margin-top: 16.3vw;
+}
+#xv_022{/*válvula de Sal mist-02*/    
+    width:3.4vw;
+    margin-left: 61.8vw;    
+    margin-top: 16.3vw;
+}
+#xv_033{/*válvula de Sal mist-03*/    
+    width:3.4vw;
+    margin-left: 77.02vw;    
+    margin-top: 16.3vw;
+}
+
+
+/*Layout dos botões do display de controle das válvulas*/
+.valv_btnAbre{
+    background-color: rgb(55,55,55);
+    border: 0.4vw outset gray;
+    width: 4vw;
+    height: 3vw;
+    font-weight: bold;
+    color: white; 
+    font-size: 1vw; 
+    text-align: left;  
+}
+.valv_btnFecha{
+    background-color: rgb(55,55,55);
+    border: 0.4vw outset gray;
+    width: 4vw;
+    height: 3vw;
+    font-weight: bold;
+    color: white;
+    font-size: 1vw; 
+    text-align: left;         
+}
+.valv_btnAuto{
+    background-color: rgb(100,100,100);
+    border: 0.4vw outset gray;
+    width: 4vw;
+    height: 3vw;
+    font-weight: bold;
+    color: white;
+    font-size: 1vw; 
+    text-align: left;         
+}
+.valv_btnMan{
     background-color: rgb(100,100,100);
     border: 0.4vw outset gray;
     width: 4vw;
