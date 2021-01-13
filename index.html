@@ -40,6 +40,18 @@
 					<button class="buttonControl" id="SIbtnMan">Man</button>
 				</div>
 
+<!--******************** Display Controle Transportador Sal *********************************-->			
+			<button type="button" class="DisplayControl"  id=controlTransp>Controle</button>
+			
+				<div class="display_controle" id="display_Transp" draggable="true">
+					<div class="display_ident">SAL
+						<button type="button" class="display_btnClose" id="btn_Transp_close">X</button>
+					</div>
+					<input type="number" id="setPressao"><label>PSI</label>
+					<button type="button" class="display_btnClose" id="TranspSetEnviar">OK</button>
+					<button class="buttonControl" id="TranspbtnAuto">Auto</button>
+					<button class="buttonControl" id="TranspbtnMan">Man</button>
+				</div>
 
 
 
@@ -269,7 +281,20 @@
 					<button class="valv_btnMan" id="xv_100_man">Man</button>
 				</div>
 
+<!--******************** Válvula Alívo vx-110 ******************************-->
+			<button type="button" class="valvula" name="valv_Alivio" id=xv_110>
+				<img class="valve" id="xv110Acionada" src="Imagens/valvAlivio110.png">
+			</button>
 
+				<div class="display_valv" id="display_xv110" draggable="true">
+					<div class="display_ident">xv-110
+						<button type="button" class="display_btnClose" id="btn_xv110_close">X</button>
+					</div>
+					<button class="valv_btnAbre" id="xv_110_abre">Abre</button>
+					<button class="valv_btnFecha" id="xv_110_fecha">Fecha</button>
+					<button class="valv_btnAuto" id="xv_110_auto">Auto</button>
+					<button class="valv_btnMan" id="xv_110_man">Man</button>
+				</div>
 
 
 		</div>

@@ -176,12 +176,12 @@ var mt01Ligado=document.getElementById("mt01Acionado");
 			btnMt01Auto.style.backgroundColor="green";
 			btnMt01Auto.value="1";		
 			btnMt01Man.style.backgroundColor="rgb(100,100,100)";
-			btnMt01Man.value="0";
+			btnMt01Man.value="";
 			mt01Manual();					
 		})
 		btnMt01Man.addEventListener("click",function(){
 			btnMt01Auto.style.backgroundColor="rgb(100,100,100)";
-			btnMt01Auto.value="0";		
+			btnMt01Auto.value="";		
 			btnMt01Man.style.backgroundColor="green";
 			btnMt01Man.value="1";
 			mt01Manual();					
@@ -190,12 +190,12 @@ var mt01Ligado=document.getElementById("mt01Acionado");
 			btnMt01Liga.style.backgroundColor="green";
 			btnMt01Liga.value="1";
 			btnMt01Desl.style.backgroundColor="rgb(55,55,55)";
-			btnMt01Desl.value="0";
+			btnMt01Desl.value="";
 			mt01Manual();					
 		});
 		btnMt01Desl.addEventListener("click",function(){
 			btnMt01Liga.style.backgroundColor="rgb(55,55,55)";
-			btnMt01Liga.value="0";
+			btnMt01Liga.value="";
 			btnMt01Desl.style.backgroundColor="green";
 			btnMt01Desl.value="1";
 			mt01Manual();					
@@ -241,12 +241,12 @@ var tubSIMist036=document.getElementById("tub_SI_mist_036");
 			btnMt02Auto.style.backgroundColor="green";
 			btnMt02Auto.value="1";		
 			btnMt02Man.style.backgroundColor="rgb(100,100,100)";
-			btnMt02Man.value="0";
+			btnMt02Man.value="";
 			mt02Manual();		
 		});
 		btnMt02Man.addEventListener("click",function(){
 			btnMt02Auto.style.backgroundColor="rgb(100,100,100)";
-			btnMt02Auto.value="0";		
+			btnMt02Auto.value="";		
 			btnMt02Man.style.backgroundColor="green";
 			btnMt02Man.value="1";
 			mt02Manual();			
@@ -255,12 +255,12 @@ var tubSIMist036=document.getElementById("tub_SI_mist_036");
 			btnMt02Liga.style.backgroundColor="green";
 			btnMt02Liga.value="1";
 			btnMt02Desl.style.backgroundColor="rgb(55,55,55)";
-			btnMt02Desl.value="0";
+			btnMt02Desl.value="";
 			mt02Manual();			
 		});
 		btnMt02Desl.addEventListener("click",function(){
 			btnMt02Liga.style.backgroundColor="rgb(55,55,55)";
-			btnMt02Liga.value="0";
+			btnMt02Liga.value="";
 			btnMt02Desl.style.backgroundColor="green";
 			btnMt02Desl.value="1";
 			mt02Manual();			
@@ -314,12 +314,12 @@ var mt03Ligado=document.getElementById("mt03Acionado");
 			btnMt03Auto.style.backgroundColor="green";
 			btnMt03Auto.value="1";		
 			btnMt03Man.style.backgroundColor="rgb(100,100,100)";
-			btnMt03Man.value="0";
+			btnMt03Man.value="";
 			mt03Manual();					
 		})
 		btnMt03Man.addEventListener("click",function(){
 			btnMt03Auto.style.backgroundColor="rgb(100,100,100)";
-			btnMt03Auto.value="0";		
+			btnMt03Auto.value="";		
 			btnMt03Man.style.backgroundColor="green";
 			btnMt03Man.value="1";
 			mt03Manual();					
@@ -328,12 +328,12 @@ var mt03Ligado=document.getElementById("mt03Acionado");
 			btnMt03Liga.style.backgroundColor="green";
 			btnMt03Liga.value="1";
 			btnMt03Desl.style.backgroundColor="rgb(55,55,55)";
-			btnMt03Desl.value="0";
+			btnMt03Desl.value="";
 			mt03Manual();					
 		});
 		btnMt03Desl.addEventListener("click",function(){
 			btnMt03Liga.style.backgroundColor="rgb(55,55,55)";
-			btnMt03Liga.value="0";
+			btnMt03Liga.value="";
 			btnMt03Desl.style.backgroundColor="green";
 			btnMt03Desl.value="1";
 			mt03Manual();					
@@ -369,12 +369,12 @@ var mt04Ligado=document.getElementById("mt04Acionado");
 			btnMt04Auto.style.backgroundColor="green";
 			btnMt04Auto.value="1";		
 			btnMt04Man.style.backgroundColor="rgb(100,100,100)";
-			btnMt04Man.value="0";
+			btnMt04Man.value="";
 			mt04Manual();					
 		})
 		btnMt04Man.addEventListener("click",function(){
 			btnMt04Auto.style.backgroundColor="rgb(100,100,100)";
-			btnMt04Auto.value="0";		
+			btnMt04Auto.value="";		
 			btnMt04Man.style.backgroundColor="green";
 			btnMt04Man.value="1";
 			mt04Manual();					
@@ -383,12 +383,12 @@ var mt04Ligado=document.getElementById("mt04Acionado");
 			btnMt04Liga.style.backgroundColor="green";
 			btnMt04Liga.value="1";
 			btnMt04Desl.style.backgroundColor="rgb(55,55,55)";
-			btnMt04Desl.value="0";
+			btnMt04Desl.value="";
 			mt04Manual();					
 		});
 		btnMt04Desl.addEventListener("click",function(){
 			btnMt04Liga.style.backgroundColor="rgb(55,55,55)";
-			btnMt04Liga.value="0";
+			btnMt04Liga.value="";
 			btnMt04Desl.style.backgroundColor="green";
 			btnMt04Desl.value="1";
 			mt04Manual();					
@@ -424,12 +424,12 @@ var mt05Ligado=document.getElementById("mt05Acionado");
 			btnMt05Auto.style.backgroundColor="green";
 			btnMt05Auto.value="1";		
 			btnMt05Man.style.backgroundColor="rgb(100,100,100)";
-			btnMt05Man.value="0";
+			btnMt05Man.value="";
 			mt05Manual();					
 		})
 		btnMt05Man.addEventListener("click",function(){
 			btnMt05Auto.style.backgroundColor="rgb(100,100,100)";
-			btnMt05Auto.value="0";		
+			btnMt05Auto.value="";		
 			btnMt05Man.style.backgroundColor="green";
 			btnMt05Man.value="1";
 			mt05Manual();					
@@ -438,12 +438,12 @@ var mt05Ligado=document.getElementById("mt05Acionado");
 			btnMt05Liga.style.backgroundColor="green";
 			btnMt05Liga.value="1";
 			btnMt05Desl.style.backgroundColor="rgb(55,55,55)";
-			btnMt05Desl.value="0";
+			btnMt05Desl.value="";
 			mt05Manual();					
 		});
 		btnMt05Desl.addEventListener("click",function(){
 			btnMt05Liga.style.backgroundColor="rgb(55,55,55)";
-			btnMt05Liga.value="0";
+			btnMt05Liga.value="";
 			btnMt05Desl.style.backgroundColor="green";
 			btnMt05Desl.value="1";
 			mt05Manual();					
@@ -481,12 +481,12 @@ var tubSIxv01Mist1=document.getElementById("tub_SI_xv01_mist1");
 			btnXv01Auto.style.backgroundColor="green";
 			btnXv01Auto.value="1";		
 			btnXv01Man.style.backgroundColor="rgb(100,100,100)";
-			btnXv01Man.value="0";
+			btnXv01Man.value="";
 			xv01Manual();					
 		})
 		btnXv01Man.addEventListener("click",function(){
 			btnXv01Auto.style.backgroundColor="rgb(100,100,100)";
-			btnXv01Auto.value="0";		
+			btnXv01Auto.value="";		
 			btnXv01Man.style.backgroundColor="green";
 			btnXv01Man.value="1";
 			xv01Manual();					
@@ -495,12 +495,12 @@ var tubSIxv01Mist1=document.getElementById("tub_SI_xv01_mist1");
 			btnXv01Abre.style.backgroundColor="green";
 			btnXv01Abre.value="1";
 			btnXv01Fecha.style.backgroundColor="rgb(55,55,55)";
-			btnXv01Fecha.value="0";
+			btnXv01Fecha.value="";
 			xv01Manual();					
 		});
 		btnXv01Fecha.addEventListener("click",function(){
 			btnXv01Abre.style.backgroundColor="rgb(55,55,55)";
-			btnXv01Abre.value="0";
+			btnXv01Abre.value="";
 			btnXv01Fecha.style.backgroundColor="green";
 			btnXv01Fecha.value="1";
 			xv01Manual();					
@@ -514,11 +514,11 @@ var tubSIxv01Mist1=document.getElementById("tub_SI_xv01_mist1");
 function xv01Manual(){	
 	if((btnXv01Man.value==="1" )&&(btnXv01Abre.value==="1")){
 		xv01Acionada.style.display="block";
-		tubSIxv01Mist1.style.display="block";		
+		//tubSIxv01Mist1.style.display="block";		
 	}	
 	else {
 	xv01Acionada.style.display="none";
-	tubSIxv01Mist1.style.display="none";
+	//tubSIxv01Mist1.style.display="none";
 	}	
 }	 
 
@@ -540,12 +540,12 @@ var xv02Acionada=document.getElementById("xv02Acionada");
 			btnXv02Auto.style.backgroundColor="green";
 			btnXv02Auto.value="1";		
 			btnXv02Man.style.backgroundColor="rgb(100,100,100)";
-			btnXv02Man.value="0";
+			btnXv02Man.value="";
 			xv02Manual();					
 		})
 		btnXv02Man.addEventListener("click",function(){
 			btnXv02Auto.style.backgroundColor="rgb(100,100,100)";
-			btnXv02Auto.value="0";		
+			btnXv02Auto.value="";		
 			btnXv02Man.style.backgroundColor="green";
 			btnXv02Man.value="1";
 			xv02Manual();					
@@ -554,12 +554,12 @@ var xv02Acionada=document.getElementById("xv02Acionada");
 			btnXv02Abre.style.backgroundColor="green";
 			btnXv02Abre.value="1";
 			btnXv02Fecha.style.backgroundColor="rgb(55,55,55)";
-			btnXv02Fecha.value="0";
+			btnXv02Fecha.value="";
 			xv02Manual();					
 		});
 		btnXv02Fecha.addEventListener("click",function(){
 			btnXv02Abre.style.backgroundColor="rgb(55,55,55)";
-			btnXv02Abre.value="0";
+			btnXv02Abre.value="";
 			btnXv02Fecha.style.backgroundColor="green";
 			btnXv02Fecha.value="1";
 			xv02Manual();					
@@ -595,12 +595,12 @@ var xv03Acionada=document.getElementById("xv03Acionada");
 			btnXv03Auto.style.backgroundColor="green";
 			btnXv03Auto.value="1";		
 			btnXv03Man.style.backgroundColor="rgb(100,100,100)";
-			btnXv03Man.value="0";
+			btnXv03Man.value="";
 			xv03Manual();					
 		})
 		btnXv03Man.addEventListener("click",function(){
 			btnXv03Auto.style.backgroundColor="rgb(100,100,100)";
-			btnXv03Auto.value="0";		
+			btnXv03Auto.value="";		
 			btnXv03Man.style.backgroundColor="green";
 			btnXv03Man.value="1";
 			xv03Manual();					
@@ -609,12 +609,12 @@ var xv03Acionada=document.getElementById("xv03Acionada");
 			btnXv03Abre.style.backgroundColor="green";
 			btnXv03Abre.value="1";
 			btnXv03Fecha.style.backgroundColor="rgb(55,55,55)";
-			btnXv03Fecha.value="0";
+			btnXv03Fecha.value="";
 			xv03Manual();					
 		});
 		btnXv03Fecha.addEventListener("click",function(){
 			btnXv03Abre.style.backgroundColor="rgb(55,55,55)";
-			btnXv03Abre.value="0";
+			btnXv03Abre.value="";
 			btnXv03Fecha.style.backgroundColor="green";
 			btnXv03Fecha.value="1";
 			xv03Manual();					
@@ -651,12 +651,12 @@ var xv011Acionada=document.getElementById("xv011Acionada");
 			btnXv011Auto.style.backgroundColor="green";
 			btnXv011Auto.value="1";		
 			btnXv011Man.style.backgroundColor="rgb(100,100,100)";
-			btnXv011Man.value="0";
+			btnXv011Man.value="";
 			xv011Manual();					
 		})
 		btnXv011Man.addEventListener("click",function(){
 			btnXv011Auto.style.backgroundColor="rgb(100,100,100)";
-			btnXv011Auto.value="0";		
+			btnXv011Auto.value="";		
 			btnXv011Man.style.backgroundColor="green";
 			btnXv011Man.value="1";
 			xv011Manual();					
@@ -665,12 +665,12 @@ var xv011Acionada=document.getElementById("xv011Acionada");
 			btnXv011Abre.style.backgroundColor="green";
 			btnXv011Abre.value="1";
 			btnXv011Fecha.style.backgroundColor="rgb(55,55,55)";
-			btnXv011Fecha.value="0";
+			btnXv011Fecha.value="";
 			xv011Manual();					
 		});
 		btnXv011Fecha.addEventListener("click",function(){
 			btnXv011Abre.style.backgroundColor="rgb(55,55,55)";
-			btnXv011Abre.value="0";
+			btnXv011Abre.value="";
 			btnXv011Fecha.style.backgroundColor="green";
 			btnXv011Fecha.value="1";
 			xv011Manual();					
@@ -709,12 +709,12 @@ var xv022Acionada=document.getElementById("xv022Acionada");
 			btnXv022Auto.style.backgroundColor="green";
 			btnXv022Auto.value="1";		
 			btnXv022Man.style.backgroundColor="rgb(100,100,100)";
-			btnXv022Man.value="0";
+			btnXv022Man.value="";
 			xv022Manual();					
 		})
 		btnXv022Man.addEventListener("click",function(){
 			btnXv022Auto.style.backgroundColor="rgb(100,100,100)";
-			btnXv022Auto.value="0";		
+			btnXv022Auto.value="";		
 			btnXv022Man.style.backgroundColor="green";
 			btnXv022Man.value="1";
 			xv022Manual();					
@@ -723,12 +723,12 @@ var xv022Acionada=document.getElementById("xv022Acionada");
 			btnXv022Abre.style.backgroundColor="green";
 			btnXv022Abre.value="1";
 			btnXv022Fecha.style.backgroundColor="rgb(55,55,55)";
-			btnXv022Fecha.value="0";
+			btnXv022Fecha.value="";
 			xv022Manual();					
 		});
 		btnXv022Fecha.addEventListener("click",function(){
 			btnXv022Abre.style.backgroundColor="rgb(55,55,55)";
-			btnXv022Abre.value="0";
+			btnXv022Abre.value="";
 			btnXv022Fecha.style.backgroundColor="green";
 			btnXv022Fecha.value="1";
 			xv022Manual();					
@@ -767,12 +767,12 @@ var xv033Acionada=document.getElementById("xv033Acionada");
 			btnXv033Auto.style.backgroundColor="green";
 			btnXv033Auto.value="1";		
 			btnXv033Man.style.backgroundColor="rgb(100,100,100)";
-			btnXv033Man.value="0";
+			btnXv033Man.value="";
 			xv033Manual();					
 		})
 		btnXv033Man.addEventListener("click",function(){
 			btnXv033Auto.style.backgroundColor="rgb(100,100,100)";
-			btnXv033Auto.value="0";		
+			btnXv033Auto.value="";		
 			btnXv033Man.style.backgroundColor="green";
 			btnXv033Man.value="1";
 			xv033Manual();					
@@ -781,12 +781,12 @@ var xv033Acionada=document.getElementById("xv033Acionada");
 			btnXv033Abre.style.backgroundColor="green";
 			btnXv033Abre.value="1";
 			btnXv033Fecha.style.backgroundColor="rgb(55,55,55)";
-			btnXv033Fecha.value="0";
+			btnXv033Fecha.value="";
 			xv033Manual();					
 		});
 		btnXv033Fecha.addEventListener("click",function(){
 			btnXv033Abre.style.backgroundColor="rgb(55,55,55)";
-			btnXv033Abre.value="0";
+			btnXv033Abre.value="";
 			btnXv033Fecha.style.backgroundColor="green";
 			btnXv033Fecha.value="1";
 			xv033Manual();					
@@ -827,12 +827,12 @@ var xv101Acionada=document.getElementById("xv101Acionada");
 			btnXv101Auto.style.backgroundColor="green";
 			btnXv101Auto.value="1";		
 			btnXv101Man.style.backgroundColor="rgb(100,100,100)";
-			btnXv101Man.value="0";
+			btnXv101Man.value="";
 			xv101Manual();					
 		})
 		btnXv101Man.addEventListener("click",function(){
 			btnXv101Auto.style.backgroundColor="rgb(100,100,100)";
-			btnXv101Auto.value="0";		
+			btnXv101Auto.value="";		
 			btnXv101Man.style.backgroundColor="green";
 			btnXv101Man.value="1";
 			xv101Manual();					
@@ -841,12 +841,12 @@ var xv101Acionada=document.getElementById("xv101Acionada");
 			btnXv101Abre.style.backgroundColor="green";
 			btnXv101Abre.value="1";
 			btnXv101Fecha.style.backgroundColor="rgb(55,55,55)";
-			btnXv101Fecha.value="0";
+			btnXv101Fecha.value="";
 			xv101Manual();					
 		});
 		btnXv101Fecha.addEventListener("click",function(){
 			btnXv101Abre.style.backgroundColor="rgb(55,55,55)";
-			btnXv101Abre.value="0";
+			btnXv101Abre.value="";
 			btnXv101Fecha.style.backgroundColor="green";
 			btnXv101Fecha.value="1";
 			xv101Manual();					
@@ -885,12 +885,12 @@ var xv102Acionada=document.getElementById("xv102Acionada");
 			btnXv102Auto.style.backgroundColor="green";
 			btnXv102Auto.value="1";		
 			btnXv102Man.style.backgroundColor="rgb(100,100,100)";
-			btnXv102Man.value="0";
+			btnXv102Man.value="";
 			xv102Manual();					
 		})
 		btnXv102Man.addEventListener("click",function(){
 			btnXv102Auto.style.backgroundColor="rgb(100,100,100)";
-			btnXv102Auto.value="0";		
+			btnXv102Auto.value="";		
 			btnXv102Man.style.backgroundColor="green";
 			btnXv102Man.value="1";
 			xv102Manual();					
@@ -899,12 +899,12 @@ var xv102Acionada=document.getElementById("xv102Acionada");
 			btnXv102Abre.style.backgroundColor="green";
 			btnXv102Abre.value="1";
 			btnXv102Fecha.style.backgroundColor="rgb(55,55,55)";
-			btnXv102Fecha.value="0";
+			btnXv102Fecha.value="";
 			xv102Manual();					
 		});
 		btnXv102Fecha.addEventListener("click",function(){
 			btnXv102Abre.style.backgroundColor="rgb(55,55,55)";
-			btnXv102Abre.value="0";
+			btnXv102Abre.value="";
 			btnXv102Fecha.style.backgroundColor="green";
 			btnXv102Fecha.value="1";
 			xv102Manual();					
@@ -943,12 +943,12 @@ var xv103Acionada=document.getElementById("xv103Acionada");
 			btnXv103Auto.style.backgroundColor="green";
 			btnXv103Auto.value="1";		
 			btnXv103Man.style.backgroundColor="rgb(100,100,100)";
-			btnXv103Man.value="0";
+			btnXv103Man.value="";
 			xv103Manual();					
 		})
 		btnXv103Man.addEventListener("click",function(){
 			btnXv103Auto.style.backgroundColor="rgb(100,100,100)";
-			btnXv103Auto.value="0";		
+			btnXv103Auto.value="";		
 			btnXv103Man.style.backgroundColor="green";
 			btnXv103Man.value="1";
 			xv103Manual();					
@@ -957,12 +957,12 @@ var xv103Acionada=document.getElementById("xv103Acionada");
 			btnXv103Abre.style.backgroundColor="green";
 			btnXv103Abre.value="1";
 			btnXv103Fecha.style.backgroundColor="rgb(55,55,55)";
-			btnXv103Fecha.value="0";
+			btnXv103Fecha.value="";
 			xv103Manual();					
 		});
 		btnXv103Fecha.addEventListener("click",function(){
 			btnXv103Abre.style.backgroundColor="rgb(55,55,55)";
-			btnXv103Abre.value="0";
+			btnXv103Abre.value="";
 			btnXv103Fecha.style.backgroundColor="green";
 			btnXv103Fecha.value="1";
 			xv103Manual();					
@@ -1001,30 +1001,30 @@ var xv100Acionada=document.getElementById("xv100Acionada");
 			btnXv100Auto.style.backgroundColor="green";
 			btnXv100Auto.value="1";		
 			btnXv100Man.style.backgroundColor="rgb(100,100,100)";
-			btnXv100Man.value="0";
+			btnXv100Man.value="";
 			xv100Manual();					
 		})
 		btnXv100Man.addEventListener("click",function(){
 			btnXv100Auto.style.backgroundColor="rgb(100,100,100)";
-			btnXv100Auto.value="0";		
+			btnXv100Auto.value="";		
 			btnXv100Man.style.backgroundColor="green";
 			btnXv100Man.value="1";
 			xv100Manual();					
 		});	
-		btnXv100Abre.addEventListener("click",function(){
+		if(btnXv100Auto.value!="1"){ btnXv100Abre.addEventListener("click",function(){
 			btnXv100Abre.style.backgroundColor="green";
 			btnXv100Abre.value="1";
 			btnXv100Fecha.style.backgroundColor="rgb(55,55,55)";
-			btnXv100Fecha.value="0";
-			xv100Manual();					
-		});
-		btnXv100Fecha.addEventListener("click",function(){
+			btnXv100Fecha.value="";
+			xv100Manual();
+		});}
+		if(btnXv100Auto.value!="1"){ btnXv100Fecha.addEventListener("click",function(){
 			btnXv100Abre.style.backgroundColor="rgb(55,55,55)";
-			btnXv100Abre.value="0";
+			btnXv100Abre.value="";
 			btnXv100Fecha.style.backgroundColor="green";
 			btnXv100Fecha.value="1";
 			xv100Manual();					
-		});	
+		});}	
 		
 		btnXv100Close.addEventListener("click",function(){
 			displayXv100.style.display="none";
@@ -1037,6 +1037,64 @@ function xv100Manual(){
 	}	
 	else {
 	xv100Acionada.style.display="none";	
+	}	
+}	  	
+
+//****************************** Válvula Alivio xv-110 ****************************
+var btnXv110Abre=document.getElementById("xv_110_abre");
+var btnXv110Fecha=document.getElementById("xv_110_fecha");
+var btnXv110Auto=document.getElementById("xv_110_auto");
+var btnXv110Man=document.getElementById("xv_110_man");
+var displayXv110=document.getElementById("display_xv110");
+var btnDisplayXv110=document.getElementById("xv_110");
+var btnXv110Close=document.getElementById("btn_xv110_close");
+var xv110Acionada=document.getElementById("xv110Acionada");
+
+
+		btnDisplayXv110.addEventListener("click",function(){
+			displayXv110.style.display="block";
+		});
+
+		btnXv110Auto.addEventListener("click",function(){
+			btnXv110Auto.style.backgroundColor="green";
+			btnXv110Auto.value="1";		
+			btnXv110Man.style.backgroundColor="rgb(100,100,100)";
+			btnXv110Man.value="0";
+			xv110Manual();					
+		})
+		btnXv110Man.addEventListener("click",function(){
+			btnXv110Auto.style.backgroundColor="rgb(100,100,100)";
+			btnXv110Auto.value="0";		
+			btnXv110Man.style.backgroundColor="green";
+			btnXv110Man.value="1";
+			xv110Manual();					
+		});	
+		btnXv110Abre.addEventListener("click",function(){
+			btnXv110Abre.style.backgroundColor="green";
+			btnXv110Abre.value="1";
+			btnXv110Fecha.style.backgroundColor="rgb(55,55,55)";
+			btnXv110Fecha.value="0";
+			xv110Manual();					
+		});
+		btnXv110Fecha.addEventListener("click",function(){
+			btnXv110Abre.style.backgroundColor="rgb(55,55,55)";
+			btnXv110Abre.value="0";
+			btnXv110Fecha.style.backgroundColor="green";
+			btnXv110Fecha.value="1";
+			xv110Manual();					
+		});	
+		
+		btnXv110Close.addEventListener("click",function(){
+			displayXv110.style.display="none";
+		});
+
+		// Acionamento manual da vávl. Inlet xv-100
+function xv110Manual(){	
+	if((btnXv110Man.value==="1" )&&(btnXv110Abre.value==="1")){
+		xv110Acionada.style.display="block";			
+	}	
+	else {
+	xv110Acionada.style.display="none";	
 	}	
 }	  	
 
@@ -1081,4 +1139,39 @@ var setpointNivelTqSI=0;
 		});
 		
 		
-	  	
+//****************************** Botão controle Tq.SI ****************************
+
+var btnTranspbtnAuto=document.getElementById("TranspbtnAuto");
+var btnTranspbtnMan=document.getElementById("TranspbtnMan");
+var displayTransp=document.getElementById("display_Transp");
+var btnctrlTransp=document.getElementById("controlTransp");
+var btnTranspClose=document.getElementById("btn_Transp_close");
+var setPressao=document.getElementById("setPressao");
+var btnTranspSetEnviar=document.getElementById("TranspSetEnviar");
+	
+	
+		btnctrlTransp.addEventListener("click",function(){
+			displayTransp.style.display="block";
+		});
+
+		btnTranspbtnAuto.addEventListener("click",function(){
+			btnTranspbtnAuto.style.backgroundColor="green";
+			btnTranspbtnAuto.value="1";		
+			btnTranspbtnMan.style.backgroundColor="rgb(100,100,100)";
+			btnTranspbtnMan.value="0";								
+		})
+		btnTranspbtnMan.addEventListener("click",function(){
+			btnTranspbtnAuto.style.backgroundColor="rgb(100,100,100)";
+			btnTranspbtnAuto.value="0";		
+			btnTranspbtnMan.style.backgroundColor="green";
+			btnTranspbtnMan.value="1";								
+		});	
+			
+		
+		btnTranspClose.addEventListener("click",function(){
+			displayTransp.style.display="none";
+		});
+
+		btnTranspSetEnviar.addEventListener("click",function(){
+			
+		});	  	

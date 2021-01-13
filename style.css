@@ -113,6 +113,7 @@ header{
 }
 #mt02Acionado{/*motor bomba de SI*/
     display: none;
+    width: 2.4vw;
     margin-top: 0.2vw;
     margin-left: -0.2vw;
 }
@@ -373,6 +374,13 @@ header{
     margin-top: 0vw;
     margin-left: 2.7vw;
 }
+#xv110Acionada{/*valvula Alivio*/
+    display: none;
+    width: 0.76vw;    
+    height: 0.76vw;    
+    margin-top: -0.7vw;
+    margin-left: 0vw;
+}
 
 /*Posição dos displays das válvulas*/
 #display_xv01{/*misturador-1 SI*/
@@ -423,7 +431,12 @@ header{
 #display_xv100{/*Inlet*/
     display: none;
     margin-left: 10vw;
-    margin-top: 17vw;
+    margin-top: 18vw;
+}
+#display_xv110{/*Alivio*/
+    display: none;
+    margin-left: 10vw;
+    margin-top: 8vw;
 }
 
 
@@ -476,6 +489,12 @@ header{
     margin-left: 12.6vw;    
     margin-top: 32.16vw;
 }
+#xv_110{/*válvula Alivio*/    
+    width:1.4vw;
+    height: 2.6vw;    
+    margin-left: 17.6vw;    
+    margin-top: 34.2vw;
+}
 
 /*Layout dos botões do display de controle das válvulas*/
 .valv_btnAbre{
@@ -520,14 +539,14 @@ header{
 }
 
 
-
+/************** Controle Tq. SI *********************/
 #LTSI{/*Indicador nível tq. SI*/
     position: absolute;   
     height: 7vw;
     width: 0.7vw;
     background-color: green;
     border: 0.1vw solid black;
-    margin-left: 32vw;
+    margin-left: 32vw; 
     margin-top: 32.5vw
 }
 #SIBarraNivel{/*Barra nível tq. SI*/
@@ -574,8 +593,6 @@ header{
     text-align: left;         
 }
 
-
-
 #display_TqSI{/*display controle tq. SI*/
     display: none;
     margin-left: 30vw;
@@ -591,8 +608,68 @@ header{
 }
 label{/*Input de setpoint nivel Tq. SI*/    
     font-size: 1.2vw;
-    font-weight: bold;   
+    font-weight: bold; 
+    color: black;  
 }
 #SISetEnviar{
+    width: 3vw;
+}
+
+/************** Controle Transportador Sal *********************/
+
+.DisplayControl{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 4vw;
+    height: 1.5vw;
+    background-color: gray;
+    border:0.1vw solid white;
+    position: absolute;
+    cursor: pointer; 
+    font-size: 0.8vw;    
+    font-weight: bold;   
+}
+.display_controle{
+    display: flex;
+    flex-wrap: wrap;
+    width: 8.6vw;
+    height: 8vw;
+    background-color:rgb(255,128,0);    
+    position: absolute;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.2vw; 
+}
+.buttonControl{/*Botões Display Controle tq. SI*/    
+    background-color: rgb(100,100,100);
+    border: 0.4vw outset gray;
+    width: 4vw;
+    height: 3vw;
+    font-weight: bold;
+    color: white;
+    font-size: 1vw; 
+    text-align: left;         
+}
+
+#display_Transp{/*display controle transportador*/
+    display: none;
+    margin-left: 20vw;
+    margin-top: 10.5vw;
+}
+#controlTransp{/*botão de chamada do display controle transportador*/
+    margin-left: 12vw;    
+    margin-top: 36vw;
+}
+#setPressao{/*Input de setpoint pressão transportador*/
+    width: 2.5vw;
+    height: 1.2vw;   
+}
+label{/*Input de setpoint pressão transportador*/    
+    font-size: 1.2vw;
+    font-weight: bold; 
+    color: black;  
+}
+#TranspSetEnviar{
     width: 3vw;
 }
