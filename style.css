@@ -95,6 +95,32 @@ header{
     width: 0.6vw;  
 }
 
+#tub_TranspVert1{
+    
+    position: absolute;    
+    margin-left: 13.4vw;
+    margin-top: 40.42vw;
+    height: 1.82vw;
+    width: 1vw;  
+}
+#tub_TranspVert2{
+    
+    position: absolute;    
+    margin-left: 5.1vw;
+    margin-top: 3.2vw;
+    height: 39vw;
+    width: 1vw;  
+}
+
+#tub_TranspHoriz1{
+    
+    position: absolute;    
+    margin-left: 5.1vw;
+    margin-top: 3.1vw;
+    height: 0.8vw;
+    width: 73.2vw;  
+}
+
 /*imagem do motores verticais*/
 .motorVertical{    
     width: 2.5vw;
@@ -672,4 +698,46 @@ label{/*Input de setpoint pressão transportador*/
 }
 #TranspSetEnviar{
     width: 3vw;
+}
+#Pt100{/*Indicação de pressão do transportador de sal*/
+    position: absolute;
+    width: 2vw;
+    height: 1vw;
+    background-color: white;
+    border:0.2vw solid black;
+    margin-top: 34.4vw;
+    margin-left: 10.3vw;
+    font-size: 1vw;
+}
+#lsh100{/*Chave nível do transportador de sal*/
+    display: none;
+    position: absolute;
+    width: 0.7vw;
+    height: 0.7vw;
+    margin-left: 11.1vw;
+    margin-top: 33vw;
+}
+#lsh101{/*Chave nível do pumão-1 sal*/
+    display: none;
+    position: absolute;
+    width: 0.8vw;
+    height: 0.52vw;
+    margin-left: 51.1vw;
+    margin-top: 6.49vw;
+}
+#lsh102{/*Chave nível do pumão-2 sal*/
+    display: none;
+    position: absolute;
+    width: 0.8vw;
+    height: 0.52vw;
+    margin-left: 66.46vw;
+    margin-top: 6.49vw;
+}
+#lsh103{/*Chave nível do pumão-3 sal*/
+    display: none;
+    position: absolute;
+    width: 0.8vw;
+    height: 0.52vw;
+    margin-left: 81.58vw;
+    margin-top: 6.46vw;
 }
