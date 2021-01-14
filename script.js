@@ -1160,6 +1160,7 @@ var Lsh100=document.getElementById("lsh100");
 
 		btnctrlTransp.addEventListener("click",function(){
 			displayTransp.style.display="block";
+			
 		});
 
 		btnTranspAuto.addEventListener("click",function(){
@@ -1186,28 +1187,34 @@ var Lsh100=document.getElementById("lsh100");
 		});	  	
 
 function transpAutomatico(){
-if(btnTranspAuto.value==1){
+if(setPressao.value<20||setPressao.value>26){
+	alert("A pressão ideal para o envio de sal é entre 22 PSI e 26 PSI");
+	btnTranspAuto.style.backgroundColor="rgb(100,100,100)";
+}	
+else if(btnTranspAuto.value==1){
 	xv110Acionada.style.display="none";
 	xv100Acionada.style.display="none";
 	xv101Acionada.style.display="none";
 	xv102Acionada.style.display="none";
 	xv103Acionada.style.display="none";
-
+	
 	var transpStep=0;
-	xv100Acionada.style.display="block";
+	xv100Acionada.style.display="block";	
+
 	setTimeout(function(){		
 		Lsh100.style.display="block"
 		lsh100.value=1;
-		setTimeout(function() {xv100Acionada.style.display="none"}, 1000);
-		var cont=0;
-		var Timer7s=setInterval(function(){
-			cont++;
-			console.log(cont);
-			PT100.innerHTML=cont*3;
-				if(cont===7){		
-				clearInterval(Timer7s);
-				}
-		},1000);
+		setTimeout(function() {xv100Acionada.style.display="none"}, 600);
+			var cont=0;
+			var Timer1s=setInterval(function(){
+				cont++;				
+				var pt100valor=cont;
+					PT100.innerHTML=pt100valor;
+					if(pt100valor>=setPressao.value){							
+					clearInterval(Timer1s);
+					
+					}
+			},300);
 	},3000);
 
 		

@@ -95,30 +95,134 @@ header{
     width: 0.6vw;  
 }
 
-#tub_TranspVert1{
-    
+#tub_TranspVert1{/*Saída do transportador*/
+    display: none;
     position: absolute;    
     margin-left: 13.4vw;
     margin-top: 40.42vw;
     height: 1.82vw;
     width: 1vw;  
 }
-#tub_TranspVert2{
-    
+#tub_TranspVert2{/*Subida para o terceiro piso*/
+    display: none;
     position: absolute;    
     margin-left: 5.1vw;
     margin-top: 3.2vw;
     height: 39vw;
     width: 1vw;  
 }
+#tub_TranspVert3{/*Entrada do Pulmão-1*/
+    display: none;
+    position: absolute;    
+    margin-left: 46.9vw;
+    margin-top: 3.9vw;
+    height: 1.3vw;
+    width: 1vw;  
+}
+#tub_TranspVert4{/*Entrada do Pulmão-2*/
+    display: none;
+    position: absolute;    
+    margin-left: 62.2vw;
+    margin-top: 3.9vw;
+    height: 1.3vw;
+    width: 1vw;  
+}
+#tub_TranspVert5{/*Entrada do Pulmão-3*/
+    display: none;
+    position: absolute;    
+    margin-left: 77.36vw;
+    margin-top: 3.86vw;
+    height: 1.3vw;
+    width: 1vw;  
+}
+#tub_TranspVert6{/*Pulmão-1 para xv-011*/
+    display: none;
+    position: absolute;    
+    margin-left: 46.9vw;
+    margin-top: 12.96vw;
+    height: 4vw;
+    width: 1vw;  
+}
+#tub_TranspVert7{/*Pulmão-2 para xv-022*/
+    display: none;
+    position: absolute;    
+    margin-left: 62.2vw;
+    margin-top: 12.96vw;
+    height: 4vw;
+    width: 1vw;  
+}
+#tub_TranspVert8{/*Pulmão-3 para xv-022*/
+    display: none;
+    position: absolute;    
+    margin-left: 77.36vw;
+    margin-top: 12.92vw;
+    height: 4.1vw;
+    width: 1vw;  
+}
+#tub_TranspVert9{/*xv-011 para misturador-1*/
+    display: none;
+    position: absolute;    
+    margin-left: 46.9vw;
+    margin-top: 17.65vw;
+    height: 1.12vw;
+    width: 1vw;  
+}
+#tub_TranspVert10{/*xv-022 para misturador-2*/
+    display: none;
+    position: absolute;    
+    margin-left: 62.2vw;
+    margin-top: 17.65vw;
+    height: 1.12vw;
+    width: 1vw;  
+}
+#tub_TranspVert11{/*xv-033 para misturador-3*/
+    display: none;
+    position: absolute;    
+    margin-left: 77.36vw;
+    margin-top: 17.65vw;
+    height: 1.12vw;
+    width: 1vw;  
+}
+#tub_TranspVert12{/*misturador-1 para env-01*/
+    display: none;
+    position: absolute;    
+    margin-left: 46.9vw;
+    margin-top: 24.1vw;
+    height: 5.6vw;
+    width: 1vw;  
+}
+#tub_TranspVert13{/*misturador-2 para env-02*/
+    display: none;
+    position: absolute;    
+    margin-left: 62.2vw;
+    margin-top: 24.1vw;
+    height: 5.6vw;
+    width: 1vw;  
+}
+#tub_TranspVert14{/*misturador-3 para env-03*/
+    display: none;
+    position: absolute;    
+    margin-left: 77.5vw;
+    margin-top: 24.1vw;
+    height: 5.6vw;
+    width: 1vw;  
+}
 
-#tub_TranspHoriz1{
-    
+#tub_TranspHoriz1{/*Saída do transportador de sal*/
+    display: none;
+    position: absolute;    
+    margin-left: 6.1vw;
+    margin-top: 41.6vw;
+    height: 0.6vw;
+    width: 7.3vw;  
+}
+#tub_TranspHoriz2{/*Abastecimento dos pulmões no terceiro piso*/
+    display: none;
     position: absolute;    
     margin-left: 5.1vw;
     margin-top: 3.1vw;
     height: 0.8vw;
-    width: 73.2vw;  
+    width: 73.26vw;  
 }
 
 /*imagem do motores verticais*/
