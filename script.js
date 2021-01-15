@@ -1230,6 +1230,8 @@ else if(btnTranspAuto.value==1){
 	function despressuriza(){
 		var p=setPressao.value;
 		var Timer02=setInterval(function(){
+						Lsh100.style.display="none";
+						lsh100.value="";
 						p--;				
 						var pt100valor=p;
 						PT100.innerHTML=pt100valor;
@@ -1264,7 +1266,7 @@ else(alert("Tanques cheios ou não habilitados"));
 			cicloTransporteSal();
 		break;
 		case 3:			
-			xv101Acionada.style.display="block";
+			xv103Acionada.style.display="block";
 			cicloTransporteSal();
 		break;
 	}
