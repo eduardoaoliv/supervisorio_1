@@ -1181,11 +1181,8 @@ var Lsh100=document.getElementById("lsh100");
 		btnTranspClose.addEventListener("click",function(){
 			displayTransp.style.display="none";
 		});
-
-		btnTranspSetEnviar.addEventListener("click",function(){
-			
-		});	  	
-
+		btnTranspSetEnviar.addEventListener("click",function(){			
+		});	
 function transpAutomatico(){
 if(setPressao.value<20||setPressao.value>26){
 	alert("A pressão ideal para o envio de sal é entre 22 PSI e 26 PSI");
@@ -1217,16 +1214,120 @@ else if(btnTranspAuto.value==1){
 			},300);
 	},3000);
 
-		
-
 	
-		
-	
-	
-
-	
-
-
 }
 
 }
+
+
+//****************************** Pulmão-1 Hab/Desab ****************************
+
+var btnPulmao1Hab=document.getElementById("pulmao1Hab");
+var btnPulmao1Desab=document.getElementById("pulmao1Desab");		
+
+		btnPulmao1Hab.addEventListener("click",function(){
+			btnPulmao1Hab.style.backgroundColor="green";
+			btnPulmao1Hab.value=1;		
+			btnPulmao1Desab.style.backgroundColor="rgb(100,100,100)";
+			btnPulmao1Desab.value="";								
+		});
+		btnPulmao1Desab.addEventListener("click",function(){
+			btnPulmao1Hab.style.backgroundColor="rgb(100,100,100)";
+			btnPulmao1Hab.value="";		
+			btnPulmao1Desab.style.backgroundColor="green";
+			btnPulmao1Desab.value=1;								
+		});	
+			
+//****************************** Pulmão-2 Hab/Desab ****************************
+
+var btnPulmao2Hab=document.getElementById("pulmao2Hab");
+var btnPulmao2Desab=document.getElementById("pulmao2Desab");		
+
+		btnPulmao2Hab.addEventListener("click",function(){
+			btnPulmao2Hab.style.backgroundColor="green";
+			btnPulmao2Hab.value=1;		
+			btnPulmao2Desab.style.backgroundColor="rgb(100,100,100)";
+			btnPulmao2Desab.value="";								
+		});
+		btnPulmao2Desab.addEventListener("click",function(){
+			btnPulmao2Hab.style.backgroundColor="rgb(100,100,100)";
+			btnPulmao2Hab.value="";		
+			btnPulmao2Desab.style.backgroundColor="green";
+			btnPulmao2Desab.value=1;								
+		});		
+
+//****************************** Pulmão-3 Hab/Desab ****************************
+
+var btnPulmao3Hab=document.getElementById("pulmao3Hab");
+var btnPulmao3Desab=document.getElementById("pulmao3Desab");		
+
+		btnPulmao3Hab.addEventListener("click",function(){
+			btnPulmao3Hab.style.backgroundColor="green";
+			btnPulmao3Hab.value=1;		
+			btnPulmao3Desab.style.backgroundColor="rgb(100,100,100)";
+			btnPulmao3Desab.value="";								
+		});
+		btnPulmao3Desab.addEventListener("click",function(){
+			btnPulmao3Hab.style.backgroundColor="rgb(100,100,100)";
+			btnPulmao3Hab.value="";		
+			btnPulmao3Desab.style.backgroundColor="green";
+			btnPulmao3Desab.value=1;								
+		});			
+		
+//****************************** Mist-1 Auto/Man ****************************
+
+var btnMist1Auto=document.getElementById("mist1Auto");
+var btnMist1Man=document.getElementById("mist1Man");		
+
+		btnMist1Auto.addEventListener("click",function(){
+			btnMist1Auto.style.backgroundColor="green";
+			btnMist1Auto.value=1;		
+			btnMist1Man.style.backgroundColor="rgb(100,100,100)";
+			btnMist1Man.value="";								
+		});
+		btnMist1Man.addEventListener("click",function(){
+			btnMist1Auto.style.backgroundColor="rgb(100,100,100)";
+			btnMist1Auto.value="";		
+			btnMist1Man.style.backgroundColor="green";
+			btnMist1Man.value=1;								
+		});	
+
+//****************************** Mist-2 Auto/Man ****************************
+
+var btnMist2Auto=document.getElementById("mist2Auto");
+var btnMist2Man=document.getElementById("mist2Man");		
+
+		btnMist2Auto.addEventListener("click",function(){
+			btnMist2Auto.style.backgroundColor="green";
+			btnMist2Auto.value=1;		
+			btnMist2Man.style.backgroundColor="rgb(100,100,100)";
+			btnMist2Man.value="";								
+		});
+		btnMist2Man.addEventListener("click",function(){
+			btnMist2Auto.style.backgroundColor="rgb(100,100,100)";
+			btnMist2Auto.value="";		
+			btnMist2Man.style.backgroundColor="green";
+			btnMist2Man.value=1;								
+		});
+
+//****************************** Mist-3 Auto/Man ****************************
+
+var btnMist3Auto=document.getElementById("mist3Auto");
+var btnMist3Man=document.getElementById("mist3Man");		
+
+		btnMist3Auto.addEventListener("click",function(){
+			btnMist3Auto.style.backgroundColor="green";
+			btnMist3Auto.value=1;		
+			btnMist3Man.style.backgroundColor="rgb(100,100,100)";
+			btnMist3Man.value="";								
+		});
+		btnMist3Man.addEventListener("click",function(){
+			btnMist3Auto.style.backgroundColor="rgb(100,100,100)";
+			btnMist3Auto.value="";		
+			btnMist3Man.style.backgroundColor="green";
+			btnMist3Man.value=1;								
+		});
+
+
+		
+	  	

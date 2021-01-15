@@ -183,7 +183,7 @@ header{
     height: 1.12vw;
     width: 1vw;  
 }
-#tub_TranspVert12{/*misturador-1 para env-01*/
+#tub_ProdutoEnv1{/*misturador-1 para env-01*/
     display: none;
     position: absolute;    
     margin-left: 46.9vw;
@@ -191,7 +191,7 @@ header{
     height: 5.6vw;
     width: 1vw;  
 }
-#tub_TranspVert13{/*misturador-2 para env-02*/
+#tub_ProdutoEnv2{/*misturador-2 para env-02*/
     display: none;
     position: absolute;    
     margin-left: 62.2vw;
@@ -199,7 +199,7 @@ header{
     height: 5.6vw;
     width: 1vw;  
 }
-#tub_TranspVert14{/*misturador-3 para env-03*/
+#tub_ProdutoEnv3{/*misturador-3 para env-03*/
     display: none;
     position: absolute;    
     margin-left: 77.5vw;
@@ -844,4 +844,91 @@ label{/*Input de setpoint pressão transportador*/
     height: 0.52vw;
     margin-left: 81.58vw;
     margin-top: 6.46vw;
+}
+/************************** Botões Habil./Desab. Tanques Pulmão **********************/
+.btnHabDesab{
+    background-color: rgb(100,100,100);
+    border: 0.2vw outset gray;
+    width: 3.2vw;
+    height: 1.8vw;
+    font-weight: bold;
+    color: white;
+    font-size: 0.8vw; 
+    text-align: left;
+    padding: 0.1vw         
+}
+
+#pulmao1Hab{
+    position: absolute;
+    margin-top: 8.5vw;
+    margin-left: 44vw;
+}
+#pulmao1Desab{
+    position: absolute;
+    margin-top: 8.5vw;
+    margin-left: 47.6vw;
+}
+#pulmao2Hab{
+    position: absolute;
+    margin-top: 8.5vw;
+    margin-left: 59.3vw;
+}
+#pulmao2Desab{
+    position: absolute;
+    margin-top: 8.5vw;
+    margin-left: 62.9vw;
+}
+#pulmao3Hab{
+    position: absolute;
+    margin-top: 8.5vw;
+    margin-left: 74.5vw;
+}
+#pulmao3Desab{
+    position: absolute;
+    margin-top: 8.5vw;
+    margin-left: 78.1vw;
+}
+/************************** Botões Auto/Man Misturadores **********************/
+
+.btnAutoMan{
+    background-color: rgb(100,100,100);
+    border: 0.2vw outset gray;
+    width: 3.2vw;
+    height: 1.8vw;
+    font-weight: bold;
+    color: white;
+    font-size: 0.8vw; 
+    text-align: center;
+    padding: 0.1vw         
+}
+
+#mist1Auto{
+    position: absolute;
+    margin-top: 20vw;
+    margin-left: 43.9vw;
+}
+#mist1Man{
+    position: absolute;
+    margin-top: 20vw;
+    margin-left: 47.7vw;
+}
+#mist2Auto{
+    position: absolute;
+    margin-top: 20vw;
+    margin-left: 59.2vw;
+}
+#mist2Man{
+    position: absolute;
+    margin-top: 20vw;
+    margin-left: 62.9vw;
+}
+#mist3Auto{
+    position: absolute;
+    margin-top: 20vw;
+    margin-left: 74.5vw;
+}
+#mist3Man{
+    position: absolute;
+    margin-top: 20vw;
+    margin-left: 78.26vw;
 }
