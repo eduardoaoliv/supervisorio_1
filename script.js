@@ -1051,10 +1051,6 @@ var btnXv110Close=document.getElementById("btn_xv110_close");
 var xv110Acionada=document.getElementById("xv110Acionada");
 
 
-
-
-
-
 		btnDisplayXv110.addEventListener("click",function(){
 			displayXv110.style.display="block";
 		});
@@ -1181,11 +1177,20 @@ var Lsh100=document.getElementById("lsh100");
 		btnTranspClose.addEventListener("click",function(){
 			displayTransp.style.display="none";
 		});
-		btnTranspSetEnviar.addEventListener("click",function(){			
-		});	
+		//btnTranspSetEnviar.addEventListener("click",function(){			
+		//});	
+
+var tubTranspVert1=document.getElementById("tub_TranspVert1");
+var tubTranspVert2=document.getElementById("tub_TranspVert2");
+var tubTranspVert3=document.getElementById("tub_TranspVert3");
+var tubTranspVert4=document.getElementById("tub_TranspVert4");
+var tubTranspVert5=document.getElementById("tub_TranspVert5");
+var tubTranspHoriz1=document.getElementById("tub_TranspHoriz1");
+var tubTranspHoriz2=document.getElementById("tub_TranspHoriz2");
+
 function transpAutomatico(){
-if(setPressao.value<20||setPressao.value>26){
-	alert("A pressão ideal para o envio de sal é entre 22 PSI e 26 PSI");
+if((setPressao.value<20||setPressao.value>26) || (btnPulmao1Hab.value=="" && btnPulmao2Hab.value=="" && btnPulmao3Hab.value=="")){
+	alert("A pressão ideal para o envio de sal é entre 22 PSI e 26 PSI e é necessário habilitar pelo menos um tanque para envio");
 	btnTranspAuto.style.backgroundColor="rgb(100,100,100)";
 }	
 else if(btnTranspAuto.value==1){
@@ -1194,34 +1199,85 @@ else if(btnTranspAuto.value==1){
 	xv101Acionada.style.display="none";
 	xv102Acionada.style.display="none";
 	xv103Acionada.style.display="none";
-	
-	var transpStep=0;
-	xv100Acionada.style.display="block";	
 
-	setTimeout(function(){		
-		Lsh100.style.display="block"
-		lsh100.value=1;
-		setTimeout(function() {xv100Acionada.style.display="none"}, 600);
-			var cont=0;
-			var Timer1s=setInterval(function(){
-				cont++;				
-				var pt100valor=cont;
-					PT100.innerHTML=pt100valor;
-					if(pt100valor>=setPressao.value){							
-					clearInterval(Timer1s);
-					
-					}
-			},300);
-	},3000);
+	function cicloTransporteSal(){
+		xv100Acionada.style.display="block";
+		setTimeout(function(){		
+			Lsh100.style.display="block"
+			lsh100.value=1;
+				setTimeout(function() {xv100Acionada.style.display="none"}, 400);//tempo para fechar a xv100 após lsh100
+					var cont=0;			
+					var Timer01=setInterval(function(){
+						cont++;				
+						var pt100valor=cont;
+						PT100.innerHTML=pt100valor;
+						tubTranspVert1.style.display="block";
+						tubTranspVert2.style.display="block";
+						tubTranspVert3.style.display="block";
+						tubTranspVert4.style.display="block";
+						tubTranspVert5.style.display="block";
+						tubTranspHoriz1.style.display="block";
+						tubTranspHoriz2.style.display="block";	
+							if(pt100valor>=setPressao.value){							
+								clearInterval(Timer01);
+								despressuriza();
+							}
+					},400);//tempo simulando subida da pressão
+		},3000);//tempo para descer o sal para o tq. transportador	
+			
+	}
 
-	
+	function despressuriza(){
+		var p=setPressao.value;
+		var Timer02=setInterval(function(){
+						p--;				
+						var pt100valor=p;
+						PT100.innerHTML=pt100valor;
+						if(pt100valor==0){							
+								clearInterval(Timer02);
+								xv101Acionada.style.display="none";	
+								xv102Acionada.style.display="none";
+								xv103Acionada.style.display="none";
+								tubTranspVert1.style.display="none";
+								tubTranspVert2.style.display="none";
+								tubTranspVert3.style.display="none";
+								tubTranspVert4.style.display="none";
+								tubTranspVert5.style.display="none";
+								tubTranspHoriz1.style.display="none";
+								tubTranspHoriz2.style.display="none";				
+							}
+		},250);				
+	}
+var envio=0;
+if(btnPulmao1Hab.value==1 && LSH101.value==""){envio=1;console.log("1");}
+else if(btnPulmao2Hab.value==1 && LSH102.value==""){envio=2;console.log("2");}
+else if(btnPulmao3Hab.value==1 && LSH103.value==""){envio=3;console.log("3");}
+else(alert("Tanques cheios ou não habilitados"));
+
+	switch(envio){
+		case 1:			
+			xv101Acionada.style.display="block";
+			cicloTransporteSal();			
+		break;
+		case 2:			
+			xv102Acionada.style.display="block";
+			cicloTransporteSal();
+		break;
+		case 3:			
+			xv101Acionada.style.display="block";
+			cicloTransporteSal();
+		break;
+	}
+
+
 }
 
 }
 
 
-//****************************** Pulmão-1 Hab/Desab ****************************
-
+//****************************** Pulmão-1 Hab/Desab e nível ****************************
+var LSH101=document.getElementById("lsh101");
+LSH101.value="";
 var btnPulmao1Hab=document.getElementById("pulmao1Hab");
 var btnPulmao1Desab=document.getElementById("pulmao1Desab");		
 
@@ -1238,8 +1294,9 @@ var btnPulmao1Desab=document.getElementById("pulmao1Desab");
 			btnPulmao1Desab.value=1;								
 		});	
 			
-//****************************** Pulmão-2 Hab/Desab ****************************
-
+//****************************** Pulmão-2 Hab/Desab e nível****************************
+var LSH102=document.getElementById("lsh102");
+LSH102.value="";
 var btnPulmao2Hab=document.getElementById("pulmao2Hab");
 var btnPulmao2Desab=document.getElementById("pulmao2Desab");		
 
@@ -1256,8 +1313,9 @@ var btnPulmao2Desab=document.getElementById("pulmao2Desab");
 			btnPulmao2Desab.value=1;								
 		});		
 
-//****************************** Pulmão-3 Hab/Desab ****************************
-
+//****************************** Pulmão-3 Hab/Desab e nível****************************
+var LSH103=document.getElementById("lsh103");
+LSH103.value="";
 var btnPulmao3Hab=document.getElementById("pulmao3Hab");
 var btnPulmao3Desab=document.getElementById("pulmao3Desab");		
 
