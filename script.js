@@ -1211,7 +1211,7 @@ else if(btnTranspAuto.value==1){
 			Lsh100.style.display="block"
 			lsh100.value=1;
 				setTimeout(function() {xv100Acionada.style.display="none"}, 400);//tempo para fechar a xv100 após lsh100
-					var cont=0;			
+					var cont=0; //variável para simular o valor da pressão 			
 					var Timer01=setInterval(function(){
 						cont++;				
 						var pt100valor=cont;
@@ -1226,9 +1226,9 @@ else if(btnTranspAuto.value==1){
 							if(pt100valor>=setPressao.value){							
 								clearInterval(Timer01);
 								despressuriza();
-								if(envio==1){
+								if(envio==1){//verifica se está enviando para pulmão-1
 									contagem1++;
-									if(contagem1==3){
+									if(contagem1==3){//após 3º envio simula nível alto no pulmão-1
 									LSH101.value=1;
 									LSH101.style.display="block";
 								}
@@ -1274,7 +1274,7 @@ else if(btnTranspAuto.value==1){
 								tubTranspVert5.style.display="none";
 								tubTranspHoriz1.style.display="none";
 								tubTranspHoriz2.style.display="none";
-								transpAutomatico();	//verifica se o nivel do pulmão está cheio e para o ciclo de enchimento			
+								transpAutomatico();	//chama a função para verificar se o nivel do pulmão está cheio e para o ciclo de enchimento(contagem1,...,3)			
 							}
 		},250);				
 	}
