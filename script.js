@@ -1188,8 +1188,12 @@ var tubTranspVert5=document.getElementById("tub_TranspVert5");
 var tubTranspHoriz1=document.getElementById("tub_TranspHoriz1");
 var tubTranspHoriz2=document.getElementById("tub_TranspHoriz2");
 
+var contagem1=0;//será zerado somente quando o ciclo do misturador acontecer 3 vezes
+var contagem2=0;
+var contagem3=0;
+
 function transpAutomatico(){
-if((setPressao.value<20||setPressao.value>26) || (btnPulmao1Hab.value=="" && btnPulmao2Hab.value=="" && btnPulmao3Hab.value=="")){
+if((setPressao.value<22||setPressao.value>26) || (btnPulmao1Hab.value=="" && btnPulmao2Hab.value=="" && btnPulmao3Hab.value=="")){
 	alert("A pressão ideal para o envio de sal é entre 22 PSI e 26 PSI e é necessário habilitar pelo menos um tanque para envio");
 	btnTranspAuto.style.backgroundColor="rgb(100,100,100)";
 }	
@@ -1200,7 +1204,8 @@ else if(btnTranspAuto.value==1){
 	xv102Acionada.style.display="none";
 	xv103Acionada.style.display="none";
 
-	function cicloTransporteSal(){
+	function cicloTransporteSal(){	
+		
 		xv100Acionada.style.display="block";
 		setTimeout(function(){		
 			Lsh100.style.display="block"
@@ -1221,10 +1226,32 @@ else if(btnTranspAuto.value==1){
 							if(pt100valor>=setPressao.value){							
 								clearInterval(Timer01);
 								despressuriza();
+								if(envio==1){
+									contagem1++;
+									if(contagem1==3){
+									LSH101.value=1;
+									LSH101.style.display="block";
+								}
+								}
+								if(envio==2){
+									contagem2++;
+									if(contagem2==3){
+									LSH102.value=1;
+									LSH102.style.display="block";
+								}
+								}
+								if(envio==3){
+									contagem3++;
+									if(contagem3==3){
+									LSH103.value=1;
+									LSH103.style.display="block";
+								}
+								}
+								console.log(contagem1);
 							}
 					},400);//tempo simulando subida da pressão
 		},3000);//tempo para descer o sal para o tq. transportador	
-			
+	
 	}
 
 	function despressuriza(){
@@ -1246,20 +1273,23 @@ else if(btnTranspAuto.value==1){
 								tubTranspVert4.style.display="none";
 								tubTranspVert5.style.display="none";
 								tubTranspHoriz1.style.display="none";
-								tubTranspHoriz2.style.display="none";				
+								tubTranspHoriz2.style.display="none";
+								transpAutomatico();	//verifica se o nivel do pulmão está cheio e para o ciclo de enchimento			
 							}
 		},250);				
 	}
+}
 var envio=0;
-if(btnPulmao1Hab.value==1 && LSH101.value==""){envio=1;console.log("1");}
-else if(btnPulmao2Hab.value==1 && LSH102.value==""){envio=2;console.log("2");}
-else if(btnPulmao3Hab.value==1 && LSH103.value==""){envio=3;console.log("3");}
+if(btnPulmao1Hab.value==1 && LSH101.value==""){envio=1;}
+else if(btnPulmao2Hab.value==1 && LSH102.value==""){envio=2;}
+else if(btnPulmao3Hab.value==1 && LSH103.value==""){envio=3;}
 else(alert("Tanques cheios ou não habilitados"));
 
 	switch(envio){
-		case 1:			
+		case 1:							
 			xv101Acionada.style.display="block";
-			cicloTransporteSal();			
+			cicloTransporteSal();	
+
 		break;
 		case 2:			
 			xv102Acionada.style.display="block";
@@ -1274,7 +1304,7 @@ else(alert("Tanques cheios ou não habilitados"));
 
 }
 
-}
+
 
 
 //****************************** Pulmão-1 Hab/Desab e nível ****************************
