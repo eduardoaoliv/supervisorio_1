@@ -157,6 +157,32 @@ function acionaMotor(ID){
 		}else mt02Aciona.style.display="none";
 }*/
 
+
+
+
+//************* Receitas ********************
+var receitaEnviar=document.getElementById("receita_enviar");
+var closeReceitas=document.getElementById("close_receitas");
+var btnReceita=document.getElementById("btn_receita");
+var modalReceitas=document.getElementById("modal_receitas");
+var receitas=document.getElementsByName("receita");
+
+
+btnReceita.addEventListener("click",function(){
+	modalReceitas.style.display="block";	
+});
+closeReceitas.addEventListener("click",function(){
+	modalReceitas.style.display="none";
+});
+
+receitaEnviar.addEventListener("click",function() {    
+    for (var i = 0; i < receitas.length; i++) {
+        if (receitas[i].checked) {
+            console.log("Escolheu: " + receitas[i].value);
+        }
+    }
+});
+
 //***************************** Motor Mexedor SI mt-01 ****************************
 
 var btnMt01Liga=document.getElementById("mt_01_liga");
@@ -1187,6 +1213,9 @@ var tubTranspVert4=document.getElementById("tub_TranspVert4");
 var tubTranspVert5=document.getElementById("tub_TranspVert5");
 var tubTranspHoriz1=document.getElementById("tub_TranspHoriz1");
 var tubTranspHoriz2=document.getElementById("tub_TranspHoriz2");
+var tubTranspVert6=document.getElementById("tub_TranspVert6");
+var tubTranspVert7=document.getElementById("tub_TranspVert7");
+var tubTranspVert8=document.getElementById("tub_TranspVert8");
 
 var contagem1=0;//será zerado somente quando o ciclo do misturador acontecer 3 vezes
 var contagem2=0;
@@ -1215,7 +1244,7 @@ else if(btnTranspAuto.value==1){
 					var Timer01=setInterval(function(){
 						cont++;				
 						var pt100valor=cont;
-						PT100.innerHTML=pt100valor;
+						PT100.innerHTML=pt100valor+"PSI";
 						tubTranspVert1.style.display="block";
 						tubTranspVert2.style.display="block";
 						tubTranspVert3.style.display="block";
@@ -1228,6 +1257,7 @@ else if(btnTranspAuto.value==1){
 								despressuriza();
 								if(envio==1){//verifica se está enviando para pulmão-1
 									contagem1++;
+									tubTranspVert6.style.display="block";
 									if(contagem1==3){//após 3º envio simula nível alto no pulmão-1
 									LSH101.value=1;
 									LSH101.style.display="block";
@@ -1235,6 +1265,7 @@ else if(btnTranspAuto.value==1){
 								}
 								if(envio==2){
 									contagem2++;
+									tubTranspVert7.style.display="block";
 									if(contagem2==3){
 									LSH102.value=1;
 									LSH102.style.display="block";
@@ -1242,6 +1273,7 @@ else if(btnTranspAuto.value==1){
 								}
 								if(envio==3){
 									contagem3++;
+									tubTranspVert8.style.display="block";
 									if(contagem3==3){
 									LSH103.value=1;
 									LSH103.style.display="block";
@@ -1261,7 +1293,7 @@ else if(btnTranspAuto.value==1){
 						lsh100.value="";
 						p--;				
 						var pt100valor=p;
-						PT100.innerHTML=pt100valor;
+						PT100.innerHTML=pt100valor+"PSI";
 						if(pt100valor==0){							
 								clearInterval(Timer02);
 								xv101Acionada.style.display="none";	
@@ -1283,7 +1315,7 @@ var envio=0;
 if(btnPulmao1Hab.value==1 && LSH101.value==""){envio=1;}
 else if(btnPulmao2Hab.value==1 && LSH102.value==""){envio=2;}
 else if(btnPulmao3Hab.value==1 && LSH103.value==""){envio=3;}
-else(alert("Tanques cheios ou não habilitados"));
+//else(alert("Tanques cheios ou não habilitados"));//Está mantendo a animação da tubulação até que se de o OK.
 
 	switch(envio){
 		case 1:							
