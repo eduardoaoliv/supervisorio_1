@@ -56,7 +56,7 @@ header{
     height: 12vw;
     margin-left: 8vw;
     margin-top: 5vw;
-    border: 0.2vw solid rgb(100,100,100);
+    border: 0.3vw solid rgb(100,100,100);
     cursor: pointer;
     font-size: 1vw;
 }#modal_receitas span{
@@ -992,4 +992,29 @@ label{/*Input de setpoint pressão transportador*/
     position: absolute;
     margin-top: 20vw;
     margin-left: 78.26vw;
+}
+
+.WIT{/*Indicadores de peso dos misturadores*/
+    position: absolute;
+    width: 2.2vw;
+    height: 1vw;
+    background-color: white;
+    border:0.2vw solid black;    
+    font-size: 0.8vw;
+    font-weight: bold;
+}
+#WIT_01{   
+    position: absolute;
+    margin-top: 23.7vw;
+    margin-left: 48.5vw;
+}
+#WIT_02{   
+    position: absolute;
+    margin-top: 23.7vw;
+    margin-left: 63.8vw;
+}
+#WIT_03{   
+    position: absolute;
+    margin-top:23.7vw;
+    margin-left: 79vw;
 }

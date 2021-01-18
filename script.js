@@ -233,7 +233,7 @@ var mt01Ligado=document.getElementById("mt01Acionado");
 
 // Acionamento manual do mexedor mt-01
 function mt01Manual(){	
-	if((btnMt01Man.value==1 )&&(btnMt01Liga.value==1)){
+	if((btnSIbtnAuto.value=="")&&(btnMt01Man.value==1 )&&(btnMt01Liga.value==1)){
 		mt01Ligado.style.display="block";		
 	}else {
 	mt01Ligado.style.display="none"};	
@@ -297,9 +297,9 @@ var tubSIMist036=document.getElementById("tub_SI_mist_036");
 		displayMt02.style.display="none";		
 	});
 
-// Acionamento manual do mexedor de SI mt-02
+// Acionamento manual da bomba de SI mt-02
 function mt02Manual(){	
-	if((btnMt02Man.value==1 )&&(btnMt02Liga.value==1)){
+	if((btnSIbtnAuto.value=="")&&(btnMt02Man.value==1 )&&(btnMt02Liga.value==1)){
 		mt02Ligado.style.display="block";
 		tubSIMist01.style.display="block";
 		tubSIMist02.style.display="block";
@@ -371,7 +371,7 @@ var mt03Ligado=document.getElementById("mt03Acionado");
 
 		// Acionamento manual do motor misturador-1 mt-03
 function mt03Manual(){	
-	if((btnMt03Man.value==1 )&&(btnMt03Liga.value==1)){
+	if((btnMist1Auto.value=="")&&(btnMt03Man.value==1 )&&(btnMt03Liga.value==1)){
 		mt03Ligado.style.display="block";		
 	}else {
 	mt03Ligado.style.display="none"};	
@@ -426,7 +426,7 @@ var mt04Ligado=document.getElementById("mt04Acionado");
 
 		// Acionamento manual do motor misturador-2 mt-04
 function mt04Manual(){	
-	if((btnMt04Man.value==1 )&&(btnMt04Liga.value==1)){
+	if((btnMist2Auto.value=="")&&(btnMt04Man.value==1 )&&(btnMt04Liga.value==1)){
 		mt04Ligado.style.display="block";		
 	}else {
 	mt04Ligado.style.display="none"};	
@@ -481,7 +481,7 @@ var mt05Ligado=document.getElementById("mt05Acionado");
 
 		// Acionamento manual do motor misturador-2 mt-04
 function mt05Manual(){	
-	if((btnMt05Man.value==1 )&&(btnMt05Liga.value==1)){
+	if((btnMist3Auto.value=="")&&(btnMt05Man.value==1 )&&(btnMt05Liga.value==1)){
 		mt05Ligado.style.display="block";		
 	}else {
 	mt05Ligado.style.display="none"};	
@@ -538,7 +538,7 @@ var tubSIxv01Mist1=document.getElementById("tub_SI_xv01_mist1");
 
 		// Acionamento manual da vávl. SI do mist-1 xv-01
 function xv01Manual(){	
-	if((btnXv01Man.value==1 )&&(btnXv01Abre.value==1)){
+	if((btnMist1Auto.value=="")&&(btnXv01Man.value==1 )&&(btnXv01Abre.value==1)){
 		xv01Acionada.style.display="block";
 		//tubSIxv01Mist1.style.display="block";		
 	}	
@@ -597,7 +597,7 @@ var xv02Acionada=document.getElementById("xv02Acionada");
 
 		// Acionamento manual da vávl. SI do mist-2 xv-02
 function xv02Manual(){	
-	if((btnXv02Man.value==1 )&&(btnXv02Abre.value==1)){
+	if((btnMist2Auto.value=="")&&(btnXv02Man.value==1 )&&(btnXv02Abre.value==1)){
 		xv02Acionada.style.display="block";		
 	}else {
 	xv02Acionada.style.display="none"};	
@@ -652,7 +652,7 @@ var xv03Acionada=document.getElementById("xv03Acionada");
 
 		// Acionamento manual da vávl. SI do mist-2 xv-02
 function xv03Manual(){	
-	if((btnXv03Man.value==1 )&&(btnXv03Abre.value==1)){
+	if((btnMist3Auto.value=="")&&(btnXv03Man.value==1 )&&(btnXv03Abre.value==1)){
 		xv03Acionada.style.display="block";		
 	}else {
 	xv03Acionada.style.display="none"};	
@@ -708,7 +708,7 @@ var xv011Acionada=document.getElementById("xv011Acionada");
 
 		// Acionamento manual da vávl. Sal do mist-1 xv-011
 function xv011Manual(){	
-	if((btnXv011Man.value==1 )&&(btnXv011Abre.value==1)){
+	if((btnMist1Auto.value=="")&&(btnXv011Man.value==1 )&&(btnXv011Abre.value==1)){
 		xv011Acionada.style.display="block";			
 	}	
 	else {
@@ -766,7 +766,7 @@ var xv022Acionada=document.getElementById("xv022Acionada");
 
 		// Acionamento manual da vávl. Sal do mist-2 xv-022
 function xv022Manual(){	
-	if((btnXv022Man.value==1 )&&(btnXv022Abre.value==1)){
+	if((btnMist2Auto.value=="")&&(btnXv022Man.value==1 )&&(btnXv022Abre.value==1)){
 		xv022Acionada.style.display="block";			
 	}	
 	else {
@@ -824,7 +824,7 @@ var xv033Acionada=document.getElementById("xv033Acionada");
 
 		// Acionamento manual da vávl. Sal do mist-3 xv-033
 function xv033Manual(){	
-	if((btnXv033Man.value==1 )&&(btnXv033Abre.value==1)){
+	if((btnMist3Auto.value=="")&&(btnXv033Man.value==1 )&&(btnXv033Abre.value==1)){	
 		xv033Acionada.style.display="block";			
 	}	
 	else {
@@ -1136,7 +1136,7 @@ var nivelTqSImax=document.getElementById("LTSI");
 var btnSISetEnviar=document.getElementById("SISetEnviar");
 var SIBarraNivel=document.getElementById("SIBarraNivel");
 var setpointNivelTqSI=0;
-
+SIBarraNivel.style.height=7+"vw";//inicia a barra de nível em 0
 
 		btnCtrlTqSI.addEventListener("click",function(){
 			displayTqSI.style.display="block";
@@ -1161,7 +1161,7 @@ var setpointNivelTqSI=0;
 		});
 
 		btnSISetEnviar.addEventListener("click",function(){
-			setpointNivelTqSI=Number(7-(setNivelSI.value*7)/100);
+			setpointNivelTqSI=Number(7-(setNivelSI.value*7)/100);//7 é o height da barra de nível
 			SIBarraNivel.style.height=setpointNivelTqSI+"vw";
 		});
 		
@@ -1405,7 +1405,8 @@ var btnMist1Man=document.getElementById("mist1Man");
 			btnMist1Auto.style.backgroundColor="green";
 			btnMist1Auto.value=1;		
 			btnMist1Man.style.backgroundColor="rgb(100,100,100)";
-			btnMist1Man.value="";								
+			btnMist1Man.value="";
+			mist1Automatico();								
 		});
 		btnMist1Man.addEventListener("click",function(){
 			btnMist1Auto.style.backgroundColor="rgb(100,100,100)";
@@ -1423,7 +1424,8 @@ var btnMist2Man=document.getElementById("mist2Man");
 			btnMist2Auto.style.backgroundColor="green";
 			btnMist2Auto.value=1;		
 			btnMist2Man.style.backgroundColor="rgb(100,100,100)";
-			btnMist2Man.value="";								
+			btnMist2Man.value="";
+			mist2Automatico();								
 		});
 		btnMist2Man.addEventListener("click",function(){
 			btnMist2Auto.style.backgroundColor="rgb(100,100,100)";
@@ -1441,7 +1443,8 @@ var btnMist3Man=document.getElementById("mist3Man");
 			btnMist3Auto.style.backgroundColor="green";
 			btnMist3Auto.value=1;		
 			btnMist3Man.style.backgroundColor="rgb(100,100,100)";
-			btnMist3Man.value="";								
+			btnMist3Man.value="";
+			mist3Automatico();								
 		});
 		btnMist3Man.addEventListener("click",function(){
 			btnMist3Auto.style.backgroundColor="rgb(100,100,100)";
@@ -1451,5 +1454,106 @@ var btnMist3Man=document.getElementById("mist3Man");
 		});
 
 
+
+
+//****************************** Mist-1 Automático****************************		
+var wit01=document.getElementById("WIT_01");
+var wit01Sal=0;
+var wit01SI=0;
+var wit01Total=0;
+
+function mist1Automatico(){
+	if(btnMist1Auto.value==1){
+	xv01Acionada.style.display="none";
+	xv011Acionada.style.display="none";	
+	mt03Ligado.style.display="none";
+	mist1DosagemSal();	
+	}
+
+	function mist1DosagemSal(){
 		
-	  	
+		xv011Acionada.style.display="block";
+		var i=0;
+			var Tmist1Sal=setInterval(function(){
+				i++;
+				wit01Sal=i*60;
+				wit01Total=wit01Sal+wit01SI
+				wit01.innerHTML=wit01Total+"Kg";
+				if(i>="5"){clearInterval(Tmist1Sal);}
+			},1000);
+		setTimeout(function(){			
+		xv011Acionada.style.display="none";	
+		mist1DosagemSI();
+		},5000);		
+	}
+
+	function mist1DosagemSI(){
+		xv01Acionada.style.display="block";
+		mt02Ligado.style.display="block";
+		tubSIMist01.style.display="block";
+		tubSIMist02.style.display="block";
+		tubSIMist03.style.display="block";
+		tubSIMist031.style.display="block";
+		tubSIMist032.style.display="block";
+		tubSIMist034.style.display="block";
+		tubSIMist035.style.display="block";
+		tubSIMist036.style.display="block";
+		var i=0;
+			var Tmist1SI=setInterval(function(){
+				i++;
+				var wit01SI=(i*10);
+				wit01Total=wit01Sal+wit01SI
+				wit01.innerHTML=wit01Total+"Kg";
+				if(i>="5"){clearInterval(Tmist1SI);}
+			},1000);
+		setTimeout(function(){			
+		xv01Acionada.style.display="none";
+		mt02Ligado.style.display="none";
+		tubSIMist01.style.display="none";
+		tubSIMist02.style.display="none";
+		tubSIMist03.style.display="none";
+		tubSIMist031.style.display="none";
+		tubSIMist032.style.display="none";
+		tubSIMist034.style.display="none";
+		tubSIMist035.style.display="none";
+		tubSIMist036.style.display="none";
+		mist1Misturador();	
+		},5000);		
+	}
+
+	function mist1Misturador(){
+		mt03Ligado.style.display="block";
+		setTimeout(function(){
+			mt03Ligado.style.display="none";
+			//mist1Automatico();
+		},10000);		
+	}
+
+}
+
+
+
+
+
+//****************************** Mist-2 Automático****************************		
+var wit02=document.getElementById("WIT_02");
+
+function mist2Automatico(){
+	if(btnMist2Auto.value==1){
+	xv02Acionada.style.display="none";
+	xv022Acionada.style.display="none";
+	mt04Ligado.style.display="none";	
+	}
+}
+
+
+//****************************** Mist-3 Automático****************************		
+var wit03=document.getElementById("WIT_03");
+
+function mist3Automatico(){
+	if(btnMist3Auto.value==1){
+	xv03Acionada.style.display="none";
+	xv033Acionada.style.display="none";
+	mt05Ligado.style.display="none";	
+	}
+}
