@@ -166,7 +166,9 @@ var closeReceitas=document.getElementById("close_receitas");
 var btnReceita=document.getElementById("btn_receita");
 var modalReceitas=document.getElementById("modal_receitas");
 var receitas=document.getElementsByName("receita");
-
+var numReceita=10;
+var fator_sal;
+var fator_si;
 
 btnReceita.addEventListener("click",function(){
 	modalReceitas.style.display="block";	
@@ -178,11 +180,32 @@ closeReceitas.addEventListener("click",function(){
 receitaEnviar.addEventListener("click",function() {    
     for (var i = 0; i < receitas.length; i++) {
         if (receitas[i].checked) {
-            console.log("Escolheu: " + receitas[i].value);
-        }
-    }
+            //console.log("Escolheu: " + receitas[i].value);
+            numReceita=receitas[i].value;                        
+        };
+    };numeroReceita();    
 });
 
+function numeroReceita(){
+switch(numReceita){
+	case "0": 
+			fator_sal=60;
+			fator_si=15;			
+	break;
+	case "1": 
+			fator_sal=62;
+			fator_si=13;			
+	break;
+	case "2": 
+			fator_sal=65;
+			fator_si=10;			
+	break;
+	case "3": 
+			fator_sal=64;
+			fator_si=11;			
+	break;
+}
+}
 //***************************** Motor Mexedor SI mt-01 ****************************
 
 var btnMt01Liga=document.getElementById("mt_01_liga");
@@ -259,6 +282,30 @@ var tubSIMist034=document.getElementById("tub_SI_mist_034");
 var tubSIMist035=document.getElementById("tub_SI_mist_035");
 var tubSIMist036=document.getElementById("tub_SI_mist_036");
 
+function enchimentoTubSI(){
+	mt02Ligado.style.display="block";
+	tubSIMist01.style.display="block";
+	tubSIMist02.style.display="block";
+	tubSIMist03.style.display="block";
+	tubSIMist031.style.display="block";
+	tubSIMist032.style.display="block";
+	tubSIMist034.style.display="block";
+	tubSIMist035.style.display="block";
+	tubSIMist036.style.display="block";
+}
+
+function esvaziamentoTubSI(){
+	mt02Ligado.style.display="none";
+	tubSIMist01.style.display="none";
+	tubSIMist02.style.display="none";
+	tubSIMist03.style.display="none";
+	tubSIMist031.style.display="none";
+	tubSIMist032.style.display="none";
+	tubSIMist034.style.display="none";	
+	tubSIMist035.style.display="none";
+	tubSIMist036.style.display="none";	
+}
+
 
 	btnDisplayMt02.addEventListener("click",function(){
 		displayMt02.style.display="block";
@@ -300,25 +347,9 @@ var tubSIMist036=document.getElementById("tub_SI_mist_036");
 // Acionamento manual da bomba de SI mt-02
 function mt02Manual(){	
 	if((btnSIbtnAuto.value=="")&&(btnMt02Man.value==1 )&&(btnMt02Liga.value==1)){
-		mt02Ligado.style.display="block";
-		tubSIMist01.style.display="block";
-		tubSIMist02.style.display="block";
-		tubSIMist03.style.display="block";
-		tubSIMist031.style.display="block";
-		tubSIMist032.style.display="block";
-		tubSIMist034.style.display="block";
-		tubSIMist035.style.display="block";
-		tubSIMist036.style.display="block";
+		enchimentoTubSI();		
 	}else {
-	mt02Ligado.style.display="none";
-	tubSIMist01.style.display="none";
-	tubSIMist02.style.display="none";
-	tubSIMist03.style.display="none";
-	tubSIMist031.style.display="none";
-	tubSIMist032.style.display="none";
-	tubSIMist034.style.display="none";	
-	tubSIMist035.style.display="none";
-	tubSIMist036.style.display="none";		
+		esvaziamentoTubSI();			
 	}
 }
 
@@ -1320,8 +1351,7 @@ else if(btnPulmao3Hab.value==1 && LSH103.value==""){envio=3;}
 	switch(envio){
 		case 1:							
 			xv101Acionada.style.display="block";
-			cicloTransporteSal();	
-
+			cicloTransporteSal();
 		break;
 		case 2:			
 			xv102Acionada.style.display="block";
@@ -1463,7 +1493,10 @@ var wit01SI=0;
 var wit01Total=0;
 
 function mist1Automatico(){
-	if(btnMist1Auto.value==1){
+	if(numReceita==10){
+		alert("Escolha uma receita");
+	}
+	else if(btnMist1Auto.value==1){
 	xv01Acionada.style.display="none";
 	xv011Acionada.style.display="none";	
 	mt03Ligado.style.display="none";
@@ -1476,7 +1509,7 @@ function mist1Automatico(){
 		var i=0;
 			var Tmist1Sal=setInterval(function(){
 				i++;
-				wit01Sal=i*60;
+				wit01Sal=i*fator_sal;
 				wit01Total=wit01Sal+wit01SI
 				wit01.innerHTML=wit01Total+"Kg";
 				if(i>="5"){clearInterval(Tmist1Sal);}
@@ -1489,34 +1522,18 @@ function mist1Automatico(){
 
 	function mist1DosagemSI(){
 		xv01Acionada.style.display="block";
-		mt02Ligado.style.display="block";
-		tubSIMist01.style.display="block";
-		tubSIMist02.style.display="block";
-		tubSIMist03.style.display="block";
-		tubSIMist031.style.display="block";
-		tubSIMist032.style.display="block";
-		tubSIMist034.style.display="block";
-		tubSIMist035.style.display="block";
-		tubSIMist036.style.display="block";
+		enchimentoTubSI();
 		var i=0;
 			var Tmist1SI=setInterval(function(){
 				i++;
-				var wit01SI=(i*10);
+				var wit01SI=i*fator_si;
 				wit01Total=wit01Sal+wit01SI
 				wit01.innerHTML=wit01Total+"Kg";
 				if(i>="5"){clearInterval(Tmist1SI);}
 			},1000);
 		setTimeout(function(){			
 		xv01Acionada.style.display="none";
-		mt02Ligado.style.display="none";
-		tubSIMist01.style.display="none";
-		tubSIMist02.style.display="none";
-		tubSIMist03.style.display="none";
-		tubSIMist031.style.display="none";
-		tubSIMist032.style.display="none";
-		tubSIMist034.style.display="none";
-		tubSIMist035.style.display="none";
-		tubSIMist036.style.display="none";
+		esvaziamentoTubSI();
 		mist1Misturador();	
 		},5000);		
 	}
