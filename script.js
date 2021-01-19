@@ -160,7 +160,7 @@ function acionaMotor(ID){
 
 
 
-//************* Receitas ********************
+//*************************** Receitas ****************************************
 var receitaEnviar=document.getElementById("receita_enviar");
 var closeReceitas=document.getElementById("close_receitas");
 var btnReceita=document.getElementById("btn_receita");
@@ -190,20 +190,20 @@ receitaEnviar.addEventListener("click",function() {
 function numeroReceita(){
 switch(numReceita){
 	case "0": 
-			fator_sal=60;
-			fator_si=15;			
+			fator_sal=30;
+			fator_si=7.5;			
 	break;
 	case "1": 
-			fator_sal=62;
-			fator_si=13;			
+			fator_sal=31;
+			fator_si=6.5;			
 	break;
 	case "2": 
-			fator_sal=65;
-			fator_si=10;			
+			fator_sal=32;
+			fator_si=5.5;			
 	break;
 	case "3": 
-			fator_sal=64;
-			fator_si=11;			
+			fator_sal=33;
+			fator_si=4.5;			
 	break;
 }
 }
@@ -348,7 +348,9 @@ function esvaziamentoTubSI(){
 // Acionamento manual da bomba de SI mt-02
 function mt02Manual(){	
 	if((btnSIbtnAuto.value=="")&&(btnMt02Man.value==1 )&&(btnMt02Liga.value==1)){
-		enchimentoTubSI();		
+		if(setpointNivelTqSI<=6.3){
+			enchimentoTubSI();
+			}else{mt02Ligado.style.display="block";}		
 	}else {
 		esvaziamentoTubSI();			
 	}
@@ -1167,7 +1169,8 @@ var setNivelSI=document.getElementById("setNivelSI");
 var nivelTqSImax=document.getElementById("LTSI");
 var btnSISetEnviar=document.getElementById("SISetEnviar");
 var SIBarraNivel=document.getElementById("SIBarraNivel");
-var setpointNivelTqSI=0;
+var setpointNivelTqSI=7;//corresponde a 0% nivel
+
 SIBarraNivel.style.height=7+"vw";//inicia a barra de nível em 0
 
 		btnCtrlTqSI.addEventListener("click",function(){
@@ -1178,7 +1181,8 @@ SIBarraNivel.style.height=7+"vw";//inicia a barra de nível em 0
 			btnSIbtnAuto.style.backgroundColor="green";
 			btnSIbtnAuto.value=1;		
 			btnSIbtnMan.style.backgroundColor="rgb(100,100,100)";
-			btnSIbtnMan.value="";								
+			btnSIbtnMan.value="";
+			tqSIAutomatico();								
 		})
 		btnSIbtnMan.addEventListener("click",function(){
 			btnSIbtnAuto.style.backgroundColor="rgb(100,100,100)";
@@ -1196,6 +1200,18 @@ SIBarraNivel.style.height=7+"vw";//inicia a barra de nível em 0
 			setpointNivelTqSI=Number(7-(setNivelSI.value*7)/100);//7 é o height da barra de nível
 			SIBarraNivel.style.height=setpointNivelTqSI+"vw";
 		});
+
+//****************************** Tanque de SI em automático ****************************
+function tqSIAutomatico(){
+	if(btnSIbtnAuto.value==1){
+		mt01Ligado.style.display="none";
+		mt02Ligado.style.display="none";
+		esvaziamentoTubSI();
+	}
+	if(setpointNivelTqSI>6.3){//equivale ao nível de 10%
+		alert("Abastecer Tq. SI com nível mínimo de 10% ");
+	}else{mt01Ligado.style.display="block";}	
+}
 		
 		
 //****************************** Botão controle Transportador SAL ****************************
@@ -1252,6 +1268,9 @@ var tubTranspVert8=document.getElementById("tub_TranspVert8");
 var contagem1=0;//será zerado somente quando o ciclo do misturador acontecer 3 vezes
 var contagem2=0;
 var contagem3=0;
+
+
+//****************************** Transportador SAL em automático ****************************
 
 function transpAutomatico(){
 if((setPressao.value<22||setPressao.value>26) || (btnPulmao1Hab.value=="" && btnPulmao2Hab.value=="" && btnPulmao3Hab.value=="")){
@@ -1494,14 +1513,19 @@ var wit01SI=0;
 var wit01Total=0;
 
 function mist1Automatico(){
-	if(numReceita==10){
-		alert("Escolha uma receita");
+	if(btnSIbtnAuto.value=="" || setpointNivelTqSI>6.3){
+		alert("Tanque de SI em manual ou nível nível abaixo de 10%");			
 	}
-	else if(btnMist1Auto.value==1){
-	xv01Acionada.style.display="none";
-	xv011Acionada.style.display="none";	
-	mt03Ligado.style.display="none";
-	mist1DosagemSal();	
+	if(numReceita==10){
+		   		alert("Escolha uma receita");
+	}
+	if(tubTranspVert6.style.display!="block")
+		{alert("Pulmão-1 vazio");}
+	if(btnMist1Auto.value==1 && setpointNivelTqSI<=6.3 && numReceita!=10 && tubTranspVert6.style.display==="block"){
+		xv01Acionada.style.display="none";
+		xv011Acionada.style.display="none";	
+		mt03Ligado.style.display="none";	
+		mist1DosagemSal();			
 	}
 
 	function mist1DosagemSal(){
@@ -1513,12 +1537,12 @@ function mist1Automatico(){
 				wit01Sal=i*fator_sal;
 				wit01Total=wit01Sal+wit01SI
 				wit01.innerHTML=wit01Total+"Kg";
-				if(i>="5"){clearInterval(Tmist1Sal);}
+				if(i>="10"){clearInterval(Tmist1Sal);}
 			},1000);
 		setTimeout(function(){			
 		xv011Acionada.style.display="none";	
 		mist1DosagemSI();
-		},5000);		
+		},10000);		
 	}
 
 	function mist1DosagemSI(){
@@ -1530,13 +1554,13 @@ function mist1Automatico(){
 				var wit01SI=i*fator_si;
 				wit01Total=wit01Sal+wit01SI
 				wit01.innerHTML=wit01Total+"Kg";
-				if(i>="5"){clearInterval(Tmist1SI);}
+				if(i>="10"){clearInterval(Tmist1SI);}
 			},1000);
 		setTimeout(function(){			
 		xv01Acionada.style.display="none";
 		esvaziamentoTubSI();
 		mist1Misturador();	
-		},5000);		
+		},10000);		
 	}
 
 	function mist1Misturador(){
@@ -1544,34 +1568,240 @@ function mist1Automatico(){
 		setTimeout(function(){
 			mt03Ligado.style.display="none";
 			//mist1Automatico();
-		},10000);		
+		},15000);		
 	}
 
 }
-
 
 
 
 
 //****************************** Mist-2 Automático****************************		
+
 var wit02=document.getElementById("WIT_02");
+var wit02Sal=0;
+var wit02SI=0;
+var wit02Total=0;
 
 function mist2Automatico(){
-	if(btnMist2Auto.value==1){
-	xv02Acionada.style.display="none";
-	xv022Acionada.style.display="none";
-	mt04Ligado.style.display="none";	
+	if(btnSIbtnAuto.value=="" || setpointNivelTqSI>6.3){
+		alert("Tanque de SI em manual ou nível nível abaixo de 10%");			
 	}
-}
+	if(numReceita==10){
+		   		alert("Escolha uma receita");
+	}
+	if(tubTranspVert7.style.display!="block")
+		{alert("Pulmão-2 vazio");}
+	if(btnMist2Auto.value==1 && setpointNivelTqSI<=6.3 && numReceita!=10 && tubTranspVert7.style.display==="block"){
+		xv02Acionada.style.display="none";
+		xv022Acionada.style.display="none";	
+		mt04Ligado.style.display="none";	
+		mist2DosagemSal();			
+	}
 
+	function mist2DosagemSal(){
+		
+		xv022Acionada.style.display="block";
+		var i=0;
+			var Tmist2Sal=setInterval(function(){
+				i++;
+				wit02Sal=i*fator_sal;
+				wit02Total=wit02Sal+wit02SI
+				wit02.innerHTML=wit02Total+"Kg";
+				if(i>="10"){clearInterval(Tmist2Sal);}
+			},1000);
+		setTimeout(function(){			
+		xv022Acionada.style.display="none";	
+		mist2DosagemSI();
+		},10000);		
+	}
+
+	function mist2DosagemSI(){
+		xv02Acionada.style.display="block";
+		enchimentoTubSI();
+		var i=0;
+			var Tmist2SI=setInterval(function(){
+				i++;
+				var wit02SI=i*fator_si;
+				wit02Total=wit02Sal+wit02SI
+				wit02.innerHTML=wit02Total+"Kg";
+				if(i>="10"){clearInterval(Tmist2SI);}
+			},1000);
+		setTimeout(function(){			
+		xv02Acionada.style.display="none";
+		esvaziamentoTubSI();
+		mist2Misturador();	
+		},10000);		
+	}
+
+	function mist2Misturador(){
+		mt04Ligado.style.display="block";
+		setTimeout(function(){
+			mt04Ligado.style.display="none";
+			//mist1Automatico();
+		},15000);		
+	}
+
+}
 
 //****************************** Mist-3 Automático****************************		
 var wit03=document.getElementById("WIT_03");
+var wit03Sal=0;
+var wit03SI=0;
+var wit03Total=0;
 
 function mist3Automatico(){
-	if(btnMist3Auto.value==1){
-	xv03Acionada.style.display="none";
-	xv033Acionada.style.display="none";
-	mt05Ligado.style.display="none";	
+	if(btnSIbtnAuto.value=="" || setpointNivelTqSI>6.3){
+		alert("Tanque de SI em manual ou nível nível abaixo de 10%");			
 	}
+	if(numReceita==10){
+		   		alert("Escolha uma receita");
+	}
+	if(tubTranspVert8.style.display!="block")
+		{alert("Pulmão-3 vazio");}
+	if(btnMist3Auto.value==1 && setpointNivelTqSI<=6.3 && numReceita!=10 && tubTranspVert8.style.display==="block"){
+		xv03Acionada.style.display="none";
+		xv033Acionada.style.display="none";	
+		mt05Ligado.style.display="none";	
+		mist3DosagemSal();			
+	}
+
+	function mist3DosagemSal(){
+		
+		xv033Acionada.style.display="block";
+		var i=0;
+			var Tmist3Sal=setInterval(function(){
+				i++;
+				wit03Sal=i*fator_sal;
+				wit03Total=wit03Sal+wit03SI
+				wit03.innerHTML=wit03Total+"Kg";
+				if(i>="10"){clearInterval(Tmist3Sal);}
+			},1000);
+		setTimeout(function(){			
+		xv033Acionada.style.display="none";	
+		mist3DosagemSI();
+		},10000);		
+	}
+
+	function mist3DosagemSI(){
+		xv03Acionada.style.display="block";
+		enchimentoTubSI();
+		var i=0;
+			var Tmist3SI=setInterval(function(){
+				i++;
+				var wit03SI=i*fator_si;
+				wit03Total=wit03Sal+wit03SI
+				wit03.innerHTML=wit03Total+"Kg";
+				if(i>="10"){clearInterval(Tmist3SI);}
+			},1000);
+		setTimeout(function(){			
+		xv03Acionada.style.display="none";
+		esvaziamentoTubSI();
+		mist3Misturador();	
+		},10000);		
+	}
+
+	function mist3Misturador(){
+		mt05Ligado.style.display="block";
+		setTimeout(function(){
+			mt05Ligado.style.display="none";
+			//mist1Automatico();
+		},15000);		
+	}
+
+}
+
+
+
+
+
+//****************************** Botões Envase****************************
+
+//*************  Env-1  *****************
+var btnEnv1Ligada=document.getElementById("btnEnv1Ligada");
+var btnEnv1Desligada=document.getElementById("btnEnv1Desligada");		
+
+		btnEnv1Ligada.addEventListener("click",function(){
+			btnEnv1Ligada.style.backgroundColor="green";
+			btnEnv1Ligada.value=1;		
+			btnEnv1Desligada.style.backgroundColor="rgb(100,100,100)";
+			btnEnv1Desligada.value="";
+			env1Automatico();								
+		});
+		btnEnv1Desligada.addEventListener("click",function(){
+			btnEnv1Ligada.style.backgroundColor="rgb(100,100,100)";
+			btnEnv1Ligada.value="";		
+			btnEnv1Desligada.style.backgroundColor="green";
+			btnEnv1Desligada.value=1;								
+		});
+
+function env1Automatico(){
+	if(wit01Total>=375 && mt03Ligado.style.display==="none"){
+		var c=wit01Total;
+		var Tenv1auto=setInterval(function(){
+		c=c-10;
+		wit01.innerHTML=c+"Kg";
+				if(c<="0"){clearInterval(Tenv1auto);}						
+	},500);
+	}
+	
+}
+//*************  Env-2  *****************
+var btnEnv2Ligada=document.getElementById("btnEnv2Ligada");
+var btnEnv2Desligada=document.getElementById("btnEnv2Desligada");		
+
+		btnEnv2Ligada.addEventListener("click",function(){
+			btnEnv2Ligada.style.backgroundColor="green";
+			btnEnv2Ligada.value=1;		
+			btnEnv2Desligada.style.backgroundColor="rgb(100,100,100)";
+			btnEnv2Desligada.value="";
+			env2Automatico();								
+		});
+		btnEnv2Desligada.addEventListener("click",function(){
+			btnEnv2Ligada.style.backgroundColor="rgb(100,100,100)";
+			btnEnv2Ligada.value="";		
+			btnEnv2Desligada.style.backgroundColor="green";
+			btnEnv2Desligada.value=1;								
+		});
+
+function env2Automatico(){
+	if(wit02Total>=375 && mt04Ligado.style.display==="none"){
+		var c=wit02Total;
+		var Tenv2auto=setInterval(function(){
+		c=c-10;
+		wit02.innerHTML=c+"Kg";
+				if(c<="0"){clearInterval(Tenv2auto);}						
+	},500);
+	}
+	
+}
+
+		//*************  Env-3  *****************
+var btnEnv3Ligada=document.getElementById("btnEnv3Ligada");
+var btnEnv3Desligada=document.getElementById("btnEnv3Desligada");		
+
+		btnEnv3Ligada.addEventListener("click",function(){
+			btnEnv3Ligada.style.backgroundColor="green";
+			btnEnv3Ligada.value=1;		
+			btnEnv3Desligada.style.backgroundColor="rgb(100,100,100)";
+			btnEnv3Desligada.value="";
+			env3Automatico();								
+		});
+		btnEnv3Desligada.addEventListener("click",function(){
+			btnEnv3Ligada.style.backgroundColor="rgb(100,100,100)";
+			btnEnv3Ligada.value="";		
+			btnEnv3Desligada.style.backgroundColor="green";
+			btnEnv3Desligada.value=1;								
+		});
+
+		function env3Automatico(){
+	if(wit03Total>=375 && mt05Ligado.style.display==="none"){
+		var c=wit03Total;
+		var Tenv3auto=setInterval(function(){
+		c=c-10;
+		wit03.innerHTML=c+"Kg";
+				if(c<="0"){clearInterval(Tenv3auto);}						
+	},500);
+	}
+	
 }

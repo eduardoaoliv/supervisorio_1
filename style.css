@@ -1018,3 +1018,45 @@ label{/*Input de setpoint pressão transportador*/
     margin-top:23.7vw;
     margin-left: 79vw;
 }
+
+/************************** Botões do Envase **********************/
+.btnEnvase{/*Botões do Envase*/    
+    background-color: rgb(100,100,100);
+    border: 0.2vw outset gray;
+    width: 3vw;
+    height: 1.7vw;
+    font-weight: bold;
+    color: white;
+    font-size: 0.7vw; 
+    text-align: center;         
+}
+#btnEnv1Ligada{
+    position: absolute;
+    margin-top: 40vw;
+    margin-left: 47vw;
+}
+#btnEnv1Desligada{
+    position: absolute;
+    margin-top: 40vw;
+    margin-left: 50.8vw;
+}
+#btnEnv2Ligada{
+    position: absolute;
+    margin-top: 40vw;
+    margin-left: 62.3vw;
+}
+#btnEnv2Desligada{
+    position: absolute;
+    margin-top: 40vw;
+    margin-left: 66.1vw;
+}
+#btnEnv3Ligada{
+    position: absolute;
+    margin-top: 40vw;
+    margin-left: 77.8vw;
+}
+#btnEnv3Desligada{
+    position: absolute;
+    margin-top: 40vw;
+    margin-left: 81.6vw;
+}
