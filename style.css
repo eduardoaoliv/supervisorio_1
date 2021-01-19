@@ -21,8 +21,8 @@ header{
 	height: 45vw;	
 }
 .menu{/*Botões do menu*/    
-    background-color: rgb(100,100,100);
-    border: 0.3vw outset rgb(150,150,150);
+    background-color: rgb(150,150,150);
+    border: 0.3vw outset rgb(160,160,160);
     width: 8vw;
     height: 2vw;
     font-weight: bold;

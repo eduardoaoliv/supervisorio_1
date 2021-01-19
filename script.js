@@ -183,7 +183,8 @@ receitaEnviar.addEventListener("click",function() {
             //console.log("Escolheu: " + receitas[i].value);
             numReceita=receitas[i].value;                        
         };
-    };numeroReceita();    
+    };
+    numeroReceita();    
 });
 
 function numeroReceita(){
