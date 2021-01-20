@@ -1019,44 +1019,63 @@ label{/*Input de setpoint pressão transportador*/
     margin-left: 79vw;
 }
 
-/************************** Botões do Envase **********************/
-.btnEnvase{/*Botões do Envase*/    
-    background-color: rgb(100,100,100);
-    border: 0.2vw outset gray;
-    width: 3vw;
-    height: 1.7vw;
+
+
+/************************** Aviso de descarregar dos Misturadores **********************/
+.btnAvisoDescarrega{/*Botões de descarga*/    
+    background-color: rgb(189,10,16);
+    border: 0.3vw solid red;
+    width: 7vw;
+    height: 2vw;
     font-weight: bold;
     color: white;
-    font-size: 0.7vw; 
+    font-size: 1vw; 
     text-align: center;         
 }
-#btnEnv1Ligada{
+#btnDescarregaMist1{
+    display: none;
     position: absolute;
-    margin-top: 40vw;
-    margin-left: 47vw;
+    margin-top: 21.8vw;
+    margin-left: 43.8vw;
 }
-#btnEnv1Desligada{
+#btnDescarregaMist2{
+    display: none;
     position: absolute;
-    margin-top: 40vw;
-    margin-left: 50.8vw;
+    margin-top: 21.8vw;
+    margin-left: 59.2vw;
 }
-#btnEnv2Ligada{
+#btnDescarregaMist3{
+    display: none;
     position: absolute;
-    margin-top: 40vw;
-    margin-left: 62.3vw;
+    margin-top: 21.8vw;
+    margin-left: 74.5vw;
 }
-#btnEnv2Desligada{
+
+/************************** Sinalizadores das Envasadoras **********************/
+.sinalizadorEnv{/*Sinalizadores das Envasadoras*/
     position: absolute;
-    margin-top: 40vw;
-    margin-left: 66.1vw;
+    width: 0.7vw;
+    height: 0.7vw;
+    background-color: green;
+    border:0.2vw solid white;    
+    font-size: 0.8vw;
+    font-weight: bold;
 }
-#btnEnv3Ligada{
+#sinalizadorEnv1{
+    display: none;
     position: absolute;
-    margin-top: 40vw;
-    margin-left: 77.8vw;
+    margin-top: 33.7vw;
+    margin-left: 53vw;
 }
-#btnEnv3Desligada{
+#sinalizadorEnv2{
+    display: none;
     position: absolute;
-    margin-top: 40vw;
-    margin-left: 81.6vw;
+    margin-top: 33.7vw;
+    margin-left: 68.3vw;
+}
+#sinalizadorEnv3{
+    display: none;
+    position: absolute;
+    margin-top: 33.7vw;
+    margin-left: 83.7vw;
 }

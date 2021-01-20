@@ -1330,7 +1330,7 @@ else if(btnTranspAuto.value==1){
 									LSH103.style.display="block";
 								}
 								}
-								console.log(contagem1);
+								
 							}
 					},400);//tempo simulando subida da pressão
 		},3000);//tempo para descer o sal para o tq. transportador	
@@ -1382,11 +1382,7 @@ else if(btnPulmao3Hab.value==1 && LSH103.value==""){envio=3;}
 			cicloTransporteSal();
 		break;
 	}
-
-
 }
-
-
 
 
 //****************************** Pulmão-1 Hab/Desab e nível ****************************
@@ -1508,6 +1504,7 @@ var btnMist3Man=document.getElementById("mist3Man");
 
 //****************************** Mist-1 Automático****************************		
 var wit01=document.getElementById("WIT_01");
+var btnDescarregaMist1=document.getElementById("btnDescarregaMist1");
 var wit01Sal=0;
 var wit01SI=0;
 var wit01Total=0;
@@ -1521,15 +1518,16 @@ function mist1Automatico(){
 	}
 	if(tubTranspVert6.style.display!="block")
 		{alert("Pulmão-1 vazio");}
-	if(btnMist1Auto.value==1 && setpointNivelTqSI<=6.3 && numReceita!=10 && tubTranspVert6.style.display==="block"){
+	if(btnMist1Auto.value==1 && setpointNivelTqSI<=6.3 && numReceita!=10 
+		&& tubTranspVert6.style.display==="block" && btnDescarregaMist1.style.display!="block")
+	{
 		xv01Acionada.style.display="none";
 		xv011Acionada.style.display="none";	
 		mt03Ligado.style.display="none";	
 		mist1DosagemSal();			
 	}
 
-	function mist1DosagemSal(){
-		
+	function mist1DosagemSal(){		
 		xv011Acionada.style.display="block";
 		var i=0;
 			var Tmist1Sal=setInterval(function(){
@@ -1567,18 +1565,36 @@ function mist1Automatico(){
 		mt03Ligado.style.display="block";
 		setTimeout(function(){
 			mt03Ligado.style.display="none";
-			//mist1Automatico();
+			avisoDescarregaMist1();
 		},15000);		
 	}
-
 }
 
-
-
+	function avisoDescarregaMist1(){
+		btnDescarregaMist1.style.display="block";
+		btnDescarregaMist1.addEventListener("click",function(){
+			if(wit01Total>=375 && mt03Ligado.style.display==="none"){
+			var c=wit01Total;
+			var Tenv1auto=setInterval(function(){
+			c=c-10;
+			wit01.innerHTML=c+"Kg";
+			btnDescarregaMist1.innerHTML="AGUARDE";
+			mt03Ligado.style.display="block";
+				if(c<="0"){
+					clearInterval(Tenv1auto);
+					btnDescarregaMist1.style.display="none";
+					btnDescarregaMist1.innerHTML="Descarregar";
+					mt03Ligado.style.display="none";
+				}						
+			},500);
+			}
+		})
+	}
 
 //****************************** Mist-2 Automático****************************		
 
 var wit02=document.getElementById("WIT_02");
+var btnDescarregaMist2=document.getElementById("btnDescarregaMist2");
 var wit02Sal=0;
 var wit02SI=0;
 var wit02Total=0;
@@ -1592,15 +1608,15 @@ function mist2Automatico(){
 	}
 	if(tubTranspVert7.style.display!="block")
 		{alert("Pulmão-2 vazio");}
-	if(btnMist2Auto.value==1 && setpointNivelTqSI<=6.3 && numReceita!=10 && tubTranspVert7.style.display==="block"){
+	if(btnMist2Auto.value==1 && setpointNivelTqSI<=6.3 && numReceita!=10 && 
+		tubTranspVert7.style.display==="block" && btnDescarregaMist2.style.display!="block"){
 		xv02Acionada.style.display="none";
 		xv022Acionada.style.display="none";	
 		mt04Ligado.style.display="none";	
 		mist2DosagemSal();			
 	}
 
-	function mist2DosagemSal(){
-		
+	function mist2DosagemSal(){		
 		xv022Acionada.style.display="block";
 		var i=0;
 			var Tmist2Sal=setInterval(function(){
@@ -1638,14 +1654,34 @@ function mist2Automatico(){
 		mt04Ligado.style.display="block";
 		setTimeout(function(){
 			mt04Ligado.style.display="none";
-			//mist1Automatico();
+			avisoDescarregaMist2();
 		},15000);		
 	}
-
 }
 
+	function avisoDescarregaMist2(){
+		btnDescarregaMist2.style.display="block";
+		btnDescarregaMist2.addEventListener("click",function(){
+			if(wit02Total>=375 && mt04Ligado.style.display==="none"){
+			var c=wit02Total;
+			var Tenv2auto=setInterval(function(){
+			c=c-10;
+			wit02.innerHTML=c+"Kg";
+			btnDescarregaMist2.innerHTML="AGUARDE";
+			mt04Ligado.style.display="block";
+				if(c<="0"){
+					clearInterval(Tenv2auto);
+					btnDescarregaMist2.style.display="none";
+					btnDescarregaMist2.innerHTML="Descarregar";
+					mt04Ligado.style.display="none";
+				}						
+			},500);
+			}
+		})
+	}
 //****************************** Mist-3 Automático****************************		
 var wit03=document.getElementById("WIT_03");
+var btnDescarregaMist3=document.getElementById("btnDescarregaMist3");
 var wit03Sal=0;
 var wit03SI=0;
 var wit03Total=0;
@@ -1659,7 +1695,8 @@ function mist3Automatico(){
 	}
 	if(tubTranspVert8.style.display!="block")
 		{alert("Pulmão-3 vazio");}
-	if(btnMist3Auto.value==1 && setpointNivelTqSI<=6.3 && numReceita!=10 && tubTranspVert8.style.display==="block"){
+	if(btnMist3Auto.value==1 && setpointNivelTqSI<=6.3 && numReceita!=10 && 
+		tubTranspVert8.style.display==="block" && btnDescarregaMist3.style.display!="block"){
 		xv03Acionada.style.display="none";
 		xv033Acionada.style.display="none";	
 		mt05Ligado.style.display="none";	
@@ -1705,103 +1742,45 @@ function mist3Automatico(){
 		mt05Ligado.style.display="block";
 		setTimeout(function(){
 			mt05Ligado.style.display="none";
-			//mist1Automatico();
+			avisoDescarregaMist3();
 		},15000);		
 	}
 
 }
 
-
-
-
-
-//****************************** Botões Envase****************************
-
-//*************  Env-1  *****************
-var btnEnv1Ligada=document.getElementById("btnEnv1Ligada");
-var btnEnv1Desligada=document.getElementById("btnEnv1Desligada");		
-
-		btnEnv1Ligada.addEventListener("click",function(){
-			btnEnv1Ligada.style.backgroundColor="green";
-			btnEnv1Ligada.value=1;		
-			btnEnv1Desligada.style.backgroundColor="rgb(100,100,100)";
-			btnEnv1Desligada.value="";
-			env1Automatico();								
-		});
-		btnEnv1Desligada.addEventListener("click",function(){
-			btnEnv1Ligada.style.backgroundColor="rgb(100,100,100)";
-			btnEnv1Ligada.value="";		
-			btnEnv1Desligada.style.backgroundColor="green";
-			btnEnv1Desligada.value=1;								
-		});
-
-function env1Automatico(){
-	if(wit01Total>=375 && mt03Ligado.style.display==="none"){
-		var c=wit01Total;
-		var Tenv1auto=setInterval(function(){
-		c=c-10;
-		wit01.innerHTML=c+"Kg";
-				if(c<="0"){clearInterval(Tenv1auto);}						
-	},500);
-	}
-	
-}
-//*************  Env-2  *****************
-var btnEnv2Ligada=document.getElementById("btnEnv2Ligada");
-var btnEnv2Desligada=document.getElementById("btnEnv2Desligada");		
-
-		btnEnv2Ligada.addEventListener("click",function(){
-			btnEnv2Ligada.style.backgroundColor="green";
-			btnEnv2Ligada.value=1;		
-			btnEnv2Desligada.style.backgroundColor="rgb(100,100,100)";
-			btnEnv2Desligada.value="";
-			env2Automatico();								
-		});
-		btnEnv2Desligada.addEventListener("click",function(){
-			btnEnv2Ligada.style.backgroundColor="rgb(100,100,100)";
-			btnEnv2Ligada.value="";		
-			btnEnv2Desligada.style.backgroundColor="green";
-			btnEnv2Desligada.value=1;								
-		});
-
-function env2Automatico(){
-	if(wit02Total>=375 && mt04Ligado.style.display==="none"){
-		var c=wit02Total;
-		var Tenv2auto=setInterval(function(){
-		c=c-10;
-		wit02.innerHTML=c+"Kg";
-				if(c<="0"){clearInterval(Tenv2auto);}						
-	},500);
-	}
-	
+function avisoDescarregaMist3(){
+		btnDescarregaMist3.style.display="block";
+		btnDescarregaMist3.addEventListener("click",function(){
+			if(wit03Total>=375 && mt05Ligado.style.display==="none"){
+			var c=wit03Total;
+			var Tenv3auto=setInterval(function(){
+			c=c-10;
+			wit03.innerHTML=c+"Kg";
+			btnDescarregaMist3.innerHTML="AGUARDE";
+			mt05Ligado.style.display="block";
+				if(c<="0"){
+					clearInterval(Tenv3auto);
+					btnDescarregaMist3.style.display="none";
+					btnDescarregaMist3.innerHTML="Descarregar";
+					mt05Ligado.style.display="none";
+				}						
+			},500);
+			}
+		})
 }
 
-		//*************  Env-3  *****************
-var btnEnv3Ligada=document.getElementById("btnEnv3Ligada");
-var btnEnv3Desligada=document.getElementById("btnEnv3Desligada");		
+//****************************** Sinalizadores das máquinas de envase***************************
+var sinalizadorEnv1=document.getElementById("sinalizadorEnv1");
+if(btnMist1Auto.value==1 && btnPulmao1Hab.value==1){
+	sinalizadorEnv1.style.display="block";
+}
 
-		btnEnv3Ligada.addEventListener("click",function(){
-			btnEnv3Ligada.style.backgroundColor="green";
-			btnEnv3Ligada.value=1;		
-			btnEnv3Desligada.style.backgroundColor="rgb(100,100,100)";
-			btnEnv3Desligada.value="";
-			env3Automatico();								
-		});
-		btnEnv3Desligada.addEventListener("click",function(){
-			btnEnv3Ligada.style.backgroundColor="rgb(100,100,100)";
-			btnEnv3Ligada.value="";		
-			btnEnv3Desligada.style.backgroundColor="green";
-			btnEnv3Desligada.value=1;								
-		});
+var sinalizadorEnv2=document.getElementById("sinalizadorEnv2"); 
+if(btnMist2Auto.value==1 && btnPulmao2Hab.value==1){
+	sinalizadorEnv2.style.display="block";
+}
 
-		function env3Automatico(){
-	if(wit03Total>=375 && mt05Ligado.style.display==="none"){
-		var c=wit03Total;
-		var Tenv3auto=setInterval(function(){
-		c=c-10;
-		wit03.innerHTML=c+"Kg";
-				if(c<="0"){clearInterval(Tenv3auto);}						
-	},500);
-	}
-	
+var sinalizadorEnv3=document.getElementById("sinalizadorEnv3");
+if(btnMist3Auto.value==1 && btnPulmao3Hab.value==1){
+	sinalizadorEnv3.style.display="block";
 }
