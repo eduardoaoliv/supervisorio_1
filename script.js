@@ -1188,7 +1188,8 @@ SIBarraNivel.style.height=7+"vw";//inicia a barra de nível em 0
 			btnSIbtnAuto.style.backgroundColor="rgb(100,100,100)";
 			btnSIbtnAuto.value="";		
 			btnSIbtnMan.style.backgroundColor="green";
-			btnSIbtnMan.value=1;								
+			btnSIbtnMan.value=1;
+			tqSIManual();											
 		});	
 			
 		
@@ -1201,7 +1202,7 @@ SIBarraNivel.style.height=7+"vw";//inicia a barra de nível em 0
 			SIBarraNivel.style.height=setpointNivelTqSI+"vw";
 		});
 
-//****************************** Tanque de SI em automático ****************************
+//****************************** Tanque de SI em automático e manual ****************************
 function tqSIAutomatico(){
 	if(btnSIbtnAuto.value==1){
 		mt01Ligado.style.display="none";
@@ -1213,7 +1214,10 @@ function tqSIAutomatico(){
 	}else{mt01Ligado.style.display="block";}	
 }
 		
-		
+function tqSIManual(){
+	mt01Ligado.style.display="none";
+	mt02Ligado.style.display="none";
+}		
 //****************************** Botão controle Transportador SAL ****************************
 
 
@@ -1505,6 +1509,7 @@ var btnMist3Man=document.getElementById("mist3Man");
 //****************************** Mist-1 Automático****************************		
 var wit01=document.getElementById("WIT_01");
 var btnDescarregaMist1=document.getElementById("btnDescarregaMist1");
+var tubSIMist037=document.getElementById("tub_SI_mist_037");
 var wit01Sal=0;
 var wit01SI=0;
 var wit01Total=0;
@@ -1529,6 +1534,7 @@ function mist1Automatico(){
 
 	function mist1DosagemSal(){		
 		xv011Acionada.style.display="block";
+		tub_TranspVert9.style.display="block";
 		var i=0;
 			var Tmist1Sal=setInterval(function(){
 				i++;
@@ -1538,13 +1544,15 @@ function mist1Automatico(){
 				if(i>="10"){clearInterval(Tmist1Sal);}
 			},1000);
 		setTimeout(function(){			
-		xv011Acionada.style.display="none";	
+		xv011Acionada.style.display="none";
+		tub_TranspVert9.style.display="none";	
 		mist1DosagemSI();
 		},10000);		
 	}
 
 	function mist1DosagemSI(){
 		xv01Acionada.style.display="block";
+		tubSIMist037.style.display="block";
 		enchimentoTubSI();
 		var i=0;
 			var Tmist1SI=setInterval(function(){
@@ -1556,6 +1564,7 @@ function mist1Automatico(){
 			},1000);
 		setTimeout(function(){			
 		xv01Acionada.style.display="none";
+		tubSIMist037.style.display="none";
 		esvaziamentoTubSI();
 		mist1Misturador();	
 		},10000);		
@@ -1571,6 +1580,7 @@ function mist1Automatico(){
 }
 
 	function avisoDescarregaMist1(){
+		pontosMist1();		
 		btnDescarregaMist1.style.display="block";
 		btnDescarregaMist1.addEventListener("click",function(){
 			if(wit01Total>=375 && mt03Ligado.style.display==="none"){
@@ -1579,22 +1589,42 @@ function mist1Automatico(){
 			c=c-10;
 			wit01.innerHTML=c+"Kg";
 			btnDescarregaMist1.innerHTML="AGUARDE";
+			btnDescarregaMist1.style.backgroundColor="red";
 			mt03Ligado.style.display="block";
 				if(c<="0"){
 					clearInterval(Tenv1auto);
 					btnDescarregaMist1.style.display="none";
 					btnDescarregaMist1.innerHTML="Descarregar";
-					mt03Ligado.style.display="none";
+					btnDescarregaMist1.style.backgroundColor="green";
+					mt03Ligado.style.display="none";					
 				}						
 			},500);
 			}
-		})
+		});
+		
 	}
+var contaPontosMist1=1;
+var stepMist1=1;
+function pontosMist1(){
+	contaPontosMist1++;
+	stepMist1=(contaPontosMist1%3);
+	if(stepMist1===0){		
+	LSH101.value="";
+	LSH101.style.display="none";
+	contagem1=0;
+	transpAutomatico();
+	}
+	 
+}
+
+
+
 
 //****************************** Mist-2 Automático****************************		
 
 var wit02=document.getElementById("WIT_02");
 var btnDescarregaMist2=document.getElementById("btnDescarregaMist2");
+var tubSIMist038=document.getElementById("tub_SI_mist_038");
 var wit02Sal=0;
 var wit02SI=0;
 var wit02Total=0;
@@ -1618,6 +1648,7 @@ function mist2Automatico(){
 
 	function mist2DosagemSal(){		
 		xv022Acionada.style.display="block";
+		tub_TranspVert10.style.display="block";
 		var i=0;
 			var Tmist2Sal=setInterval(function(){
 				i++;
@@ -1628,12 +1659,14 @@ function mist2Automatico(){
 			},1000);
 		setTimeout(function(){			
 		xv022Acionada.style.display="none";	
+		tub_TranspVert10.style.display="none";
 		mist2DosagemSI();
 		},10000);		
 	}
 
 	function mist2DosagemSI(){
 		xv02Acionada.style.display="block";
+		tubSIMist038.style.display="block";
 		enchimentoTubSI();
 		var i=0;
 			var Tmist2SI=setInterval(function(){
@@ -1645,6 +1678,7 @@ function mist2Automatico(){
 			},1000);
 		setTimeout(function(){			
 		xv02Acionada.style.display="none";
+		tubSIMist038.style.display="none";
 		esvaziamentoTubSI();
 		mist2Misturador();	
 		},10000);		
@@ -1682,6 +1716,7 @@ function mist2Automatico(){
 //****************************** Mist-3 Automático****************************		
 var wit03=document.getElementById("WIT_03");
 var btnDescarregaMist3=document.getElementById("btnDescarregaMist3");
+var tubSIMist039=document.getElementById("tub_SI_mist_039");
 var wit03Sal=0;
 var wit03SI=0;
 var wit03Total=0;
@@ -1703,9 +1738,9 @@ function mist3Automatico(){
 		mist3DosagemSal();			
 	}
 
-	function mist3DosagemSal(){
-		
+	function mist3DosagemSal(){		
 		xv033Acionada.style.display="block";
+		tub_TranspVert11.style.display="block";
 		var i=0;
 			var Tmist3Sal=setInterval(function(){
 				i++;
@@ -1716,12 +1751,14 @@ function mist3Automatico(){
 			},1000);
 		setTimeout(function(){			
 		xv033Acionada.style.display="none";	
+		tub_TranspVert11.style.display="none";
 		mist3DosagemSI();
 		},10000);		
 	}
 
 	function mist3DosagemSI(){
 		xv03Acionada.style.display="block";
+		tubSIMist039.style.display="block";
 		enchimentoTubSI();
 		var i=0;
 			var Tmist3SI=setInterval(function(){
@@ -1733,6 +1770,7 @@ function mist3Automatico(){
 			},1000);
 		setTimeout(function(){			
 		xv03Acionada.style.display="none";
+		tubSIMist039.style.display="none";
 		esvaziamentoTubSI();
 		mist3Misturador();	
 		},10000);		
