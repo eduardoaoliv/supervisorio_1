@@ -891,7 +891,7 @@ label{/*Input de setpoint pressão transportador*/
 }
 #Pt100{/*Indicação de pressão do transportador de sal*/
     position: absolute;
-    width: 2.2vw;
+    width: 2.5vw;
     height: 1vw;
     background-color: white;
     border:0.2vw solid black;
@@ -1022,7 +1022,7 @@ label{/*Input de setpoint pressão transportador*/
 
 .WIT{/*Indicadores de peso dos misturadores*/
     position: absolute;
-    width: 2.2vw;
+    width: 2.8vw;
     height: 1vw;
     background-color: white;
     border:0.2vw solid black;    
@@ -1032,17 +1032,17 @@ label{/*Input de setpoint pressão transportador*/
 #WIT_01{   
     position: absolute;
     margin-top: 23.7vw;
-    margin-left: 48.5vw;
+    margin-left: 47.8vw;
 }
 #WIT_02{   
     position: absolute;
     margin-top: 23.7vw;
-    margin-left: 63.8vw;
+    margin-left: 63.1vw;
 }
 #WIT_03{   
     position: absolute;
     margin-top:23.7vw;
-    margin-left: 79vw;
+    margin-left: 78.3vw;
 }
 
 

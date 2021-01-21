@@ -158,7 +158,11 @@ function acionaMotor(ID){
 }*/
 
 
-
+//*************************** Produção ****************************************
+var btnProducao=document.getElementById("btn_producao");
+btnProducao.addEventListener("click",function(){
+	window.open("\dashboard.html","_blank","height=500, width=900");
+})
 
 //*************************** Receitas ****************************************
 var receitaEnviar=document.getElementById("receita_enviar");
