@@ -51,14 +51,16 @@ header{
 #modal_receitas{  
     display: none;   
     position: absolute;
-    background-color: white;
+    background-color: gray;
     width: 14vw;
     height: 12vw;
-    margin-left: 8vw;
+    margin-left: 4vw;
     margin-top: 5vw;
-    border: 0.3vw solid rgb(100,100,100);
+    /*border: 0.3vw solid blue;*/
+    box-shadow: .5px .5px 4px 1px white,-0.5px -0.5px 4px 1px white;
     cursor: pointer;
-    font-size: 1vw;
+    font-size: 1.2vw;
+    color: white;
 }#modal_receitas span{
     float: right;
     background-color: gray;
@@ -88,6 +90,31 @@ header{
     height: 1vw;
 }
 
+#modal_manutencao{  
+    display: none;   
+    position: absolute;
+    background-color: gray;
+    width: 14vw;
+    height: 12vw;
+    margin-left: 19vw;
+    margin-top: 5vw;
+    /*border: 0.3vw solid blue;*/
+    box-shadow: .5px .5px 4px 1px white,-0.5px -0.5px 4px 1px white;
+    cursor: pointer;
+    font-size: 1.2vw;
+
+}#modal_manutencao span{
+    float: right;
+    background-color: gray;
+    width: 1.8vw;
+    height: 1.8vw;
+    text-align: center;
+    line-height: 1.8vw;
+    color: white;
+    font-weight: bold;
+    font-size: 1vw;
+    cursor: pointer;
+}
 
 /*Tubulações SI*/
 #tub_SI_mist_01{/*saída da bomba*/
@@ -438,7 +465,8 @@ header{
     font-weight: bold;    
     display: flex;
     justify-content: space-between;
-	align-items: center;    
+	align-items: center; 
+
 }
 .display_btnClose{
     background-color: gray;
@@ -459,7 +487,8 @@ header{
     font-weight: bold;
     color: white; 
     font-size: 1vw; 
-    text-align: left;  
+    text-align: left;
+    cursor: pointer;  
 }
 .motor_btnDesl{
     background-color: rgb(55,55,55);
@@ -785,7 +814,8 @@ header{
     position: absolute;
     cursor: pointer; 
     font-size: 0.8vw;    
-    font-weight: bold;   
+    font-weight: bold; 
+    cursor: pointer;  
 }
 .display_controle{
     display: flex;
@@ -942,7 +972,9 @@ label{/*Input de setpoint pressão transportador*/
     color: white;
     font-size: 0.8vw; 
     text-align: left;
-    padding: 0.1vw         
+    padding: 0.1vw ;
+    cursor: pointer;
+
 }
 
 #pulmao1Hab{
@@ -986,7 +1018,8 @@ label{/*Input de setpoint pressão transportador*/
     color: white;
     font-size: 0.8vw; 
     text-align: center;
-    padding: 0.1vw         
+    padding: 0.1vw;
+    cursor: pointer;        
 }
 
 #mist1Auto{

@@ -157,11 +157,22 @@ function acionaMotor(ID){
 		}else mt02Aciona.style.display="none";
 }*/
 
+//*************************** Manutenção ****************************************
+var btnManut=document.getElementById("btn_manut");
+var closeManutencao=document.getElementById("close_manutencao");
+var modalManutencao=document.getElementById("modal_manutencao");
+
+btnManut.addEventListener("click",function(){
+	modalManutencao.style.display="block";
+})
+closeManutencao.addEventListener("click",function(){
+	modalManutencao.style.display="none";
+});
 
 //*************************** Produção ****************************************
 var btnProducao=document.getElementById("btn_producao");
 btnProducao.addEventListener("click",function(){
-	window.open("\dashboard.html","_blank","height=500, width=900");
+	window.open("\dashboard.html","_blank","height=500, width=860");
 })
 
 //*************************** Receitas ****************************************
@@ -1532,7 +1543,7 @@ function mist1Automatico(){
 	{
 		xv01Acionada.style.display="none";
 		xv011Acionada.style.display="none";	
-		mt03Ligado.style.display="none";	
+		mt03Ligado.style.display="none";					
 		mist1DosagemSal();			
 	}
 
@@ -1600,12 +1611,11 @@ function mist1Automatico(){
 					btnDescarregaMist1.style.display="none";
 					btnDescarregaMist1.innerHTML="Descarregar";
 					btnDescarregaMist1.style.backgroundColor="green";
-					mt03Ligado.style.display="none";					
+					mt03Ligado.style.display="none";									
 				}						
 			},500);
 			}
-		});
-		
+		});	
 	}
 var contaPontosMist1=1;
 var stepMist1=1;
@@ -1615,14 +1625,10 @@ function pontosMist1(){
 	if(stepMist1===0){		
 	LSH101.value="";
 	LSH101.style.display="none";
-	contagem1=0;
+	contagem1=0;	
 	transpAutomatico();
-	}
-	 
+	}	 
 }
-
-
-
 
 //****************************** Mist-2 Automático****************************		
 
@@ -1698,6 +1704,7 @@ function mist2Automatico(){
 }
 
 	function avisoDescarregaMist2(){
+		pontosMist2();
 		btnDescarregaMist2.style.display="block";
 		btnDescarregaMist2.addEventListener("click",function(){
 			if(wit02Total>=375 && mt04Ligado.style.display==="none"){
@@ -1706,17 +1713,33 @@ function mist2Automatico(){
 			c=c-10;
 			wit02.innerHTML=c+"Kg";
 			btnDescarregaMist2.innerHTML="AGUARDE";
+			btnDescarregaMist2.style.backgroundColor="red";
 			mt04Ligado.style.display="block";
 				if(c<="0"){
 					clearInterval(Tenv2auto);
 					btnDescarregaMist2.style.display="none";
 					btnDescarregaMist2.innerHTML="Descarregar";
+					btnDescarregaMist2.style.backgroundColor="green";
 					mt04Ligado.style.display="none";
 				}						
 			},500);
 			}
-		})
+		});		
 	}
+
+var contaPontosMist2=1;
+var stepMist2=1;
+function pontosMist2(){
+	contaPontosMist2++;
+	stepMist2=(contaPontosMist2%3);
+	if(stepMist2===0){		
+	LSH102.value="";
+	LSH102.style.display="none";
+	contagem2=0;	
+	transpAutomatico();
+	}	 
+}
+
 //****************************** Mist-3 Automático****************************		
 var wit03=document.getElementById("WIT_03");
 var btnDescarregaMist3=document.getElementById("btnDescarregaMist3");
@@ -1791,6 +1814,7 @@ function mist3Automatico(){
 }
 
 function avisoDescarregaMist3(){
+		pontosMist3();
 		btnDescarregaMist3.style.display="block";
 		btnDescarregaMist3.addEventListener("click",function(){
 			if(wit03Total>=375 && mt05Ligado.style.display==="none"){
@@ -1799,11 +1823,13 @@ function avisoDescarregaMist3(){
 			c=c-10;
 			wit03.innerHTML=c+"Kg";
 			btnDescarregaMist3.innerHTML="AGUARDE";
+			btnDescarregaMist3.style.backgroundColor="red";
 			mt05Ligado.style.display="block";
 				if(c<="0"){
 					clearInterval(Tenv3auto);
 					btnDescarregaMist3.style.display="none";
 					btnDescarregaMist3.innerHTML="Descarregar";
+					btnDescarregaMist3.style.backgroundColor="green";
 					mt05Ligado.style.display="none";
 				}						
 			},500);
@@ -1811,18 +1837,36 @@ function avisoDescarregaMist3(){
 		})
 }
 
+var contaPontosMist3=1;
+var stepMist3=1;
+function pontosMist3(){
+	contaPontosMist3++;
+	stepMist3=(contaPontosMist3%3);
+	if(stepMist3===0){		
+	LSH103.value="";
+	LSH103.style.display="none";
+	contagem3=0;	
+	transpAutomatico();
+	}	 
+}
+
 //****************************** Sinalizadores das máquinas de envase***************************
 var sinalizadorEnv1=document.getElementById("sinalizadorEnv1");
-if(btnMist1Auto.value==1 && btnPulmao1Hab.value==1){
-	sinalizadorEnv1.style.display="block";
-}
-
-var sinalizadorEnv2=document.getElementById("sinalizadorEnv2"); 
-if(btnMist2Auto.value==1 && btnPulmao2Hab.value==1){
-	sinalizadorEnv2.style.display="block";
-}
-
+var sinalizadorEnv2=document.getElementById("sinalizadorEnv2");
 var sinalizadorEnv3=document.getElementById("sinalizadorEnv3");
-if(btnMist3Auto.value==1 && btnPulmao3Hab.value==1){
-	sinalizadorEnv3.style.display="block";
+
+function sinalizadorEnv1(){
+	if(btnMist1Auto.value==1 || btnPulmao1Hab.value==1){
+		sinalizadorEnv1.style.display="block";
+	}
+}
+function sinalizadorEnv2(){ 
+	if(btnMist2Auto.value==1 || btnPulmao2Hab.value==1){
+		sinalizadorEnv2.style.display="block";
+	}
+}
+function sinalizadorEnv3(){
+	if(btnMist3Auto.value==1 || btnPulmao3Hab.value==1){
+		sinalizadorEnv3.style.display="block";
+	}
 }
