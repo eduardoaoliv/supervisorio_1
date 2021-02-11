@@ -2,18 +2,386 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js" defer></script>
     <title>Supervisório</title>
 </head>
 <body>
-	
-	<h1>Em manutenção</h1>				
+	<header>Principal</header>
+		<div id="conteiner"  dropzone="copy">
+			<img id="tela_principal" src="Imagens/tela_principal.png">			
+			
+			<button class="menu" id="btn_producao">Produção</button>
+			<button class="menu" id="btn_receita">Receitas</button>
+			<button class="menu" id="btn_manut">Manutenção</button>
+
+			<div id="modal_receitas">
+				<span id="close_receitas">X</span>
+				<label>Escolha uma receita:</label><br><br>
+				<input type="radio" name="receita" value="0">Tempero Caseiro<br>
+				<input type="radio" name="receita" value="1">Tempero Completo<br>
+				<input type="radio" name="receita" value="2">Tempero Alho e Sal<br>
+				<input type="radio" name="receita" value="3">Tempero com Pimenta<br>
+				<button type="button" id="receita_enviar">Enviar</button>
+			</div>
+
+			<div id="modal_manutencao">
+				<span id="close_manutencao">X</span>
+				<a href="http://www.dynamicair.com.br/", target="_blank" >Dynamic Air</a><br>
+				<a href="https://www.novus.com.br/site/default.asp?Idioma=55&TroncoID=508083&SecaoID=628282&SubsecaoID=926211&Template=../catalogos/layout_produto.asp&ProdutoID=630606", target="_blank">PT-100</a><br>
+				<a href="https://www.smar.com/brasil/produto/ld301-hart-4-to-20-ma-transmissores-inteligentes-de-pressao", target="_blank">LT-01</a><br>
+				<a href="https://www.weg.net/institutional/BR/pt/", target="_blank" >Motores</a><br>	
+				<a href="https://www.rockwellautomation.com/pt-br/", target="_blank" >Plc</a><br>
+				<a href="https://www.festo.com/cms/pt-br_br/index.htm", target="_blank" >Pneumática</a><br>			
+			</div>
+
+			<img  id="tub_SI_mist_01" src="Imagens/tub_SI_mist_horiz.png">
+			<img  id="tub_SI_mist_02" src="Imagens/tub_SI_mist.png">
+			<img  id="tub_SI_mist_03" src="Imagens/tub_SI_mist_horiz.png">
+			<img  id="tub_SI_mist_031" src="Imagens/tub_SI_mist_horiz.png">
+			<img  id="tub_SI_mist_032" src="Imagens/tub_SI_mist_horiz.png">
+			<img  id="tub_SI_mist_034" src="Imagens/tub_SI_mist.png">
+			<img  id="tub_SI_mist_035" src="Imagens/tub_SI_mist.png">
+			<img  id="tub_SI_mist_036" src="Imagens/tub_SI_mist.png">
+			<img  id="tub_SI_mist_037" src="Imagens/tub_SI_mist.png">
+			<img  id="tub_SI_mist_038" src="Imagens/tub_SI_mist.png">
+			<img  id="tub_SI_mist_039" src="Imagens/tub_SI_mist.png">
+
+			<img  id="tub_TranspVert1" src="Imagens/tub_TranspVert.png">
+			<img  id="tub_TranspVert2" src="Imagens/tub_TranspVert.png">
+			<img  id="tub_TranspVert3" src="Imagens/tub_TranspVert.png">
+			<img  id="tub_TranspVert4" src="Imagens/tub_TranspVert.png">
+			<img  id="tub_TranspVert6" src="Imagens/tub_TranspVert.png">
+			<img  id="tub_TranspVert7" src="Imagens/tub_TranspVert.png">
+			<img  id="tub_TranspVert8" src="Imagens/tub_TranspVert.png">
+			<img  id="tub_TranspVert9" src="Imagens/tub_TranspVert.png">
+			<img  id="tub_TranspVert10" src="Imagens/tub_TranspVert.png">
+			<img  id="tub_TranspVert11" src="Imagens/tub_TranspVert.png">
+			<img  id="tub_ProdutoEnv1" src="Imagens/tub_ProdutoEnv.png">
+			<img  id="tub_ProdutoEnv2" src="Imagens/tub_ProdutoEnv.png">
+			<img  id="tub_ProdutoEnv3" src="Imagens/tub_ProdutoEnv.png">
+
+			<img  id="tub_TranspVert5" src="Imagens/tub_TranspVert.png">
+			<img  id="tub_TranspHoriz1" src="Imagens/tub_TranspHoriz.png">
+			<img  id="tub_TranspHoriz2" src="Imagens/tub_TranspHoriz.png">
+
+
+<!--******************** Display Controle Tanque SI  *********************************-->			
+			<button type="button" class="DisplayControl"  id=controlTqSI>Controle</button>
+			<div id="LTSI">
+				<div id="SIBarraNivel"></div>				
+			</div>
+				<div class="display_controle" id="display_TqSI" draggable="true">
+					<div class="display_ident">Tq. SI
+						<button type="button" class="display_btnClose" id="btn_TqSI_close">X</button>
+					</div>
+					<input type="number" id="setNivelSI"><label>%</label>
+					<button type="button" class="display_btnClose" id="SISetEnviar">OK</button>
+					<button class="buttonControl" id="SIbtnAuto">Auto</button>
+					<button class="buttonControl" id="SIbtnMan">Man</button>
+				</div>
+
+<!--******************** Display Controle Transportador Sal *********************************-->			
+			<button type="button" class="DisplayControl"  id=controlTransp>Controle</button>
+			<div id=Pt100></div>
+				<div class="display_controle" id="display_Transp" draggable="true">
+					<div class="display_ident">SAL
+						<button type="button" class="display_btnClose" id="btn_Transp_close">X</button>
+					</div>
+					<input type="number" id="setPressao"><label>PSI</label>
+					<button type="button" class="display_btnClose" id="TranspSetEnviar">OK</button>
+					<button class="buttonControl" id="TranspbtnAuto">Auto</button>
+					<button class="buttonControl" id="TranspbtnMan">Man</button>
+				</div>
+						
+
+
+<!--******************** Botões Tanques Pulmão 1,2 e 3 *********************************-->
+			<button class="btnHabDesab" id="pulmao1Hab">Habil.</button>
+			<button class="btnHabDesab" id="pulmao1Desab">Desab.</button>
+			<button class="btnHabDesab" id="pulmao2Hab">Habil.</button>
+			<button class="btnHabDesab" id="pulmao2Desab">Desab.</button>
+			<button class="btnHabDesab" id="pulmao3Hab">Habil.</button>
+			<button class="btnHabDesab" id="pulmao3Desab">Desab.</button>
+
+<!--******************** Botões Misturadores 1,2 e 3 *********************************-->			
+			<button class="btnAutoMan" id="mist1Auto">Auto</button>
+			<button class="btnAutoMan" id="mist1Man">Man</button>
+			<button class="btnAutoMan" id="mist2Auto">Auto</button>
+			<button class="btnAutoMan" id="mist2Man">Man</button>
+			<button class="btnAutoMan" id="mist3Auto">Auto</button>
+			<button class="btnAutoMan" id="mist3Man">Man</button>
+
+<!--******************** Motor Mexedor SI - mt-01 *********************************-->			
+			<button type="button" class="motor" name="motor_mexedorSI" id=mt_01>
+				<img  class="motorVertical" id="mt01Acionado" src="Imagens/motorVertical.jpg">
+			</button>
+
+				<div class="display_motor" id="display_mt01" draggable="true">
+					<div class="display_ident">mt-01
+						<button type="button" class="display_btnClose" id="btn_mt01_close">X</button>
+					</div>
+					<button class="motor_btnLiga" id="mt_01_liga">Liga</button>
+					<button class="motor_btnDesl" id="mt_01_desl">Desl</button>
+					<button class="motor_btnAuto" id="mt_01_auto">Auto</button>
+					<button class="motor_btnMan" id="mt_01_man">Man</button>
+				</div>
+
+<!--******************** Motor Bomba SI - mt-02 *********************************-->
+			<button type="button" class="motor" name="motor_bombaSI" id=mt_02>
+				<img class="motorHoriz" id="mt02Acionado" src="Imagens/motorHoriz.jpg">
+			</button>
+
+				<div class="display_motor" id="display_mt02" draggable="true">
+					<div class="display_ident">mt-02
+						<button type="button" class="display_btnClose" id="btn_mt02_close">X</button>
+					</div>
+					<button class="motor_btnLiga" id="mt_02_liga">Liga</button>
+					<button class="motor_btnDesl" id="mt_02_desl">Desl</button>
+					<button class="motor_btnAuto" id="mt_02_auto">Auto</button>
+					<button class="motor_btnMan" id="mt_02_man">Man</button>
+				</div>
+
+<!--******************** Motor Misturador-01 - mt-03 *********************************-->
+			<button type="button" class="motor" name="motor_mist01" id=mt_03>
+				<img class="motorHoriz" id="mt03Acionado" src="Imagens/motorMist.jpg">
+			</button>
+
+				<div class="display_motor" id="display_mt03" draggable="true">
+					<div class="display_ident">mt-03
+						<button type="button" class="display_btnClose" id="btn_mt03_close">X</button>
+					</div>
+					<button class="motor_btnLiga" id="mt_03_liga">Liga</button>
+					<button class="motor_btnDesl" id="mt_03_desl">Desl</button>
+					<button class="motor_btnAuto" id="mt_03_auto">Auto</button>
+					<button class="motor_btnMan" id="mt_03_man">Man</button>
+				</div>	
+
+<!--******************** Motor Misturador-02 - mt-04 *********************************-->
+			<button type="button" class="motor" name="motor_mist02" id=mt_04>
+				<img class="motorHoriz" id="mt04Acionado" src="Imagens/motorMist.jpg">
+			</button>
+
+				<div class="display_motor" id="display_mt04" draggable="true">
+					<div class="display_ident">mt-04
+						<button type="button" class="display_btnClose" id="btn_mt04_close">X</button>
+					</div>
+					<button class="motor_btnLiga" id="mt_04_liga">Liga</button>
+					<button class="motor_btnDesl" id="mt_04_desl">Desl</button>
+					<button class="motor_btnAuto" id="mt_04_auto">Auto</button>
+					<button class="motor_btnMan" id="mt_04_man">Man</button>
+				</div>	
+
+<!--******************** Motor Misturador-03 - mt-05 *********************************-->
+			<button type="button" class="motor" name="motor_mist03" id=mt_05>
+				<img class="motorHoriz" id="mt05Acionado" src="Imagens/motorMist.jpg">
+			</button>
+
+				<div class="display_motor" id="display_mt05" draggable="true">
+					<div class="display_ident">mt-05
+						<button type="button" class="display_btnClose" id="btn_mt05_close">X</button>
+					</div>
+					<button class="motor_btnLiga" id="mt_05_liga">Liga</button>
+					<button class="motor_btnDesl" id="mt_05_desl">Desl</button>
+					<button class="motor_btnAuto" id="mt_05_auto">Auto</button>
+					<button class="motor_btnMan" id="mt_05_man">Man</button>
+				</div>	
+
+<!--******************** Válvula SI mist-01 vx-01 ******************************-->
+			<button type="button" class="valvula" name="valv_SIMist01" id=xv_01>
+				<img class="valve" id="xv01Acionada" src="Imagens/valvSI.png">
+			</button>
+
+				<div class="display_valv" id="display_xv01" draggable="true">
+					<div class="display_ident">xv-01
+						<button type="button" class="display_btnClose" id="btn_xv01_close">X</button>
+					</div>
+					<button class="valv_btnAbre" id="xv_01_abre">Abre</button>
+					<button class="valv_btnFecha" id="xv_01_fecha">Fecha</button>
+					<button class="valv_btnAuto" id="xv_01_auto">Auto</button>
+					<button class="valv_btnMan" id="xv_01_man">Man</button>
+				</div>		
+
+<!--******************** Válvula SI mist-02 vx-02 ******************************-->
+			<button type="button" class="valvula" name="valv_SIMist02" id=xv_02>
+				<img class="valve" id="xv02Acionada" src="Imagens/valvSI.png">
+			</button>
+
+				<div class="display_valv" id="display_xv02" draggable="true">
+					<div class="display_ident">xv-02
+						<button type="button" class="display_btnClose" id="btn_xv02_close">X</button>
+					</div>
+					<button class="valv_btnAbre" id="xv_02_abre">Abre</button>
+					<button class="valv_btnFecha" id="xv_02_fecha">Fecha</button>
+					<button class="valv_btnAuto" id="xv_02_auto">Auto</button>
+					<button class="valv_btnMan" id="xv_02_man">Man</button>
+				</div>		
+
+<!--******************** Válvula SI mist-03 vx-03 ******************************-->
+			<button type="button" class="valvula" name="valv_SIMist03" id=xv_03>
+				<img class="valve" id="xv03Acionada" src="Imagens/valvSI.png">
+			</button>
+
+				<div class="display_valv" id="display_xv03" draggable="true">
+					<div class="display_ident">xv-03
+						<button type="button" class="display_btnClose" id="btn_xv03_close">X</button>
+					</div>
+					<button class="valv_btnAbre" id="xv_03_abre">Abre</button>
+					<button class="valv_btnFecha" id="xv_03_fecha">Fecha</button>
+					<button class="valv_btnAuto" id="xv_03_auto">Auto</button>
+					<button class="valv_btnMan" id="xv_03_man">Man</button>
+				</div>		
+
+<!--******************** Válvula SAL mist-01 vx-011 ******************************-->
+			<button type="button" class="valvula" name="valv_SalMist01" id=xv_011>
+				<img class="valve" id="xv011Acionada" src="Imagens/valvSal.png">
+			</button>
+
+				<div class="display_valv" id="display_xv011" draggable="true">
+					<div class="display_ident">xv-011
+						<button type="button" class="display_btnClose" id="btn_xv011_close">X</button>
+					</div>
+					<button class="valv_btnAbre" id="xv_011_abre">Abre</button>
+					<button class="valv_btnFecha" id="xv_011_fecha">Fecha</button>
+					<button class="valv_btnAuto" id="xv_011_auto">Auto</button>
+					<button class="valv_btnMan" id="xv_011_man">Man</button>
+				</div>
+
+<!--******************** Válvula SAL mist-02 vx-022 ******************************-->
+			<button type="button" class="valvula" name="valv_SalMist02" id=xv_022>
+				<img class="valve" id="xv022Acionada" src="Imagens/valvSal.png">
+			</button>
+
+				<div class="display_valv" id="display_xv022" draggable="true">
+					<div class="display_ident">xv-022
+						<button type="button" class="display_btnClose" id="btn_xv022_close">X</button>
+					</div>
+					<button class="valv_btnAbre" id="xv_022_abre">Abre</button>
+					<button class="valv_btnFecha" id="xv_022_fecha">Fecha</button>
+					<button class="valv_btnAuto" id="xv_022_auto">Auto</button>
+					<button class="valv_btnMan" id="xv_022_man">Man</button>
+				</div>
+
+<!--******************** Válvula SAL mist-03 vx-033 ******************************-->
+			<button type="button" class="valvula" name="valv_SalMist03" id=xv_033>
+				<img class="valve" id="xv033Acionada" src="Imagens/valvSal.png">
+			</button>
+
+				<div class="display_valv" id="display_xv033" draggable="true">
+					<div class="display_ident">xv-033
+						<button type="button" class="display_btnClose" id="btn_xv033_close">X</button>
+					</div>
+					<button class="valv_btnAbre" id="xv_033_abre">Abre</button>
+					<button class="valv_btnFecha" id="xv_033_fecha">Fecha</button>
+					<button class="valv_btnAuto" id="xv_033_auto">Auto</button>
+					<button class="valv_btnMan" id="xv_033_man">Man</button>
+				</div>
+
+<!--******************** Válvula SAL pulmão-01 vx-101 ******************************-->
+			<button type="button" class="valvula" name="valv_SalPulm01" id=xv_101>
+				<img class="valve" id="xv101Acionada" src="Imagens/valvPulm.png">
+			</button>
+
+				<div class="display_valv" id="display_xv101" draggable="true">
+					<div class="display_ident">xv-101
+						<button type="button" class="display_btnClose" id="btn_xv101_close">X</button>
+					</div>
+					<button class="valv_btnAbre" id="xv_101_abre">Abre</button>
+					<button class="valv_btnFecha" id="xv_101_fecha">Fecha</button>
+					<button class="valv_btnAuto" id="xv_101_auto">Auto</button>
+					<button class="valv_btnMan" id="xv_101_man">Man</button>
+				</div>
+
+<!--******************** Válvula SAL pulmão-02 vx-102 ******************************-->
+			<button type="button" class="valvula" name="valv_SalPulm02" id=xv_102>
+				<img class="valve" id="xv102Acionada" src="Imagens/valvPulm.png">
+			</button>
+
+				<div class="display_valv" id="display_xv102" draggable="true">
+					<div class="display_ident">xv-102
+						<button type="button" class="display_btnClose" id="btn_xv102_close">X</button>
+					</div>
+					<button class="valv_btnAbre" id="xv_102_abre">Abre</button>
+					<button class="valv_btnFecha" id="xv_102_fecha">Fecha</button>
+					<button class="valv_btnAuto" id="xv_102_auto">Auto</button>
+					<button class="valv_btnMan" id="xv_102_man">Man</button>
+				</div>
+
+<!--******************** Válvula SAL pulmão-03 vx-103 ******************************-->
+			<button type="button" class="valvula" name="valv_SalPulm" id=xv_103>
+				<img class="valve" id="xv103Acionada" src="Imagens/valvPulm.png">
+			</button>
+
+				<div class="display_valv" id="display_xv103" draggable="true">
+					<div class="display_ident">xv-103
+						<button type="button" class="display_btnClose" id="btn_xv103_close">X</button>
+					</div>
+					<button class="valv_btnAbre" id="xv_103_abre">Abre</button>
+					<button class="valv_btnFecha" id="xv_103_fecha">Fecha</button>
+					<button class="valv_btnAuto" id="xv_103_auto">Auto</button>
+					<button class="valv_btnMan" id="xv_103_man">Man</button>
+				</div>
+
+<!--******************** Válvula Inlet vx-100 ******************************-->
+			<button type="button" class="valvula" name="valv_Inlet" id=xv_100>
+				<img class="valve" id="xv100Acionada" src="Imagens/valvInlet100.png">
+			</button>
+
+				<div class="display_valv" id="display_xv100" draggable="true">
+					<div class="display_ident">xv-100
+						<button type="button" class="display_btnClose" id="btn_xv100_close">X</button>
+					</div>
+					<button class="valv_btnAbre" id="xv_100_abre">Abre</button>
+					<button class="valv_btnFecha" id="xv_100_fecha">Fecha</button>
+					<button class="valv_btnAuto" id="xv_100_auto">Auto</button>
+					<button class="valv_btnMan" id="xv_100_man">Man</button>
+				</div>
+
+<!--******************** Válvula Alívo vx-110 ******************************-->
+			<button type="button" class="valvula" name="valv_Alivio" id=xv_110>
+				<img class="valve" id="xv110Acionada" src="Imagens/valvAlivio110.png">
+			</button>
+
+				<div class="display_valv" id="display_xv110" draggable="true">
+					<div class="display_ident">xv-110
+						<button type="button" class="display_btnClose" id="btn_xv110_close">X</button>
+					</div>
+					<button class="valv_btnAbre" id="xv_110_abre">Abre</button>
+					<button class="valv_btnFecha" id="xv_110_fecha">Fecha</button>
+					<button class="valv_btnAuto" id="xv_110_auto">Auto</button>
+					<button class="valv_btnMan" id="xv_110_man">Man</button>
+				</div>
+
+<!--******************** Chaves de nível ******************************-->
+
+<img id="lsh100" src="Imagens/LSH.png">	<!--transportador-->
+<img id="lsh101" src="Imagens/LSH.png"> <!--pulmão-1-->
+<img id="lsh102" src="Imagens/LSH.png"> <!--pulmão-2-->
+<img id="lsh103" src="Imagens/LSH.png"> <!--pulmão-3-->
+
+
+<!--******************** Transmissores de peso WIT ******************************-->
+<div class="WIT" id=WIT_01></div><!--misturador-1-->
+<div class="WIT" id=WIT_02></div><!--misturador-2-->
+<div class="WIT" id=WIT_03></div><!--misturador-3-->
+
+<!--******************** Aviso dos misturadores - descarregamento ******************************-->
+
+<button class="btnAvisoDescarrega" id="btnDescarregaMist1">Descarregar</button>
+<button class="btnAvisoDescarrega" id="btnDescarregaMist2">Descarregar</button>
+<button class="btnAvisoDescarrega" id="btnDescarregaMist3">Descarregar</button>
+
+<!--******************** Sinalizadores das Envasadoras ******************************-->
+<div class="sinalizadorEnv" id="sinalizadorEnv1"></div>
+<div class="sinalizadorEnv" id="sinalizadorEnv2"></div>
+<div class="sinalizadorEnv" id="sinalizadorEnv3"></div>
 
 
 
 
 
 
-		
+		</div>
 </body>
 </html>
